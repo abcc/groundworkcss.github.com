@@ -1,0 +1,25 @@
+// responsive helpers
+.only-ipad { display:none; }
+
+@media (max-width:1024px) and (min-width:768px) {
+  .hide-ipad { display:none; }
+  .only-ipad { display:inline; }
+}
+
+@media (max-width:480px) {
+  header {
+    nav {
+      ul {
+        li {
+          display:block;
+          &:first-child a {
+            border-radius:0.4em 0.4em 0 0;
+          }
+          &:last-child a {
+            border-radius:0 0 0.4em 0.4em;
+          }
+        }
+      }
+    }
+  }
+}

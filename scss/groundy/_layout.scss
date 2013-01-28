@@ -1,0 +1,173 @@
+// ===================================
+//         Minty Fresh Layout
+// ===================================
+
+
+
+
+body {
+  background:$lt-gray;
+}
+
+header {
+  nav {
+    background:$blue-2;
+    border-radius:0.4em;
+    ul {
+      list-style:none;
+      margin:0;
+      padding:0;
+      li {
+        display:block;
+        position:relative;
+        a {
+          @extend .button;
+          @extend .block;
+        }
+        &:first-child a {
+          border-radius:0.4em 0 0 0.4em;
+        }
+        &:last-child a {
+          border-radius:0 0.4em 0.4em 0;
+        }
+        &:hover, &:focus, &.on {
+          ul {
+            display:block;
+          }
+        }
+      }
+      ul {
+        display:none;
+        position:absolute;
+        width:100%;
+        z-index:10;
+        @include filter-shadow(rgba(0,0,0,0.75), 10px, 0, 5px);
+        li {
+          a {
+            @extend .red;
+          }
+          &:first-child a {
+            border-radius:0;
+          }
+          &:last-child a {
+            border-radius:0 0 0.4em 0.4em;
+          }
+        }
+      }
+    }
+  }
+}
+
+hr {
+  margin:$gutter auto;
+  border:none;
+  border-bottom:1px solid $md-gray;
+}
+
+#slider {
+  > div, > a, > img {
+    display:none;
+    &:first-child {
+      display:block;
+    }
+  }
+}
+
+.border-right, 
+.border-left, 
+.border-top, 
+.border-bottom { border-color:$md-gray; }
+
+.demo {
+  .row {
+    margin-bottom:10px;
+    background:lighten($blue-1, 20%);
+  }
+  .column, .columns, 
+  .whole, 
+  .half, .halves, 
+  .third, .thirds, 
+  .fourth, .fourths, 
+  .fifth, .fifths, 
+  .sixth, .sixths, 
+  .seventh, .sevenths, 
+  .eighth, .eighths, 
+  .ninth, .ninths, 
+  .tenth, .tenths, 
+  .eleventh, .elevenths, 
+  .twelfth, .twelfths {
+    text-align:center;
+    padding:$gutter 0;
+    background:$blue-1;
+    border:1px dashed $white;
+    @include drop-shadow(rgba(0,0,0,0.25), 5px, 0, 0);
+    color:$white;
+    font-size:0.8em;
+    &.small-tablet {
+      background:$blue-2;
+    }
+    &.mobile {
+      background:$blue-3;
+    }
+  }
+  &.reordering {
+    .row {
+      background:$lt-red;
+    }
+    .column, .columns, 
+    .whole, 
+    .half, .halves, 
+    .third, .thirds, 
+    .fourth, .fourths, 
+    .fifth, .fifths, 
+    .sixth, .sixths, 
+    .seventh, .sevenths, 
+    .eighth, .eighths, 
+    .ninth, .ninths, 
+    .tenth, .tenths, 
+    .eleventh, .elevenths, 
+    .twelfth, .twelfths {
+      background:$red;
+    }
+  }
+  &.centering {
+    .row {
+      background:$lt-green;
+    }
+    .column, .columns, 
+    .whole, 
+    .half, .halves, 
+    .third, .thirds, 
+    .fourth, .fourths, 
+    .fifth, .fifths, 
+    .sixth, .sixths, 
+    .seventh, .sevenths, 
+    .eighth, .eighths, 
+    .ninth, .ninths, 
+    .tenth, .tenths, 
+    .eleventh, .elevenths, 
+    .twelfth, .twelfths {
+      background:$dk-green;
+    }
+  }
+  &.offsetting {
+    .row {
+      background:lighten($lt-blue, 25%);
+    }
+    .column, .columns, 
+    .whole, 
+    .half, .halves, 
+    .third, .thirds, 
+    .fourth, .fourths, 
+    .fifth, .fifths, 
+    .sixth, .sixths, 
+    .seventh, .sevenths, 
+    .eighth, .eighths, 
+    .ninth, .ninths, 
+    .tenth, .tenths, 
+    .eleventh, .elevenths, 
+    .twelfth, .twelfths {
+      background:$lt-blue;
+    }
+  }
+}

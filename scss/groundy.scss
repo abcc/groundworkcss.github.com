@@ -1,0 +1,44 @@
+// ===================================
+//         Minty Fresh Theme
+// ===================================
+
+
+
+
+///////////////////////
+//     variables     //
+///////////////////////
+
+@import "variables";  // include Groundwork variables
+@import "mixins";     // include Groundwork mixins
+
+// color palette
+$white:         #ffffff;
+$black:         #000000;
+
+$gray:          #505050;
+$lt-gray:       #e7e7e7;
+$md-gray:       #c7c7c7;
+$dk-gray:       #2c2c2f;
+
+$green:         #bada55;
+$lt-green:      lighten($green, 15%);
+$dk-green:      darken($green, 15%);
+
+$blue-1:        #55ADAB;
+$blue-2:        #1DABB8;
+$blue-3:        #198D98;
+$blue:          $blue-3;
+$lt-blue:       lighten($blue, 15%);  // #24cada
+$dk-blue:       darken($blue, 15%); 
+$navy:          #282830;
+
+$red:           #c82647;
+$lt-red:        lighten($red, 15%);
+$dk-red:        darken($red, 15%);
+
+@import "groundy/web-fonts";
+@import "groundy/helpers";
+@import "groundy/typography";
+@import "groundy/layout";
+@import "groundy/responsive";

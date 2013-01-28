@@ -1,0 +1,60 @@
+// ===================================
+//           Groundy Theme
+// ===================================
+
+
+
+
+// color helpers
+
+// font color
+.invert-color   { color:$white;
+  *             { color:inherit; }
+}
+
+.white-color    { color:$white; }
+.black-color    { color:$black; }
+
+.gray-color     { color:$gray; }
+.lt-gray-color  { color:$lt-gray; }
+.md-gray-color  { color:$md-gray; }
+.dk-gray-color  { color:$dk-gray; }
+
+.green-color    { color:$green; }
+.lt-green-color { color:$lt-green; }
+.dk-green-color { color:$dk-green; }
+
+.blue-1-color   { color:$blue-1; }
+.blue-2-color   { color:$blue-2; }
+.blue-3-color   { color:$blue-3; }
+.lt-blue-color  { color:$lt-blue; }
+.dk-blue-color  { color:$dk-blue; }
+.navy-color     { color:$navy; }
+
+.red-color      { color:$red; }
+.lt-red-color   { color:$lt-red; }
+.dk-red-color   { color:$dk-red; }
+
+// background color
+.white          { background:$white; }
+.black          { background:$black; }
+
+.gray           { background:$gray; }
+.lt-gray        { background:$lt-gray; }
+.md-gray        { background:$md-gray; }
+.dk-gray        { background:$dk-gray; }
+
+.green          { background:$green; }
+.lt-green       { background:$lt-green; }
+.dk-green       { background:$dk-green; }
+
+.blue-1         { background:$blue-1; }
+.blue-2         { background:$blue-2; }
+.blue-3         { background:$blue-3; }
+.lt-blue        { background:$lt-blue; }
+.dk-blue        { background:$dk-blue; }
+.navy           { background:$navy; }
+
+.red            { background:$red; }
+.lt-red         { background:$lt-red; }
+.dk-red         { background:$dk-red; }

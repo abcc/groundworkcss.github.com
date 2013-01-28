@@ -1,0 +1,420 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <title>Groundwork CSS</title>
+  <!-- Modernizr -->
+  <script src="js/libs/modernizr-2.6.2.min.js"></script>
+  <!-- jQuery -->
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  <script type="text/javascript">window.jQuery || document.write('<script src="./js/libs/jquery-1.8.2.min.js"><\/script>')</script>
+  <!-- Groundwork CSS -->
+  <link type="text/css" rel="stylesheet" href="./css/groundwork.css">
+  <!-- Groundy theme files -->
+  <link type="text/css" rel="stylesheet" href="./css/groundy.css">
+  <!-- Font Awesome -->
+  <link type="text/css" rel="stylesheet" href="./css/font-awesome.css">
+</head>
+<body>
+
+  <header class="white band padded">
+    <div class="container">
+      <div class="row">
+        <div class="one third">
+          <h1 class="big responsive heading"><a href="./"><span class="logo">Groundwork</span> Groundwork<sup>Beta</sup></a></h1>
+        </div>
+        <div class="two thirds double pad-top">
+          <nav>
+              <ul class="row">
+                  <li class="one mobile third"><a href="./">Home</a></li
+                  ><li class="one mobile third"><a class="active" href="./components.html">Components</a>
+                    <ul>
+                      <li><a class="lt-red" href="./grid.html">Grid</a></li>
+                      <li><a href="./media-queries.html">Media Queries</a></li>
+                      <li><a href="./typography.html">Typography</a></li>
+                      <li><a href="./buttons.html">Buttons</a></li>
+                      <li><a href="./forms.html">Forms</a></li>
+                      <li><a href="./navigation.html">Navigation</a></li>
+                      <li><a href="./tabs.html">Tabs</a></li>
+                      <li><a href="./ui-elements.html">UI Elements</a></li>
+                      <li><a href="./icons.html">Icons</a></li>
+                      <li><a href="./responsiveText-js.html">ResponsiveText</a></li>
+                      <li><a href="./popovers-js.html">Popovers</a></li>
+                      <li><a href="./tooltips-js.html">Tooltips</a></li>
+                      <li><a href="./orbit-js.html">Orbit</a></li>
+                      <li><a href="./colorbox-js.html">ColorBox</a></li>
+                    </ul>
+                  </li
+                  ><li class="one mobile third"><a href="./documentation.html">Documentation</a></li>
+
+                  <!-- <li class="one small-tablet sixth"><a href="./layout-1.html">Layout 1</a></li
+                  ><li class="one small-tablet sixth"><a href="./layout-2.html">Layout 2</a></li
+                  ><li class="one small-tablet sixth"><a href="./layout-3.html">Layout 3</a></li
+                  ><li class="one small-tablet sixth"><a href="./layout-4.html">Layout 4</a></li
+                  ><li class="one small-tablet sixth"><a href="./layout-5.html">Layout 5</a></li> -->
+              </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="row">
+      <div class="one fourth padded">
+        <h1><i class="icon-th"></i> The Grid</h1>
+        <p>The grid system is extremely flexible and supports any number of columns with semantic class names such as "one half" "three fourths" or "one fifth". Fractions from halves to twelfths are supported and a higher number of columns can be achieved by nesting grids within outer containing columns (i.e. &mdash; 3 columns with nested 5-column grids achieves a row with 15 columns).</p>
+        <h4 class="double gap-top">Responsive Adjustments</h4>
+        <p>By default, columns collapse into seperate rows when viewport width is below 768 pixels. To enable twelfth layouts on mobile devices such as small tablets and handhelds the helper classes of "small-tablet" and "mobile" can be added. These helpers enable the columns to remain in tacts beyond these media query thresholds that collapse them by default.</p>
+        <h4>Example usage:</h4>
+        <code>
+<pre>&lt;div class="<span>row</span>"&gt;</pre>
+<pre>  &lt;div class="<span>one third</span>"&gt;1st&lt;/div&gt;</pre>
+<pre>  &lt;div class="<span>one third</span>"&gt;2nd&lt;/div&gt;</pre>
+<pre>  &lt;div class="<span>one third</span>"&gt;3rd&lt;/div&gt;</pre>
+<pre>&lt;/div&gt;</pre>
+        </code>
+        <hr/>
+        <h4>Result:</h4>
+        <div class="row">
+          <div class="one third">1st</div>
+          <div class="one third">2nd</div>
+          <div class="one third">3rd</div>
+        </div>
+      </div>
+      <div class="three fourths padded">
+        <!-- start demo grid -->
+        <div class="demo pad-top">
+          <h6>Halves</h6>
+          <div class="row">
+            <div class="one half">1/2</div>
+            <div class="one half">1/2</div>
+          </div>
+          
+          <h6>Thirds</h6>
+          <div class="row">
+            <div class="one third">1/3</div>
+            <div class="one third">1/3</div>
+            <div class="one third">1/3</div>
+          </div>
+          <div class="row">
+            <div class="one third">1/3</div>
+            <div class="two thirds">2/3</div>
+          </div>
+          
+          <h6>Fourths</h6>
+          <div class="row">
+            <div class="one fourth">1/4</div>
+            <div class="two fourths">2/4</div>
+            <div class="one fourth">1/4</div>
+          </div>
+          <div class="row">
+            <div class="one fourth">1/4</div>
+            <div class="three fourths">3/4</div>
+          </div>
+          
+          <h6>Fifths</h6>
+          <div class="row">
+            <div class="one fifth">1/5</div>
+            <div class="three fifths">3/5</div>
+            <div class="one fifth">1/5</div>
+          </div>
+          <div class="row">
+            <div class="one fifth">1/5</div>
+            <div class="four fifths">4/5</div>
+          </div>
+          
+          <h6>Sixths</h6>
+          <div class="row">
+            <div class="one sixth">1/6</div>
+            <div class="two sixths">2/6</div>
+            <div class="three sixths">3/6</div>
+          </div>
+          <div class="row">
+            <div class="one sixth">1/6</div>
+            <div class="five sixths">5/6</div>
+          </div>
+          
+          <h6>Sevenths</h6>
+          <div class="row">
+            <div class="one seventh">1/7</div>
+            <div class="two sevenths">2/7</div>
+            <div class="four sevenths">4/7</div>
+          </div>
+          <div class="row">
+            <div class="one seventh">1/7</div>
+            <div class="six sevenths">6/7</div>
+          </div>
+          
+          <h6>Eighths</h6>
+          <div class="row">
+            <div class="one eighth">1/8</div>
+            <div class="three eighths">3/8</div>
+            <div class="four eighths">4/8</div>
+          </div>
+          <div class="row">
+            <div class="one eighth">1/8</div>
+            <div class="seven eighths">7/8</div>
+          </div>
+          
+          <h6>Ninths</h6>
+          <div class="row">
+            <div class="one ninth">1/9</div>
+            <div class="three ninth">3/9</div>
+            <div class="five ninths">5/9</div>
+          </div>
+          <div class="row">
+            <div class="one ninth">1/9</div>
+            <div class="eight ninths">8/9</div>
+          </div>
+          
+          <h6>Tenths</h6>
+          <div class="row">
+            <div class="one tenth">1/10</div>
+            <div class="three tenths">3/10</div>
+            <div class="six tenths">6/10</div>
+          </div>
+          <div class="row">
+            <div class="one tenth">1/10</div>
+            <div class="nine tenths">9/10</div>
+          </div>
+          
+          <h6>Elevenths</h6>
+          <div class="row">
+            <div class="one eleventh">1/11</div>
+            <div class="three elevenths">3/11</div>
+            <div class="seven elevenths">7/11</div>
+          </div>
+          <div class="row">
+            <div class="one eleventh">1/11</div>
+            <div class="ten elevenths">10/11</div>
+          </div>
+          
+          <h6>Twelfths</h6>
+          <div class="row">
+            <div class="one twelfth">1/12</div>
+            <div class="three twelfths">3/12</div>
+            <div class="eight twelfths">8/12</div>
+          </div>
+          <div class="row">
+            <div class="one twelfth">1/12</div>
+            <div class="eleven twelfths">11/12</div>
+          </div>
+        </div>
+
+        <hr/>
+
+        <h6>Small Tablets Grid</h6>
+        <p>Columns don't collapse into seperate rows until viewport width falls below 480 pixels</p>
+        <div class="demo">
+          <div class="row">
+            <div class="one small-tablet third">1/3</div>
+            <div class="one small-tablet third">1/3</div>
+            <div class="one small-tablet third">1/3</div>
+          </div>
+          <div class="row">
+            <div class="one small-tablet fourth">1/4</div>
+            <div class="two small-tablet fourths">2/4</div>
+            <div class="one small-tablet fourth">1/4</div>
+          </div>
+          <div class="row">
+            <div class="one small-tablet fifth">1/5</div>
+            <div class="three small-tablet fifths">3/5</div>
+            <div class="one small-tablet fifth">1/5</div>
+          </div>
+          <div class="row">
+            <div class="three small-tablet fourths">3/4</div>
+            <div class="one small-tablet fourth">1/4</div>
+          </div>
+          <div class="row">
+            <div class="one small-tablet half">1/2</div>
+            <div class="one small-tablet half">1/2</div>
+          </div>
+          <div class="row">
+            <div class="one small-tablet seventh">1/7</div>
+            <div class="five small-tablet sevenths">5/7</div>
+            <div class="one small-tablet seventh">1/7</div>
+          </div>
+          <div class="row">
+            <div class="three small-tablet tenths">3/10</div>
+            <div class="five small-tablet tenths">5/10</div>
+            <div class="two small-tablet tenths">2/10</div>
+          </div>
+        </div>
+
+        <hr/>
+
+        <h6>Mobile Grid</h6>
+        <p>Columns maintain structure down through mobile viewport sizes</p>
+        <div id="mobilegriddemo" class="demo">
+          <div class="row">
+            <div class="four mobile twelfths">1/3</div>
+            <div class="four mobile twelfths">1/3</div>
+            <div class="four mobile twelfths">1/3</div>
+          </div>
+          <div class="row">
+            <div class="three mobile twelfths">1/4</div>
+            <div class="six mobile twelfths">1/2</div>
+            <div class="three mobile twelfths">1/4</div>
+          </div>
+          <div class="row">
+            <div class="three mobile twelfths">1/4</div>
+            <div class="three mobile twelfths">1/4</div>
+            <div class="three mobile twelfths">1/4</div>
+            <div class="three mobile twelfths">1/4</div>
+          </div>
+          <div class="row">
+            <div class="nine mobile twelfths">3/4</div>
+            <div class="three mobile twelfths">1/4</div>
+          </div>
+          <div class="row">
+            <div class="eight mobile twelfths">2/3</div>
+            <div class="four mobile twelfths">1/3</div>
+          </div>
+          <div class="row">
+            <div class="six mobile twelfths">1/2</div>
+            <div class="six mobile twelfths">1/2</div>
+          </div>
+          <div class="row">
+            <div class="four mobile twelfths">1/3</div>
+            <div class="eight mobile twelfths">2/3</div>
+          </div>
+          <div class="row">
+            <div class="three mobile twelfths">1/4</div>
+            <div class="nine mobile twelfths">3/4</div>
+          </div>
+          <div class="row">
+            <div class="one mobile fifth">1/5</div>
+            <div class="three mobile fifths">3/5</div>
+            <div class="one mobile fifth">1/5</div>
+          </div>
+          <div class="row">
+            <div class="one mobile seventh">1/7</div>
+            <div class="five mobile sevenths">5/7</div>
+            <div class="one mobile seventh">1/7</div>
+          </div>
+        </div>
+
+        <hr/>
+
+        <h6 class="sectionheading">Re-ordering</h6>
+        <div class="reordering demo">
+          <div class="row">
+            <div class="one fifth right-four">1/5 (first)</div>
+            <div class="four fifths left-one">4/5 (last)</div>
+          </div>
+          <div class="row">
+            <div class="two thirds right-one">2/3 (first)</div>
+            <div class="one third left-two">1/3 (last)</div>
+          </div>
+          <div class="row">
+            <div class="one fourth right-two">1/4 (first)</div>
+            <div class="one fourth left-one">1/4 (second)</div>
+            <div class="one fourth right-one">1/4 (third)</div>
+            <div class="one fourth left-two">1/4 (fourth)</div>
+          </div>
+          <div class="row">
+            <div class="three eighths right-five">3/8 (first)</div>
+            <div class="two eighths left-three">2/8 (second)</div>
+            <div class="three eighths left-three">3/8 (third)</div>
+          </div>
+        </div>
+
+        <hr/>
+
+        <h6 class="sectionheading">Centering</h6>
+        <div class="centering demo">
+          <div class="row">
+            <div class="one centered mobile seventh">1/7</div>
+          </div>
+          <div class="row">
+            <div class="one centered mobile fifth">1/5</div>
+          </div>
+          <div class="row">
+            <div class="one centered mobile third">1/3</div>
+          </div>
+        </div>
+
+        <hr/>
+
+        <h6 class="sectionheading">Offsetting</h6>
+        <div class="offsetting demo">
+          <div class="row">
+            <div class="eleven mobile twelfths skip-one">11</div>
+          </div>
+          <div class="row">
+            <div class="ten mobile twelfths skip-two">10</div>
+          </div>
+          <div class="row">
+            <div class="nine mobile twelfths skip-three">9</div>
+          </div>
+          <div class="row">
+            <div class="eight mobile twelfths skip-four">8</div>
+          </div>
+          <div class="row">
+            <div class="seven mobile twelfths skip-five">7</div>
+          </div>
+          <div class="row">
+            <div class="six mobile twelfths skip-six">6</div>
+          </div>
+          <div class="row">
+            <div class="one mobile twelfth">1</div>
+            <div class="five mobile twelfths skip-six">5</div>
+          </div>
+          <div class="row">
+            <div class="two mobile twelfths">2</div>
+            <div class="four mobile twelfths skip-six">4</div>
+          </div>
+          <div class="row">
+            <div class="three mobile twelfths">3</div>
+            <div class="three mobile twelfths skip-six">3</div>
+          </div>
+          <div class="row">
+            <div class="four mobile twelfths">4</div>
+            <div class="two mobile twelfths skip-six">2</div>
+          </div>
+          <div class="row">
+            <div class="five mobile twelfths">5</div>
+            <div class="one mobile twelfth skip-six">1</div>
+          </div>
+          <div class="row">
+            <div class="four mobile fifths skip-one">4/5</div>
+          </div>
+          <div class="row">
+            <div class="eight mobile elevenths skip-three">8/11</div>
+          </div>
+          <div class="row">
+            <div class="five mobile sevenths skip-two">5/7</div>
+          </div>
+        </div>
+      </div>
+      <!-- end demo grid -->
+    </div>
+  </div>
+
+  
+
+  <!-- scripts -->
+  <script type="text/javascript" src="./js/plugins/jquery.orbit-1.4.0.js"></script>
+  <script type="text/javascript" src="http://garyhepting.com/responsiveText/jquery.responsiveText.js"></script>
+  <script type="text/javascript" src="./js/groundwork.js"></script>
+
+  <!-- google analytics -->
+  <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-17121602-5']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+
+</body>
+</html>
