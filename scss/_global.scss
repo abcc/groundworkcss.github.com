@@ -9,13 +9,19 @@
 ///////////////////////
 //   global styles   //
 ///////////////////////
+html {
+  width:100%;
+  height:100%;
+}
 html, body {
   width:100% !important;
-  height:100%;
-  font-size:12px;
-  font-family:Helvetica, Arial, Geneva, sans-serif;
+  min-height:100%;
+  background:$background-color;
+  font-size:$font-size;
+  font-family:$font-family;
   line-height:14.4px;
   padding:0;
+  color:$font-color;
 }
 h1, h2, h3, h4, h5, h6 {
   line-height:1.1;
@@ -23,31 +29,31 @@ h1, h2, h3, h4, h5, h6 {
 }
 h1 {
   font-weight:200;
-  font-size:28px;
+  font-size:$font-size * 2.3333333333;
 }
 h2 {
   font-weight:200;
-  font-size:24px;
+  font-size:$font-size * 2;
 }
 h3 {
   font-weight:500;
-  font-size:18px;
+  font-size:$font-size * 1.5;
 }
 h4 {
   font-weight:500;
-  font-size:16px;
+  font-size:$font-size * 1.3333333333;
 }
 h5 {
   font-weight:900;
-  font-size:14px;
+  font-size:$font-size * 1.1666666667;
 }
 h6 {
   font-weight:900;
-  font-size:14px;
+  font-size:$font-size * 1.1666666667;
   text-transform:uppercase;
 }
-a {
-  text-decoration:none;
+a, a:link, a:visited {
+  color:inherit;
   * {
     color:inherit;
   }
@@ -60,11 +66,11 @@ a {
 }
 hr {
   border:0;
-  border-bottom:1px solid #ddd;
+  border-bottom:1px solid $border-color;
   margin:$gutter;
   clear:both;
 }
-img {
+img, a img {
   max-width:100%;
   border:none;
 }
@@ -79,4 +85,32 @@ ul, ol {
 }
 ul {
   list-style-type:circle;
+}
+ul.list {
+  list-style-image:url('../images/check_mark.png');
+  margin-left:2em;
+}
+ol.list {
+  counter-reset:li;
+  list-style:none;
+  margin-left:2em;
+}
+ol.list > li {
+    position:relative;
+    padding:4px 6px;
+}
+ol.list > li:before {
+    content:counter(li);
+    counter-increment:li;
+    position:absolute;
+    top:2px;
+    left:-2em;
+    width:2em;
+    text-align:center;
+    padding:2px;
+    font-size:10px;
+    color:#fff;
+    background:#55adab;
+    font-weight:bold;
+    @include rounded(4px);
 }

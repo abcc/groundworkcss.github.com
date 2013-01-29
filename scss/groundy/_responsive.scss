@@ -1,10 +1,9 @@
-// responsive helpers
-.only-ipad { display:none; }
+// ===================================
+//            Media Queries
+// ===================================
 
-@media (max-width:1024px) and (min-width:768px) {
-  .hide-ipad { display:none; }
-  .only-ipad { display:inline; }
-}
+
+
 
 @media (max-width:480px) {
   header {

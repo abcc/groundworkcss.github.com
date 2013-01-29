@@ -1,20 +1,20 @@
 /* =============================================
  *        Groundwork by Gary Hepting
- *          Last Updated:2013-1-22
+ *          Last Updated:2013-1-28
  * ===========================================*/
 
-@import "reset";        // required
+// variables & mixins
+@import "variables";
+@import "mixins";
 
-@import "variables";    // required
-
-@import "mixins";       // required
-
-@import "grid";         // required
-
-@import "layout";       // optional
-
-@import "global";       // optional
-
-@import "orbit";        // optional
-
-@import "responsive";   // optional
+// components
+@import "reset";
+@import "grid";
+@import "layout";
+@import "global";
+@import "buttons";
+@import "navigation";
+@import "typography";
+@import "responsive";
+@import "font-awesome";
+@import "orbit";

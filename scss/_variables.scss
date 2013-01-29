@@ -1,8 +1,21 @@
 ///////////////////////
 //      settings     //
 ///////////////////////
-$max-width:         1200px; // max container width (i.e. - 960px)
-$gutter:            10px;   // gutter spacing
+$max-width:           1200px; // max container width (i.e. - 960px)
+$gutter:              10px;   // gutter spacing
+
+
+// base styles
+$background-color:    #ffffff;
+$font-color:          #2b2b2d;
+$font-size:           12px;
+$font-family:         Helvetica, Arial, Geneva, sans-serif;
+$border-color:        #dddddd;
+$button-color:        #999999;
+$button-active:       #cccccc;
+$button-text:         $font-color;
+$button-active-text:  $font-color;
+$radius:              4px;
 
 
 

@@ -1,5 +1,5 @@
 // ===================================
-//         Minty Fresh Theme
+//         Groundwork Theme
 // ===================================
 
 
@@ -9,8 +9,8 @@
 //     variables     //
 ///////////////////////
 
-@import "variables";  // include Groundwork variables
-@import "mixins";     // include Groundwork mixins
+@import "../variables";  // include Groundwork variables
+@import "../mixins";     // include Groundwork mixins
 
 // color palette
 $white:         #ffffff;
@@ -37,8 +37,9 @@ $red:           #c82647;
 $lt-red:        lighten($red, 15%);
 $dk-red:        darken($red, 15%);
 
-@import "groundy/web-fonts";
-@import "groundy/helpers";
-@import "groundy/typography";
-@import "groundy/layout";
-@import "groundy/responsive";
+@import "web-fonts";
+@import "layout";
+@import "navigation";
+@import "buttons";
+@import "helpers";
+@import "responsive";

@@ -14,8 +14,6 @@
   <link type="text/css" rel="stylesheet" href="./css/groundwork.css">
   <!-- Groundy theme files -->
   <link type="text/css" rel="stylesheet" href="./css/groundy.css">
-  <!-- Font Awesome -->
-  <link type="text/css" rel="stylesheet" href="./css/font-awesome.css">
 </head>
 <body>
 
@@ -60,6 +58,64 @@
       </div>
     </div>
   </header>
+
+  <div class="container">
+    <div class="row">
+      <div class="one third double pad-top pad-right">
+        <h1><i class="icon-tablet"></i> Media Queries</h1>
+        <p>Groundwork's adaptive grid is mobile-friendly and fully responsive.</p>
+        <h2>Example:</h2>
+        <code>
+<pre>@media only screen and (<span class="key">max-width</span>:<span>767px</span>) {</pre>
+<pre>  <comment>// styles when below 768 pixels</comment></pre>
+<pre>}</pre>
+        </code>
+      </div>
+      <div class="two thirds double pad-top">
+        <h2>Overview</h2>
+        <p>Groundwork has been built to help you make websites that look great on any screen, big ones, small ones, and ones in sizes that have yet to be invented. Groundwork columns, by default, expand to full-width rows when the viewport drops below 768 pixels.</p>
+        <h2>Mobile and Tablet Layouts</h2>
+        <p>In cases where you want columns for smaller widths, you simply add one of these classes:</p>
+        <dl>
+          <dt>`small-tablet`</dt>
+          <dd>Structure remains down to 480px</dd>
+          <dt>`mobile`</dt>
+          <dd>Structure remains at all sizes. Everybody gets columns!</dd>
+        </dl>
+        <h6>Example usage:</h6>
+        <code>
+<pre>&lt;div class="<span>row</span>"&gt;</pre>
+<pre>  &lt;div class="<span>two thirds</span>"&gt;<content>Normal</content>&lt;/div&gt;</pre>
+<pre>  &lt;div class="<span>one third</span>"&gt;<content>Normal</content>&lt;/div&gt;</pre>
+<pre>&lt;/div&gt;</pre>
+<pre>&lt;div class="<span>row</span>"&gt;</pre>
+<pre>  &lt;div class="<span>two small-tablet thirds</span>"&gt;<content>Small Tablet</content>&lt;/div&gt;</pre>
+<pre>  &lt;div class="<span>one small-tablet third</span>"&gt;<content>Small Tablet</content>&lt;/div&gt;</pre>
+<pre>&lt;/div&gt;</pre>
+<pre>&lt;div class="<span>row</span>"&gt;</pre>
+<pre>  &lt;div class="<span>two mobile thirds</span>"&gt;<content>Mobile</content>&lt;/div&gt;</pre>
+<pre>  &lt;div class="<span>one mobile third</span>"&gt;<content>Mobile</content>&lt;/div&gt;</pre>
+<pre>&lt;/div&gt;</pre>
+        </code>
+        <hr/>
+        <h6>Result:</h6>
+        <div class="demo">
+          <div class="row">
+            <div class="two thirds">Normal</div>
+            <div class="one third">Normal</div>
+          </div>
+          <div class="row">
+            <div class="two small-tablet thirds">Small Tablet</div>
+            <div class="one small-tablet third">Small Tablet</div>
+          </div>
+          <div class="row">
+            <div class="two mobile thirds">Mobile</div>
+            <div class="one mobile third">Mobile</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   
 

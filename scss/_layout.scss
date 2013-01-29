@@ -55,10 +55,10 @@
   &.double        { padding:$gutter*2; }
   &.tripple       { padding:$gutter*3; }
 }
-.border-right     { border-right:1px solid #ddd; }
-.border-left      { border-left:1px solid #ddd; }
-.border-top       { border-top:1px solid #ddd; }
-.border-bottom    { border-bottom:1px solid #ddd; }
+.border-right     { border-right:1px solid $border-color; }
+.border-left      { border-left:1px solid $border-color; }
+.border-top       { border-top:1px solid $border-color; }
+.border-bottom    { border-bottom:1px solid $border-color; }
 .align-top        { display:table-cell; vertical-align:top; } // must have height
 .align-right      { text-align:right; }
 .align-bottom     { display:table-cell; vertical-align:bottom; } // must have height

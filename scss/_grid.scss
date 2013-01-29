@@ -19,18 +19,18 @@
 .column, .columns   { float:left;position:relative; }
 
 // columns sizing
-// .one                { width:$one-twelfth; }
-// .two                { width:$one-sixth; }
-// .three              { width:$one-fourth; }
-// .four               { width:$one-third; }
-// .five               { width:$five-twelfths; }
-// .six                { width:$one-half; }
-// .seven              { width:$seven-twelfths; }
-// .eight              { width:$two-thirds; }
-// .nine               { width:$three-fourths; }
-// .ten                { width:$five-sixths; }
-// .eleven             { width:$eleven-twelfths; }
-// .twelve             { width:$one-whole; }
+.one                { width:$one-twelfth; }
+.two                { width:$one-sixth; }
+.three              { width:$one-fourth; }
+.four               { width:$one-third; }
+.five               { width:$five-twelfths; }
+.six                { width:$one-half; }
+.seven              { width:$seven-twelfths; }
+.eight              { width:$two-thirds; }
+.nine               { width:$three-fourths; }
+.ten                { width:$five-sixths; }
+.eleven             { width:$eleven-twelfths; }
+.twelve             { width:$one-whole; }
 
 // move column right (source ordering)
 .right-one           { left:$one-twelfth; }

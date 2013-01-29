@@ -1,157 +1,104 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Page Not Found :(</title>
-        <style>
-            ::-moz-selection {
-                background: #b3d4fc;
-                text-shadow: none;
-            }
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <title>Page Not Found :(</title>
+  <!-- Modernizr -->
+  <script src="js/libs/modernizr-2.6.2.min.js"></script>
+  <!-- jQuery -->
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  <script type="text/javascript">window.jQuery || document.write('<script src="./js/libs/jquery-1.8.2.min.js"><\/script>')</script>
+  <!-- Groundwork CSS -->
+  <link type="text/css" rel="stylesheet" href="./css/groundwork.css">
+  <!-- Groundy theme files -->
+  <link type="text/css" rel="stylesheet" href="./css/groundy.css">
+</head>
+<body>
 
-            ::selection {
-                background: #b3d4fc;
-                text-shadow: none;
-            }
-
-            html {
-                padding: 30px 10px;
-                font-size: 20px;
-                line-height: 1.4;
-                color: #737373;
-                background: #f0f0f0;
-                -webkit-text-size-adjust: 100%;
-                -ms-text-size-adjust: 100%;
-            }
-
-            html,
-            input {
-                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-            }
-
-            body {
-                max-width: 500px;
-                _width: 500px;
-                padding: 30px 20px 50px;
-                border: 1px solid #b3b3b3;
-                border-radius: 4px;
-                margin: 0 auto;
-                box-shadow: 0 1px 10px #a7a7a7, inset 0 1px 0 #fff;
-                background: #fcfcfc;
-            }
-
-            h1 {
-                margin: 0 10px;
-                font-size: 50px;
-                text-align: center;
-            }
-
-            h1 span {
-                color: #bbb;
-            }
-
-            h3 {
-                margin: 1.5em 0 0.5em;
-            }
-
-            p {
-                margin: 1em 0;
-            }
-
-            ul {
-                padding: 0 0 0 40px;
-                margin: 1em 0;
-            }
-
-            .container {
-                max-width: 380px;
-                _width: 380px;
-                margin: 0 auto;
-            }
-
-            /* google search */
-
-            #goog-fixurl ul {
-                list-style: none;
-                padding: 0;
-                margin: 0;
-            }
-
-            #goog-fixurl form {
-                margin: 0;
-            }
-
-            #goog-wm-qt,
-            #goog-wm-sb {
-                border: 1px solid #bbb;
-                font-size: 16px;
-                line-height: normal;
-                vertical-align: top;
-                color: #444;
-                border-radius: 2px;
-            }
-
-            #goog-wm-qt {
-                width: 220px;
-                height: 20px;
-                padding: 5px;
-                margin: 5px 10px 0 0;
-                box-shadow: inset 0 1px 1px #ccc;
-            }
-
-            #goog-wm-sb {
-                display: inline-block;
-                height: 32px;
-                padding: 0 10px;
-                margin: 5px 0 0;
-                white-space: nowrap;
-                cursor: pointer;
-                background-color: #f5f5f5;
-                background-image: -webkit-linear-gradient(rgba(255,255,255,0), #f1f1f1);
-                background-image: -moz-linear-gradient(rgba(255,255,255,0), #f1f1f1);
-                background-image: -ms-linear-gradient(rgba(255,255,255,0), #f1f1f1);
-                background-image: -o-linear-gradient(rgba(255,255,255,0), #f1f1f1);
-                -webkit-appearance: none;
-                -moz-appearance: none;
-                appearance: none;
-                *overflow: visible;
-                *display: inline;
-                *zoom: 1;
-            }
-
-            #goog-wm-sb:hover,
-            #goog-wm-sb:focus {
-                border-color: #aaa;
-                box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-                background-color: #f8f8f8;
-            }
-
-            #goog-wm-qt:hover,
-            #goog-wm-qt:focus {
-                border-color: #105cb6;
-                outline: 0;
-                color: #222;
-            }
-
-            input::-moz-focus-inner {
-                padding: 0;
-                border: 0;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <h1>Not found <span>:(</span></h1>
-            <p>Sorry, but the page you were trying to view does not exist.</p>
-            <p>It looks like this was the result of either:</p>
-            <ul>
-                <li>a mistyped address</li>
-                <li>an out-of-date link</li>
-            </ul>
-            <script>
-                var GOOG_FIXURL_LANG = (navigator.language || '').slice(0,2),GOOG_FIXURL_SITE = location.host;
-            </script>
-            <script src="http://linkhelp.clients.google.com/tbproxy/lh/wm/fixurl.js"></script>
+  <header class="white band padded">
+    <div class="container">
+      <div class="row">
+        <div class="one third">
+          <h1 class="big responsive heading"><a href="./"><span class="logo">Groundwork</span> Groundwork<sup>Beta</sup></a></h1>
         </div>
-    </body>
+        <div class="two thirds double pad-top">
+          <nav>
+              <ul class="row">
+                  <li class="one mobile third"><a href="./">Home</a></li
+                  ><li class="one mobile third"><a class="active" href="./components.html">Components <i class="icon-caret-down"></i></a>
+                    <ul>
+                      <li><a href="./grid.html">Grid</a></li>
+                      <li><a href="./media-queries.html">Media Queries</a></li>
+                      <li><a href="./typography.html">Typography</a></li>
+                      <li><a href="./buttons.html">Buttons</a></li>
+                      <li><a href="./forms.html">Forms</a></li>
+                      <li><a href="./navigation.html">Navigation</a></li>
+                      <li><a href="./tabs.html">Tabs</a></li>
+                      <li><a href="./ui-elements.html">UI Elements</a></li>
+                      <li><a href="./icons.html">Icons</a></li>
+                      <li><a href="./responsiveText-js.html">ResponsiveText</a></li>
+                      <li><a href="./popovers-js.html">Popovers</a></li>
+                      <li><a href="./tooltips-js.html">Tooltips</a></li>
+                      <li><a href="./orbit-js.html">Orbit</a></li>
+                      <li><a href="./colorbox-js.html">ColorBox</a></li>
+                    </ul>
+                  </li
+                  ><li class="one mobile third"><a href="./documentation.html">Documentation</a></li>
+
+                  <!-- <li class="one small-tablet sixth"><a href="./layout-1.html">Layout 1</a></li
+                  ><li class="one small-tablet sixth"><a href="./layout-2.html">Layout 2</a></li
+                  ><li class="one small-tablet sixth"><a href="./layout-3.html">Layout 3</a></li
+                  ><li class="one small-tablet sixth"><a href="./layout-4.html">Layout 4</a></li
+                  ><li class="one small-tablet sixth"><a href="./layout-5.html">Layout 5</a></li> -->
+              </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="row">
+      <div class="two centered thirds tripple padded align-center">
+        <h1 class="heading responsive"><i class="icon-thumbs-down"></i> Not found</h1>
+        <h3 class="responsive">Sorry, but the page you were trying to view does not exist.</h3>
+        <div class="row">
+          <div class="one centered small-tablet half padded align-left">
+            <h3>It looks like this could be the result of:</h3>
+            <ul class="list">
+                <li>A mistyped address</li>
+                <li>An out-of-date link</li>
+                <li>An engineer needing a coffee</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+  <!-- scripts -->
+  <script type="text/javascript" src="./js/plugins/jquery.orbit-1.4.0.js"></script>
+  <script type="text/javascript" src="http://garyhepting.com/responsiveText/jquery.responsiveText.js"></script>
+  <script type="text/javascript" src="./js/groundwork.js"></script>
+
+  <!-- google analytics -->
+  <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-17121602-5']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+
+</body>
 </html>

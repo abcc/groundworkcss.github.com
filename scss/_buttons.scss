@@ -1,0 +1,39 @@
+// ===================================
+//       Groundwork Buttons
+// ===================================
+
+
+
+
+.button, a.button, a.button:link, a.button:visited, input[type=submit],  input[type=button], input[type=reset] {
+  display:inline-block;
+  word-wrap:break-word;
+  padding:0.3em 1em;
+  background:$button-color;
+  border:1px solid $border-color;
+  color:$font-color;
+  font-weight:bold;
+  text-decoration:none;
+  cursor:pointer;
+  line-height:1.5;
+  @include transition(background-color 0.25s ease-out);
+  &:hover, &:focus {
+    background:$button-active;
+  }
+  &.active, &.active:hover, &.active:focus {
+    background:$button-active;
+  }
+  &.large {
+    font-size:1.5em;
+    padding:0.8em 1em;
+  }
+  &.small {
+    padding:0.4em 1em 0.3em;
+    font-size:0.8em;
+  }
+  &.block {
+    display:block;
+    width:100%;
+    text-align:center;
+  }
+}

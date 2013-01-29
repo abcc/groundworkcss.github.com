@@ -1,0 +1,15 @@
+// ===================================
+//       Groundwork Components
+// ===================================
+
+
+
+
+#slider {
+  > div, > a, > img {
+    display:none;
+    &:first-child {
+      display:block;
+    }
+  }
+}

@@ -58,3 +58,7 @@
 .red            { background:$red; }
 .lt-red         { background:$lt-red; }
 .dk-red         { background:$dk-red; }
+
+// shadows, borders
+.glow { @include filter-shadow(rgba(0,0,0,0.35), 5px, 0, 0); }
+.rounded { border-radius:0.4em; }
