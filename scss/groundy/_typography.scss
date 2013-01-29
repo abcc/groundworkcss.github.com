@@ -1,7 +1,76 @@
 // ===================================
-//       Groundwork Typography
+//      Customized Typography
 // ===================================
 
 
 
 
+a, a:link, a:visited {
+  color:$blue;
+  text-decoration:none;
+  &:hover, &:focus {
+    color:$lt-blue;
+    text-decoration:none;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @include font-stack('Average Sans', 'Six Caps');
+  color:$navy;
+  a, a:link, a:visited {
+    color:inherit;
+  }
+}
+
+p, ul, ol, dl {
+  a, a:link, a:visited {
+    color:$blue;
+    border-bottom:1px dotted $blue;
+    &:hover, &:focus {
+      border-bottom:1px dotted $dk-blue;
+    }
+  }
+}
+
+ul.list {
+  list-style-image:url('../images/groundy/check_mark.png');
+}
+
+ol.list > li:before {
+  color:$white;
+  background:$blue;
+}
+
+::selection {
+  background:$lt-blue;
+  color:$white;
+}
+::-moz-selection {
+  background:$lt-blue;
+  color:$white;
+}
+
+code {
+  color:$lt-blue;
+  background:$dk-gray;
+  border-left:2.5em solid $gray;
+  tag {
+    color:$lt-red;
+  }
+  span {
+    color:$green;
+    &.key {
+      color:$lt-red;
+    }
+  }
+  content {
+    color:$white;
+  }
+  comment {
+    color:lighten($gray, 10%);
+  }
+  &.inline {
+    background:darken($lt-gray, 5%);
+    color:$navy;
+  }
+}

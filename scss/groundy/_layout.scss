@@ -11,39 +11,6 @@ body {
   color:$dk-gray;
 }
 
-a, a:link, a:visited {
-  color:inherit;
-  text-decoration:none;
-  &:hover, &:focus {
-    text-decoration:none;
-  }
-}
-
-h1, h2, h3, h4, h5, h6 {
-  @include font-stack('Average Sans', 'Six Caps');
-  color:$navy;
-}
-
-p, ul, ol, dl {
-  a, a:link, a:visited {
-    color:$blue;
-    border-bottom:1px dotted $blue;
-    &:hover, &:focus {
-      color:$dk-blue;
-      border-bottom:1px dotted $dk-blue;
-    }
-  }
-}
-
-::selection {
-  background:$lt-blue;
-  color:$white;
-}
-::-moz-selection {
-  background:$lt-blue;
-  color:$white;
-}
-
 .heading {
   font-size:3em;
   line-height:1.5;
@@ -206,52 +173,6 @@ hr {
   i {
     display:block;
     margin:0 auto;
-  }
-}
-
-code {
-  color:$lt-blue;
-  background:$dk-gray;
-  font-size:0.8em;
-  padding:0.5em;
-  display:block;
-  border-left:2.5em solid $gray;
-  counter-reset:linenumber;
-  span {
-    color:$green;
-    &.key {
-      color:$lt-red;
-    }
-  }
-  content {
-    color:$white;
-  }
-  comment {
-    color:lighten($gray, 10%);
-  }
-  &.inline {
-    display:inline-block;
-    background:darken($lt-gray, 5%);
-    border:none;
-    padding:0 0.3em;
-    margin:0 0.2em;
-    color:$navy;
-    font-size:inherit;
-    line-height:inherit;
-  }
-}
-
-pre {
-  white-space:pre-wrap;
-  &:before {
-    counter-increment:linenumber;
-    content:counter(linenumber) ".";
-    display:inline-block;
-    width:2em;
-    text-align:right;
-    position:absolute;
-    left:1em;
-    color:$white;
   }
 }
 

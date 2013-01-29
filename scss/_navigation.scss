@@ -7,6 +7,7 @@
 
 nav {
   background:$button-color;
+  border-radius:$radius;
   ul {
     list-style:none;
     margin:0;
@@ -14,14 +15,38 @@ nav {
     li {
       display:block;
       position:relative;
-      a {
-        @extend .button;
-        @extend .block;
+      a, a:link, a:visited {
+        display:block;
+        width:100%;
+        word-wrap:break-word;
+        padding:0.25em 1em;
+        background:$button-color;
+        border:1px solid $border-color;
+        color:$button-text;
+        font-weight:bold;
+        font-size:1em;
+        text-decoration:none;
+        text-align:center;
+        cursor:pointer;
+        line-height:1.5;
+        @include transition(background-color 0.25s ease-out);
+        &:hover, &:focus {
+          background:$button-active;
+        }
+        &.active, &.active:hover, &.active:focus {
+          background:$button-active;
+        }
       }
       &:hover, &:focus, &.on {
         ul {
           display:block;
         }
+      }
+      &:first-child a {
+        border-radius:$radius 0 0 $radius;
+      }
+      &:last-child a {
+        border-radius:0 $radius $radius 0;
       }
     }
     ul {
@@ -29,6 +54,14 @@ nav {
       position:absolute;
       width:100%;
       z-index:10;
+      li {
+        &:first-child a {
+          border-radius:0;
+        }
+        &:last-child a {
+          border-radius:0 0 $radius $radius;
+        }
+      }
     }
   }
 }

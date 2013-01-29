@@ -1,0 +1,31 @@
+// ===================================
+//         Groundwork Forms
+// ===================================
+
+
+
+
+form {
+  fieldset {
+    legend {
+
+    }
+  }
+  label {
+    display:block;
+    padding:0.4em 0.2em;
+    font-size:0.8em;
+  }
+  input, select, textarea {
+    display:block;
+    width:100%;
+    margin:0;
+    padding:0.4em;
+    font-size:1em;
+    border:1px solid $border-color;
+    @include rounded($radius);
+  }
+  textarea {
+    height:10em;
+  }
+}

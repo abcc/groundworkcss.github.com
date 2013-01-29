@@ -10,11 +10,16 @@ $background-color:    #ffffff;
 $font-color:          #2b2b2d;
 $font-size:           12px;
 $font-family:         Helvetica, Arial, Geneva, sans-serif;
+$link-color:          #489AC1;
+$selection-color:     $font-color;
 $border-color:        #dddddd;
-$button-color:        #999999;
-$button-active:       #cccccc;
-$button-text:         $font-color;
-$button-active-text:  $font-color;
+$button-color:        #1DABB8;
+$button-active:       #198D98;
+$button-text:         #ffffff;
+$button-active-text:  #ffffff;
+$error-color:         #A40400;
+$warning-color:       #FF971E;
+$success-color:       #5FB40E;
 $radius:              4px;
 
 

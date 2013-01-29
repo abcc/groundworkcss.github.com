@@ -21,7 +21,7 @@
     <div class="container">
       <div class="row">
         <div class="one third">
-          <h1 class="big responsive heading"><a href="./"><span class="logo">Groundwork</span> Groundwork<sup>Beta</sup></a></h1>
+          <h1 class="big responsive heading"><a href="./"><span class="logo"></span> Groundwork<sup>Beta</sup></a></h1>
         </div>
         <div class="two thirds double pad-top">
           <nav>
@@ -58,6 +58,107 @@
       </div>
     </div>
   </header>
+
+  <div class="container">
+    <div class="row">
+      <div class="one third padded">
+        <h1><i class="icon-edit"></i> Forms</h1>
+        <p>Forms are a part of almost any modern web application. Users need clean and easy to use forms to submit their information.</p>
+      </div>
+      <div class="two thirds padded">
+        <h2>Form Elements</h2>
+        <h6>Example usage:</h6>
+        <code>
+<pre>&lt;<tag>form</tag> action="<span>./</span>" method="<span>post</span>"&gt;</pre>
+<pre>  &lt;<tag>div</tag> class=&quot;<span>row</span>&quot;&gt;</pre>
+<pre>    &lt;<tag>div</tag> class=&quot;<span>one whole padded</span>&quot;&gt;</pre>
+<pre>      &lt;<tag>label</tag> for=&quot;<span>name</span>&quot;&gt;<content>First &amp;amp; Last Name</content>&lt;/<tag>label</tag>&gt;</pre>
+<pre>      &lt;<tag>input</tag> type=&quot;<span>text</span>&quot; id=&quot;<span>name</span>&quot; placeholder=&quot;<span>First &amp;amp; Last Name</span>&quot; /&gt;</pre>
+<pre>    &lt;/<tag>div</tag>&gt;</pre>
+<pre>  &lt;/<tag>div</tag>&gt;</pre>
+<pre>  &lt;<tag>div</tag> class=&quot;<span>row</span>&quot;&gt;</pre>
+<pre>    &lt;<tag>div</tag> class=&quot;<span>one whole padded</span>&quot;&gt;</pre>
+<pre>      &lt;<tag>label</tag> for=&quot;<span>email</span>&quot;&gt;<content>Email Address</content>&lt;/label&gt;</pre>
+<pre>      &lt;<tag>input</tag> type=&quot;<span>email</span>&quot; id=&quot;<span>email</span>&quot; placeholder=&quot;<span>you@example.com</span>&quot; /&gt;</pre>
+<pre>    &lt;/<tag>div</tag>&gt;</pre>
+<pre>  &lt;/<tag>div</tag>&gt;</pre>
+<pre>  &lt;<tag>div</tag> class=&quot;<span>row</span>&quot;&gt;</pre>
+<pre>    &lt;<tag>div</tag> class=&quot;<span>one whole padded</span>&quot;&gt;</pre>
+<pre>      &lt;<tag>label</tag> for=&quot;<span>address</span>&quot;&gt;<content>Address</content>&lt;/label&gt;</pre>
+<pre>      &lt;<tag>input</tag> type=&quot;<span>text</span>&quot; id=&quot;<span>address</span>&quot; placeholder=&quot;<span>Street Address</span>&quot; /&gt;</pre>
+<pre>    &lt;/<tag>div</tag>&gt;</pre>
+<pre>  &lt;/<tag>div</tag>&gt;</pre>
+<pre>  &lt;<tag>div</tag> class=&quot;<span>row</span>&quot;&gt;</pre>
+<pre>    &lt;<tag>div</tag> class=&quot;<span>one half padded</span>&quot;&gt;</pre>
+<pre>      &lt;<tag>input</tag> type=&quot;<span>text</span>&quot; placeholder=&quot;<span>City</span>&quot; /&gt;</pre>
+<pre>    &lt;/<tag>div</tag>&gt;</pre>
+<pre>    &lt;<tag>div</tag> class=&quot;<span>one fourth padded</span>&quot;&gt;</pre>
+<pre>      &lt;<tag>input</tag> type=&quot;<span>text</span>&quot; placeholder=&quot;<span>State</span>&quot; /&gt;</pre>
+<pre>    &lt;/<tag>div</tag>&gt;</pre>
+<pre>    &lt;<tag>div</tag> class=&quot;<span>one fourth padded</span>&quot;&gt;</pre>
+<pre>      &lt;<tag>input</tag> type=&quot;<span>text</span>&quot; placeholder=&quot;<span>Zip Code</span>&quot; /&gt;</pre>
+<pre>    &lt;/<tag>div</tag>&gt;</pre>
+<pre>  &lt;/<tag>div</tag>&gt;</pre>
+<pre>  &lt;<tag>div</tag> class=&quot;<span>row</span>&quot;&gt;</pre>
+<pre>    &lt;<tag>div</tag> class=&quot;<span>one whole padded</span>&quot;&gt;</pre>
+<pre>      &lt;<tag>label</tag> for=&quot;<span>message</span>&quot;&gt;<content>Special Instructions</content>&lt;/<tag>label</tag>&gt;</pre>
+<pre>      &lt;<tag>textarea</tag> id=&quot;<span>message</span>&quot; placeholder=&quot;<span>Enter your message...</span>&quot;&gt;&lt;/<tag>textarea</tag>&gt;</pre>
+<pre>    &lt;/<tag>div</tag>&gt;</pre>
+<pre>  &lt;/<tag>div</tag>&gt;</pre>
+<pre>  &lt;<tag>div</tag> class=&quot;<span>row</span>&quot;&gt;</pre>
+<pre>    &lt;<tag>div</tag> class=&quot;<span>one whole padded</span>&quot;&gt;</pre>
+<pre>      &lt;<tag>button</tag>&gt;<content>Submit</content>&lt;/<tag>button</tag>&gt; &lt;<tag>button</tag> class=&quot;<span>warning</span>&quot;&gt;<content>Cancel</content>&lt;/<tag>button</tag>&gt;</pre>
+<pre>    &lt;/<tag>div</tag>&gt;</pre>
+<pre>  &lt;/<tag>div</tag>&gt;</pre>
+<pre>&lt;/<tag>form</tag>&gt;</pre>
+        </code>
+        <hr/>
+        <h6>Result:</h6>
+        <form action="./" method="post">
+          <div class="row">
+            <div class="one whole padded">
+              <label for="name">First &amp; Last Name</label>
+              <input type="text" id="name" placeholder="First &amp; Last Name" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="one whole padded">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" placeholder="you@example.com" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="one whole padded">
+              <label for="address">Address</label>
+              <input type="text" id="address" placeholder="Street Address" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="one half padded">
+              <input type="text" placeholder="City" />
+            </div>
+            <div class="one fourth padded">
+              <input type="text" placeholder="State" />
+            </div>
+            <div class="one fourth padded">
+              <input type="text" placeholder="Zip Code" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="one whole padded">
+              <label for="message">Special Instructions</label>
+              <textarea id="message" placeholder="Enter your message..."></textarea>
+            </div>
+          </div>
+          <div class="row">
+            <div class="one whole padded">
+              <button>Submit</button> <button class="warning">Cancel</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 
   
 
