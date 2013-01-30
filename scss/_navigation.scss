@@ -32,6 +32,7 @@ nav {
         @include transition(background-color 0.25s ease-out);
         &:hover, &:focus {
           background:$button-active;
+          border:1px solid $border-color;
         }
         &.active, &.active:hover, &.active:focus {
           background:$button-active;

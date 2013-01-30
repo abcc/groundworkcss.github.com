@@ -79,7 +79,9 @@ input, select, textarea {
 }
 textarea {
   height:10em;
-  @include drop-shadow(rgba(0,0,0,0.125), 15px, 0, 0);
+  &:focus {
+    @include drop-shadow(rgba(0,0,0,0.125), 15px, 0, 0);
+  }
 }
 span.select select {
   &:focus {
@@ -90,7 +92,7 @@ span.select {
   display:block;
   color:gray;
   background:white;
-  border:1px solid darken(white, 17.5%);
+  border:1px solid $border-color;
   position:relative;
   @include rounded($radius);
   &:after {
@@ -123,6 +125,9 @@ span.select {
     padding-right:2.5em;
     position:relative;
     z-index:2;
+    &.unselected {
+      color:#999;
+    }
   }
 }
 ul.radio-list {

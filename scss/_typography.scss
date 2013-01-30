@@ -107,7 +107,6 @@ dl {
   }
   dd {
     padding-left:1em;
-    font-family:monospace;
     margin-bottom:$gutter;
   }
 }
@@ -168,7 +167,7 @@ code {
     border:none;
     padding:0 0.3em;
     margin:0 0.2em;
-    font-size:inherit;
+    font-weight:normal;
     line-height:inherit;
   }
 }

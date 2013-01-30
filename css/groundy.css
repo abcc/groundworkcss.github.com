@@ -76,44 +76,44 @@ code.inline { background: #dadada; color: #282830; }
 
 nav { background: #1dabb8; border-radius: 0.4em; }
 nav ul li a, nav ul li a:link, nav ul li a:visited { background: #1dabb8; border: 1px solid #198d98; color: white; text-shadow: 0 0 5px rgba(0, 0, 0, 0.25); }
-nav ul li a:hover, nav ul li a:focus, nav ul li a:link:hover, nav ul li a:link:focus, nav ul li a:visited:hover, nav ul li a:visited:focus { background: #198d98; color: white; }
-nav ul li a.active, nav ul li a.active:hover, nav ul li a.active:focus, nav ul li a:link.active, nav ul li a:link.active:hover, nav ul li a:link.active:focus, nav ul li a:visited.active, nav ul li a:visited.active:hover, nav ul li a:visited.active:focus { background: #282830; border-color: #3f3f4c; }
+nav ul li a:hover, nav ul li a:focus, nav ul li a:link:hover, nav ul li a:link:focus, nav ul li a:visited:hover, nav ul li a:visited:focus { background: #198d98; border: 1px solid #198d98; color: white; }
+nav ul li a.active, nav ul li a.active:hover, nav ul li a.active:focus, nav ul li a:link.active, nav ul li a:link.active:hover, nav ul li a:link.active:focus, nav ul li a:visited.active, nav ul li a:visited.active:hover, nav ul li a:visited.active:focus { background: #282830; border: 1px solid #3f3f4c; }
 nav ul li a.white, nav ul li a:link.white, nav ul li a:visited.white { background: white; border: 1px solid #e7e7e7; }
-nav ul li a.white:hover, nav ul li a.white:focus, nav ul li a:link.white:hover, nav ul li a:link.white:focus, nav ul li a:visited.white:hover, nav ul li a:visited.white:focus { background: #e7e7e7; }
+nav ul li a.white:hover, nav ul li a.white:focus, nav ul li a:link.white:hover, nav ul li a:link.white:focus, nav ul li a:visited.white:hover, nav ul li a:visited.white:focus { background: #e7e7e7; border: 1px solid #e7e7e7; }
 nav ul li a.black, nav ul li a:link.black, nav ul li a:visited.black { background: black; border: 1px solid #2c2c2f; }
-nav ul li a.black:hover, nav ul li a.black:focus, nav ul li a:link.black:hover, nav ul li a:link.black:focus, nav ul li a:visited.black:hover, nav ul li a:visited.black:focus { background: #2c2c2f; }
+nav ul li a.black:hover, nav ul li a.black:focus, nav ul li a:link.black:hover, nav ul li a:link.black:focus, nav ul li a:visited.black:hover, nav ul li a:visited.black:focus { background: #2c2c2f; border: 1px solid #2c2c2f; }
 nav ul li a.gray, nav ul li a:link.gray, nav ul li a:visited.gray { background: #505050; border: 1px solid #2c2c2f; }
-nav ul li a.gray:hover, nav ul li a.gray:focus, nav ul li a:link.gray:hover, nav ul li a:link.gray:focus, nav ul li a:visited.gray:hover, nav ul li a:visited.gray:focus { background: #2c2c2f; }
+nav ul li a.gray:hover, nav ul li a.gray:focus, nav ul li a:link.gray:hover, nav ul li a:link.gray:focus, nav ul li a:visited.gray:hover, nav ul li a:visited.gray:focus { background: #2c2c2f; border: 1px solid #2c2c2f; }
 nav ul li a.lt-gray, nav ul li a:link.lt-gray, nav ul li a:visited.lt-gray { background: #e7e7e7; border: 1px solid #c7c7c7; }
-nav ul li a.lt-gray:hover, nav ul li a.lt-gray:focus, nav ul li a:link.lt-gray:hover, nav ul li a:link.lt-gray:focus, nav ul li a:visited.lt-gray:hover, nav ul li a:visited.lt-gray:focus { background: #c7c7c7; }
+nav ul li a.lt-gray:hover, nav ul li a.lt-gray:focus, nav ul li a:link.lt-gray:hover, nav ul li a:link.lt-gray:focus, nav ul li a:visited.lt-gray:hover, nav ul li a:visited.lt-gray:focus { background: #c7c7c7; border: 1px solid #c7c7c7; }
 nav ul li a.md-gray, nav ul li a:link.md-gray, nav ul li a:visited.md-gray { background: #c7c7c7; border: 1px solid #505050; }
-nav ul li a.md-gray:hover, nav ul li a.md-gray:focus, nav ul li a:link.md-gray:hover, nav ul li a:link.md-gray:focus, nav ul li a:visited.md-gray:hover, nav ul li a:visited.md-gray:focus { background: #505050; }
+nav ul li a.md-gray:hover, nav ul li a.md-gray:focus, nav ul li a:link.md-gray:hover, nav ul li a:link.md-gray:focus, nav ul li a:visited.md-gray:hover, nav ul li a:visited.md-gray:focus { background: #505050; border: 1px solid #505050; }
 nav ul li a.dk-gray, nav ul li a:link.dk-gray, nav ul li a:visited.dk-gray { background: #2c2c2f; border: 1px solid black; }
-nav ul li a.dk-gray:hover, nav ul li a.dk-gray:focus, nav ul li a:link.dk-gray:hover, nav ul li a:link.dk-gray:focus, nav ul li a:visited.dk-gray:hover, nav ul li a:visited.dk-gray:focus { background: black; }
+nav ul li a.dk-gray:hover, nav ul li a.dk-gray:focus, nav ul li a:link.dk-gray:hover, nav ul li a:link.dk-gray:focus, nav ul li a:visited.dk-gray:hover, nav ul li a:visited.dk-gray:focus { background: black; border: 1px solid black; }
 nav ul li a.green, nav ul li a:link.green, nav ul li a:visited.green { background: #bada55; border: 1px solid #97ba28; }
-nav ul li a.green:hover, nav ul li a.green:focus, nav ul li a:link.green:hover, nav ul li a:link.green:focus, nav ul li a:visited.green:hover, nav ul li a:visited.green:focus { background: #97ba28; }
+nav ul li a.green:hover, nav ul li a.green:focus, nav ul li a:link.green:hover, nav ul li a:link.green:focus, nav ul li a:visited.green:hover, nav ul li a:visited.green:focus { background: #97ba28; border: 1px solid #97ba28; }
 nav ul li a.lt-green, nav ul li a:link.lt-green, nav ul li a:visited.lt-green { background: #d3e894; border: 1px solid #bada55; }
-nav ul li a.lt-green:hover, nav ul li a.lt-green:focus, nav ul li a:link.lt-green:hover, nav ul li a:link.lt-green:focus, nav ul li a:visited.lt-green:hover, nav ul li a:visited.lt-green:focus { background: #bada55; }
+nav ul li a.lt-green:hover, nav ul li a.lt-green:focus, nav ul li a:link.lt-green:hover, nav ul li a:link.lt-green:focus, nav ul li a:visited.lt-green:hover, nav ul li a:visited.lt-green:focus { background: #bada55; border: 1px solid #bada55; }
 nav ul li a.dk-green, nav ul li a:link.dk-green, nav ul li a:visited.dk-green { background: #97ba28; border: 1px solid #bada55; }
-nav ul li a.dk-green:hover, nav ul li a.dk-green:focus, nav ul li a:link.dk-green:hover, nav ul li a:link.dk-green:focus, nav ul li a:visited.dk-green:hover, nav ul li a:visited.dk-green:focus { background: #bada55; }
+nav ul li a.dk-green:hover, nav ul li a.dk-green:focus, nav ul li a:link.dk-green:hover, nav ul li a:link.dk-green:focus, nav ul li a:visited.dk-green:hover, nav ul li a:visited.dk-green:focus { background: #bada55; border: 1px solid #bada55; }
 nav ul li a.blue-1, nav ul li a:link.blue-1, nav ul li a:visited.blue-1 { background: #55adab; border: 1px solid #1dabb8; }
-nav ul li a.blue-1:hover, nav ul li a.blue-1:focus, nav ul li a:link.blue-1:hover, nav ul li a:link.blue-1:focus, nav ul li a:visited.blue-1:hover, nav ul li a:visited.blue-1:focus { background: #1dabb8; }
+nav ul li a.blue-1:hover, nav ul li a.blue-1:focus, nav ul li a:link.blue-1:hover, nav ul li a:link.blue-1:focus, nav ul li a:visited.blue-1:hover, nav ul li a:visited.blue-1:focus { background: #1dabb8; border: 1px solid #1dabb8; }
 nav ul li a.blue-2, nav ul li a:link.blue-2, nav ul li a:visited.blue-2 { background: #1dabb8; border: 1px solid #198d98; }
-nav ul li a.blue-2:hover, nav ul li a.blue-2:focus, nav ul li a:link.blue-2:hover, nav ul li a:link.blue-2:focus, nav ul li a:visited.blue-2:hover, nav ul li a:visited.blue-2:focus { background: #198d98; }
+nav ul li a.blue-2:hover, nav ul li a.blue-2:focus, nav ul li a:link.blue-2:hover, nav ul li a:link.blue-2:focus, nav ul li a:visited.blue-2:hover, nav ul li a:visited.blue-2:focus { background: #198d98; border: 1px solid #198d98; }
 nav ul li a.blue-3, nav ul li a.blue, nav ul li a:link.blue-3, nav ul li a:link.blue, nav ul li a:visited.blue-3, nav ul li a:visited.blue { background: #198d98; border: 1px solid #0e5056; }
-nav ul li a.blue-3:hover, nav ul li a.blue-3:focus, nav ul li a.blue:hover, nav ul li a.blue:focus, nav ul li a:link.blue-3:hover, nav ul li a:link.blue-3:focus, nav ul li a:link.blue:hover, nav ul li a:link.blue:focus, nav ul li a:visited.blue-3:hover, nav ul li a:visited.blue-3:focus, nav ul li a:visited.blue:hover, nav ul li a:visited.blue:focus { background: #0e5056; }
+nav ul li a.blue-3:hover, nav ul li a.blue-3:focus, nav ul li a.blue:hover, nav ul li a.blue:focus, nav ul li a:link.blue-3:hover, nav ul li a:link.blue-3:focus, nav ul li a:link.blue:hover, nav ul li a:link.blue:focus, nav ul li a:visited.blue-3:hover, nav ul li a:visited.blue-3:focus, nav ul li a:visited.blue:hover, nav ul li a:visited.blue:focus { background: #0e5056; border: 1px solid #0e5056; }
 nav ul li a.lt-blue, nav ul li a:link.lt-blue, nav ul li a:visited.lt-blue { background: #24cada; border: 1px solid #198d98; }
-nav ul li a.lt-blue:hover, nav ul li a.lt-blue:focus, nav ul li a:link.lt-blue:hover, nav ul li a:link.lt-blue:focus, nav ul li a:visited.lt-blue:hover, nav ul li a:visited.lt-blue:focus { background: #198d98; }
+nav ul li a.lt-blue:hover, nav ul li a.lt-blue:focus, nav ul li a:link.lt-blue:hover, nav ul li a:link.lt-blue:focus, nav ul li a:visited.lt-blue:hover, nav ul li a:visited.lt-blue:focus { background: #198d98; border: 1px solid #198d98; }
 nav ul li a.dk-blue, nav ul li a:link.dk-blue, nav ul li a:visited.dk-blue { background: #0e5056; border: 1px solid #198d98; }
-nav ul li a.dk-blue:hover, nav ul li a.dk-blue:focus, nav ul li a:link.dk-blue:hover, nav ul li a:link.dk-blue:focus, nav ul li a:visited.dk-blue:hover, nav ul li a:visited.dk-blue:focus { background: #198d98; }
+nav ul li a.dk-blue:hover, nav ul li a.dk-blue:focus, nav ul li a:link.dk-blue:hover, nav ul li a:link.dk-blue:focus, nav ul li a:visited.dk-blue:hover, nav ul li a:visited.dk-blue:focus { background: #198d98; border: 1px solid #198d98; }
 nav ul li a.navy, nav ul li a:link.navy, nav ul li a:visited.navy { background: #282830; border: 1px solid #0e5056; }
-nav ul li a.navy:hover, nav ul li a.navy:focus, nav ul li a:link.navy:hover, nav ul li a:link.navy:focus, nav ul li a:visited.navy:hover, nav ul li a:visited.navy:focus { background: #0e5056; }
+nav ul li a.navy:hover, nav ul li a.navy:focus, nav ul li a:link.navy:hover, nav ul li a:link.navy:focus, nav ul li a:visited.navy:hover, nav ul li a:visited.navy:focus { background: #0e5056; border: 1px solid #0e5056; }
 nav ul li a.red, nav ul ul li a, nav ul li a:link.red, nav ul ul li a:link, nav ul li a:visited.red, nav ul ul li a:visited { background: #c82647; border: 1px solid #881a30; }
-nav ul li a.red:hover, nav ul ul li a:hover, nav ul li a.red:focus, nav ul ul li a:focus, nav ul li a:link.red:hover, nav ul ul li a:link:hover, nav ul li a:link.red:focus, nav ul ul li a:link:focus, nav ul li a:visited.red:hover, nav ul ul li a:visited:hover, nav ul li a:visited.red:focus, nav ul ul li a:visited:focus { background: #881a30; }
+nav ul li a.red:hover, nav ul ul li a:hover, nav ul li a.red:focus, nav ul ul li a:focus, nav ul li a:link.red:hover, nav ul ul li a:link:hover, nav ul li a:link.red:focus, nav ul ul li a:link:focus, nav ul li a:visited.red:hover, nav ul ul li a:visited:hover, nav ul li a:visited.red:focus, nav ul ul li a:visited:focus { background: #881a30; border: 1px solid #881a30; }
 nav ul li a.lt-red, nav ul li a:link.lt-red, nav ul li a:visited.lt-red { background: #e05b76; border: 1px solid #c82647; }
-nav ul li a.lt-red:hover, nav ul li a.lt-red:focus, nav ul li a:link.lt-red:hover, nav ul li a:link.lt-red:focus, nav ul li a:visited.lt-red:hover, nav ul li a:visited.lt-red:focus { background: #c82647; }
+nav ul li a.lt-red:hover, nav ul li a.lt-red:focus, nav ul li a:link.lt-red:hover, nav ul li a:link.lt-red:focus, nav ul li a:visited.lt-red:hover, nav ul li a:visited.lt-red:focus { background: #c82647; border: 1px solid #c82647; }
 nav ul li a.dk-red, nav ul li a:link.dk-red, nav ul li a:visited.dk-red { background: #881a30; border: 1px solid #c82647; }
-nav ul li a.dk-red:hover, nav ul li a.dk-red:focus, nav ul li a:link.dk-red:hover, nav ul li a:link.dk-red:focus, nav ul li a:visited.dk-red:hover, nav ul li a:visited.dk-red:focus { background: #c82647; }
+nav ul li a.dk-red:hover, nav ul li a.dk-red:focus, nav ul li a:link.dk-red:hover, nav ul li a:link.dk-red:focus, nav ul li a:visited.dk-red:hover, nav ul li a:visited.dk-red:focus { background: #c82647; border: 1px solid #c82647; }
 nav ul li:first-child a { border-radius: 0.4em 0 0 0.4em; }
 nav ul li:last-child a { border-radius: 0 0.4em 0.4em 0; }
 nav ul li:hover ul, nav ul li:focus ul, nav ul li.on ul { display: block; }

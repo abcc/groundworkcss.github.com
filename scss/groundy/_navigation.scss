@@ -17,101 +17,156 @@ nav {
         text-shadow:0 0 5px rgba(0,0,0,0.25);
         &:hover, &:focus {
           background:$blue;
+          border:1px solid $blue;
           color:$white;
         }
         &.active, &.active:hover, &.active:focus {
           background:$navy;
-          border-color:lighten($navy, 10%);
+          border:1px solid lighten($navy, 10%);
         }
         &.white {
           background:$white;
           border:1px solid $lt-gray;
-          &:hover, &:focus  { background:$lt-gray; }
+          &:hover, &:focus  {
+            background:$lt-gray;
+            border:1px solid $lt-gray;
+          }
         }
         &.black {
           background:$black;
           border:1px solid $dk-gray;
-          &:hover, &:focus  { background:$dk-gray; }
+          &:hover, &:focus  {
+            background:$dk-gray;
+            border:1px solid $dk-gray;
+          }
         }
         &.gray {
           background:$gray;
           border:1px solid $dk-gray;
-          &:hover, &:focus  { background:$dk-gray; }
+          &:hover, &:focus  {
+            background:$dk-gray;
+            border:1px solid $dk-gray;
+          }
         }
         &.lt-gray {
           background:$lt-gray;
           border:1px solid $md-gray;
-          &:hover, &:focus  { background:$md-gray; }
+          &:hover, &:focus  {
+            background:$md-gray;
+            border:1px solid $md-gray;
+          }
         }
         &.md-gray {
           background:$md-gray;
           border:1px solid $gray;
-          &:hover, &:focus  { background:$gray; }
+          &:hover, &:focus  {
+            background:$gray;
+            border:1px solid $gray;
+          }
         }
         &.dk-gray {
           background:$dk-gray;
           border:1px solid $black;
-          &:hover, &:focus  { background:$black; }
+          &:hover, &:focus  {
+            background:$black;
+            border:1px solid $black;
+          }
         }
         &.green {
           background:$green;
           border:1px solid $dk-green;
-          &:hover, &:focus  { background:$dk-green; }
+          &:hover, &:focus  {
+            background:$dk-green;
+            border:1px solid $dk-green;
+          }
         }
         &.lt-green {
           background:$lt-green;
           border:1px solid $green;
-          &:hover, &:focus  { background:$green; }
+          &:hover, &:focus  {
+            background:$green;
+            border:1px solid $green;
+          }
         }
         &.dk-green {
           background:$dk-green;
           border:1px solid $green;
-          &:hover, &:focus  { background:$green; }
+          &:hover, &:focus  {
+            background:$green;
+            border:1px solid $green;
+          }
         }
         &.blue-1 {
           background:$blue-1;
           border:1px solid $blue-2;
-          &:hover, &:focus  { background:$blue-2; }
+          &:hover, &:focus  {
+            background:$blue-2;
+            border:1px solid $blue-2;
+          }
         }
         &.blue-2 {
           background:$blue-2;
           border:1px solid $blue;
-          &:hover, &:focus  { background:$blue; }
+          &:hover, &:focus  {
+            background:$blue;
+            border:1px solid $blue;
+          }
         }
         &.blue-3, &.blue {
           background:$blue;
           border:1px solid $dk-blue;
-          &:hover, &:focus  { background:$dk-blue; }
+          &:hover, &:focus  {
+            background:$dk-blue;
+            border:1px solid $dk-blue;
+          }
         }
         &.lt-blue {
           background:$lt-blue;
           border:1px solid $blue;
-          &:hover, &:focus  { background:$blue; }
+          &:hover, &:focus  {
+            background:$blue;
+            border:1px solid $blue;
+          }
         }
         &.dk-blue {
           background:$dk-blue;
           border:1px solid $blue;
-          &:hover, &:focus  { background:$blue; }
+          &:hover, &:focus  {
+            background:$blue;
+            border:1px solid $blue;
+          }
         }
         &.navy {
           background:$navy;
           border:1px solid $dk-blue;
-          &:hover, &:focus  { background:$dk-blue; }
+          &:hover, &:focus  {
+            background:$dk-blue;
+            border:1px solid $dk-blue;
+          }
         }
         &.red {
           background:$red;
           border:1px solid $dk-red;
-          &:hover, &:focus  { background:$dk-red; }
+          &:hover, &:focus  {
+            background:$dk-red;
+            border:1px solid $dk-red;
+          }
         }
         &.lt-red {
           background:$lt-red;
           border:1px solid $red;
-          &:hover, &:focus  { background:$red; }
+          &:hover, &:focus  {
+            background:$red;
+            border:1px solid $red;
+          }
         }
         &.dk-red {
           background:$dk-red;
           border:1px solid $red;
-          &:hover, &:focus  { background:$red; }
+          &:hover, &:focus  {
+            background:$red;
+            border:1px solid $red;
+          }
         }
       }
       &:first-child a {

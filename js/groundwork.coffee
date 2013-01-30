@@ -1,16 +1,37 @@
 $(document).ready ->
 
-  # open/close dropdown nav
-  delay = ''
-  $('header nav > ul > li').on
-    mouseenter: ->
-      clearTimeout(delay)
-      $(this).addClass('on')
-    mouseleave: ->
-      $this = $(this)
-      delay = setTimeout (->
-        $this.removeClass('on')
-      ), 350
+  # # open/close dropdown nav
+  # delay = ''
+  # $('header nav > ul > li').on
+  #   mouseenter: ->
+  #     clearTimeout(delay)
+  #     $(this).addClass('on')
+  #   mouseleave: ->
+  #     $this = $(this)
+  #     delay = setTimeout (->
+  #       $this.removeClass('on')
+  #     ), 350
+
+  $('.error input, .error textarea, 
+     .invalid input, .invalid textarea, 
+     input.error, textarea.error, 
+     input.invalid, textarea.invalid').on
+    click: ->
+      $(this).focus()
+      $(this).select()
+
+  # polyfill select box placeholders
+  $('span.select select').each ->
+    if $(this).children('option').first().val() == '' and $(this).children('option').first().attr('selected')
+      $(this).addClass('unselected')
+    else
+      $(this).removeClass('unselected')
+  $('span.select select').on
+    change: ->
+      if $(this).children('option').first().val() == '' and $(this).children('option').first().attr('selected')
+        $(this).addClass('unselected')
+      else
+        $(this).removeClass('unselected')
 
   # responsive headings
   $('h1.heading.responsive').responsiveText
