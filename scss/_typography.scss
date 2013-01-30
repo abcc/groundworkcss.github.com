@@ -191,3 +191,10 @@ pre {
 .success, .valid {
   color:$success-color;
 }
+// responsive headings
+.js {
+  .responsive {
+    @include transition(font 0.25s);
+    white-space:nowrap;
+  }
+}

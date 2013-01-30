@@ -11,7 +11,6 @@ nav {
     list-style:none;
     margin:0;
     padding:0;
-    @include rounded($radius);
     li {
       display:block;
       position:relative;
@@ -84,7 +83,7 @@ nav {
         }
       }
     }
-    // horizontal navigation
+    // horizontal grid navigation
     &.row {
       li {
         a, a:link, a:visited {
@@ -115,6 +114,52 @@ nav {
           &:last-child {
             a, a:link, a:visited {
               @include rounded(0 0 $radius $radius !important);
+            }
+          }
+        }
+      }
+    }
+  }
+  // horizontal inline navigation
+  &.inline {
+    width:auto;
+    ul {
+      font-size:0;
+      @include rounded($radius);
+      li {
+        font-size:$font-size;
+        display:inline-block;
+        white-space-collapse:discard;
+        float:none;
+        a, a:link, a:visited {
+
+        }
+        &:first-child {
+          a, a:link, a:visited {
+            @include rounded($radius 0 0 $radius);
+          }
+        }
+        &:last-child {
+          a, a:link, a:visited {
+            @include rounded(0 $radius $radius 0);
+          }
+        }
+        ul {
+          display:none;
+          position:absolute;
+          left:auto;
+          top:auto;
+          min-width:100%;
+          z-index:10;
+          li {
+            display:block;
+            a, a:link, a:visited {
+              @include rounded(0 !important);
+            }
+            &:last-child {
+              a, a:link, a:visited {
+                @include rounded(0 0 $radius $radius !important);
+              }
             }
           }
         }

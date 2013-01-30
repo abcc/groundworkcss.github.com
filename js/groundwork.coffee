@@ -1,16 +1,17 @@
 $(document).ready ->
 
-  # # open/close dropdown nav
-  # delay = ''
-  # $('header nav > ul > li').on
-  #   mouseenter: ->
-  #     clearTimeout(delay)
-  #     $(this).addClass('on')
-  #   mouseleave: ->
-  #     $this = $(this)
-  #     delay = setTimeout (->
-  #       $this.removeClass('on')
-  #     ), 350
+  # delayed close of navigation dropdowns
+  delay = ''
+  $('header nav > ul > li').on
+    mouseenter: ->
+      clearTimeout(delay)
+      $('header nav > ul > li').removeClass('on')
+      $(this).addClass('on')
+    mouseleave: ->
+      $this = $(this)
+      delay = setTimeout (->
+        $('header nav > ul > li').removeClass('on')
+      ), 350
   
   # select all text on invalid input field entries
   $('.error input, .error textarea, 
@@ -43,18 +44,17 @@ $(document).ready ->
     tabs.children($(this).attr('href')).addClass('active')
 
   # responsive headings
-  $('h1.heading.responsive').responsiveText
-    agressiveness: 7.75,
-    minSize: 20,
-    maxSize: 100
-  $('h1.responsive').not('.heading').responsiveText
-    agressiveness: 4.1,
-    minSize: 20,
-    maxSize: 170
-  $('h3.responsive').responsiveText
-    agressiveness: 13.6,
-    minSize: 15,
-    maxSize: 50
+  $('.responsive').each (index, object) ->
+    scale = 10
+    min = 10
+    max = 200
+    scale = parseFloat $(this).attr('data-scale') || scale
+    min = parseFloat $(this).attr('data-min') || min
+    max = parseFloat $(this).attr('data-max') || max
+    $(object).responsiveText
+      agressiveness: scale,
+      minSize: min,
+      maxSize: max
 
   # add titles to demo grid cells
   $('.demo > .row > .column, 

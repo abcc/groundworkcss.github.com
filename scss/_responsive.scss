@@ -102,6 +102,21 @@
         }
       }
     }
+    &.inline {
+      > ul {
+        li {
+          ul {
+            float:left;
+            li {
+              display:inline-block;
+              a, a:link, a:visited {
+                @include rounded(0 !important);
+              }
+            }
+          }
+        }
+      }
+    }
   }
   .tabs:not(.small-tablet):not(.mobile) {
     > ul {
@@ -211,6 +226,23 @@
           li {
             a {
 
+            }
+          }
+        }
+      }
+    }
+    &.inline {
+      display:block;
+      > ul {
+        li {
+          display:block;
+          ul {
+            float:none !important;
+            li {
+              display:block !important;
+              a, a:link, a:visited {
+                @include rounded(0 !important);
+              }
             }
           }
         }

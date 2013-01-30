@@ -74,7 +74,6 @@ code content { color: white; }
 code comment { color: #6a6a6a; }
 code.inline { background: #dadada; color: #282830; }
 
-nav ul { background: #1dabb8; border-radius: 0.4em; }
 nav ul li a, nav ul li a:link, nav ul li a:visited { background: #1dabb8; border: 1px solid #198d98; color: white; text-shadow: 0 0 5px rgba(0, 0, 0, 0.25); }
 nav ul li a:hover, nav ul li a:focus, nav ul li a:link:hover, nav ul li a:link:focus, nav ul li a:visited:hover, nav ul li a:visited:focus { background: #198d98; border: 1px solid #198d98; color: white; }
 nav ul li a.active, nav ul li a.active:hover, nav ul li a.active:focus, nav ul li a:link.active, nav ul li a:link.active:hover, nav ul li a:link.active:focus, nav ul li a:visited.active, nav ul li a:visited.active:hover, nav ul li a:visited.active:focus { background: #282830; border: 1px solid #3f3f4c; }
