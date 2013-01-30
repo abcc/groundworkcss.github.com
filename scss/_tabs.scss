@@ -6,7 +6,10 @@
 
 
 .tabs {
-  ul {
+  position:relative;
+  > ul {
+    display:block;
+    width:100%;
     margin:0;
     padding:0;
     list-style:none;
@@ -18,10 +21,59 @@
     li {
       display:block;
       float:left;
+      &.pull-right  { float:right; }
+      &.pull-left   { float:left; }
       a {
         display:block;
+        width:100%;
+        word-wrap:break-word;
+        padding:0.25em 1em;
+        background:$button-color;
+        border:1px solid $border-color;
+        color:$button-text;
+        font-weight:bold;
+        font-size:1em;
+        text-decoration:none;
+        text-align:center;
+        cursor:pointer;
+        line-height:1.5;
+        height:2em;
+        @include transition(background-color 0.25s ease-out);
         @include rounded($radius $radius 0 0);
+        &:hover, &:focus {
+          background:$button-active;
+          border:1px solid $border-color;
+          color:$button-text;
+          text-decoration:none;
+        }
+        &.active, &.active:hover, &.active:focus {
+          background:$button-active;
+          color:$button-text;
+        }
+        &.disabled {
+          background:lighten(gray, 15%);
+          color:lighten(gray, 35%);
+          cursor:not-allowed;
+          &:hover, &:focus {
+            background:lighten(gray, 15%);
+            color:lighten(gray, 35%);
+          }
+        }
       }
+    }
+  }
+  > div {
+    display:none;
+    padding:$gutter * 2;
+    *:first-child {
+      margin-top:0;
+    }
+    *:last-child {
+      margin-bottom:0;
+    }
+    &.active {
+      display:block;
+      border:1px solid $border-color;
     }
   }
 }

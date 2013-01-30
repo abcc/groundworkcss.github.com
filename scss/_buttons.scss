@@ -33,6 +33,7 @@ button, .button, a.button, a.button:link, a.button:visited, input[type=submit], 
     border-color:gray;
     color:lighten(gray, 35%);
     cursor:not-allowed;
+    text-decoration:none;
   }
   &.small {
     font-size:0.8em;

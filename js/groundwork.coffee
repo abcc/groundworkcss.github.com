@@ -11,7 +11,8 @@ $(document).ready ->
   #     delay = setTimeout (->
   #       $this.removeClass('on')
   #     ), 350
-
+  
+  # select all text on invalid input field entries
   $('.error input, .error textarea, 
      .invalid input, .invalid textarea, 
      input.error, textarea.error, 
@@ -32,6 +33,14 @@ $(document).ready ->
         $(this).addClass('unselected')
       else
         $(this).removeClass('unselected')
+
+  # tabs
+  $('.tabs > ul > li > a').not('.disabled').click (e) ->
+    tabs = $(this).parents('.tabs')
+    tabs.find('> ul li a').removeClass('active')
+    $(this).addClass('active')
+    tabs.children('div').removeClass('active')
+    tabs.children($(this).attr('href')).addClass('active')
 
   # responsive headings
   $('h1.heading.responsive').responsiveText
