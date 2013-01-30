@@ -26,8 +26,10 @@ input, select, textarea {
   width:100%;
   margin:0;
   padding:0.4em;
+  font-family:monospace;
   font-size:1em;
   line-height:1.5;
+  height:2.25em;
   background:white;
   border:1px solid $border-color;
   @include rounded($radius);
@@ -106,9 +108,18 @@ span.select {
     background:darken(white, 12.5%);
   }
   select {
+    -ms-appearance:none;
+    -o-appearance:none;
+    -moz-appearance:none;
     -webkit-appearance:none;
+    appearance:none;
     border:none;
     background:none;
+    padding:0.4em;
+    font-family:monospace;
+    font-size:1em;
+    line-height:1.5;
+    height:2.25em;
     padding-right:2.5em;
     position:relative;
     z-index:2;
@@ -126,8 +137,10 @@ ul.radio-list {
   width:100%;
   margin:0;
   padding:0.4em;
+  font-family:monospace;
   font-size:1em;
-  line-height:1.5;
+  line-height:1.25;
+  height:2.25em;
   text-align:center;
   color:gray;
   background:darken(white, 12.5%);

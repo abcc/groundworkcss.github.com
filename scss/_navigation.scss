@@ -42,12 +42,12 @@ nav {
           display:block;
         }
       }
-      &:first-child a {
-        border-radius:$radius 0 0 $radius;
-      }
-      &:last-child a {
-        border-radius:0 $radius $radius 0;
-      }
+    }
+    &:first-child li a {
+      border-radius:$radius 0 0 $radius;
+    }
+    &:last-child li a {
+      border-radius:0 $radius $radius 0;
     }
     ul {
       display:none;
@@ -55,11 +55,11 @@ nav {
       width:100%;
       z-index:10;
       li {
-        &:first-child a {
-          border-radius:0;
+        a {
+          border-radius:0 !important;
         }
         &:last-child a {
-          border-radius:0 0 $radius $radius;
+          border-radius:0 0 $radius $radius !important;
         }
       }
     }

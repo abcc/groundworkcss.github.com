@@ -512,18 +512,18 @@ nav ul li a, nav ul li a:link, nav ul li a:visited { display: block; width: 100%
 nav ul li a:hover, nav ul li a:focus, nav ul li a:link:hover, nav ul li a:link:focus, nav ul li a:visited:hover, nav ul li a:visited:focus { background: #198d98; }
 nav ul li a.active, nav ul li a.active:hover, nav ul li a.active:focus, nav ul li a:link.active, nav ul li a:link.active:hover, nav ul li a:link.active:focus, nav ul li a:visited.active, nav ul li a:visited.active:hover, nav ul li a:visited.active:focus { background: #198d98; }
 nav ul li:hover ul, nav ul li:focus ul, nav ul li.on ul { display: block; }
-nav ul li:first-child a { border-radius: 4px 0 0 4px; }
-nav ul li:last-child a { border-radius: 0 4px 4px 0; }
+nav ul:first-child li a { border-radius: 4px 0 0 4px; }
+nav ul:last-child li a { border-radius: 0 4px 4px 0; }
 nav ul ul { display: none; position: absolute; width: 100%; z-index: 10; }
-nav ul ul li:first-child a { border-radius: 0; }
-nav ul ul li:last-child a { border-radius: 0 0 4px 4px; }
+nav ul ul li a { border-radius: 0 !important; }
+nav ul ul li:last-child a { border-radius: 0 0 4px 4px !important; }
 
 fieldset { border: 1px solid #dddddd; padding: 10px; }
 fieldset legend { font-weight: 900; font-size: 0.8em; color: #a6a6a6; margin-bottom: 0; }
 
 label { display: block; padding: 0.4em 0.2em; }
 
-input, select, textarea { display: block; width: 100%; margin: 0; padding: 0.4em; font-size: 1em; line-height: 1.5; background: white; border: 1px solid #dddddd; -ms-border-radius: 4px; -o-border-radius: 4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; }
+input, select, textarea { display: block; width: 100%; margin: 0; padding: 0.4em; font-family: monospace; font-size: 1em; line-height: 1.5; height: 2.25em; background: white; border: 1px solid #dddddd; -ms-border-radius: 4px; -o-border-radius: 4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; }
 input[type=checkbox], input[type=radio], select[type=checkbox], select[type=radio], textarea[type=checkbox], textarea[type=radio] { display: inline-block; width: 1em; height: 1em; margin: 0 0 0 0.2em; background: white; border: 1px solid #dddddd; -ms-border-radius: 4px; -o-border-radius: 4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; }
 input.error, input.invalid, select.error, select.invalid, textarea.error, textarea.invalid { color: #a40400; background: #ffe2e1; border-color: #a40400; }
 input.success, input.valid, select.success, select.valid, textarea.success, textarea.valid { color: #5fb40e; background: white; border-color: #5fb40e; }
@@ -540,11 +540,11 @@ span.select select:focus { -ms-box-shadow: 0 0 15px rgba(0, 0, 0, 0.35); filter:
 
 span.select { display: block; color: gray; background: white; border: 1px solid #d2d2d2; position: relative; -ms-border-radius: 4px; -o-border-radius: 4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; }
 span.select:after { content: '...'; display: block; width: 1.5em; text-align: center; height: 100%; position: absolute; z-index: 1; font-size: 1.5em; line-height: 1.25; top: 0; right: 0; background: #dfdfdf; }
-span.select select { -webkit-appearance: none; border: none; background: none; padding-right: 2.5em; position: relative; z-index: 2; }
+span.select select { -ms-appearance: none; -o-appearance: none; -moz-appearance: none; -webkit-appearance: none; appearance: none; border: none; background: none; padding: 0.4em; font-family: monospace; font-size: 1em; line-height: 1.5; height: 2.25em; padding-right: 2.5em; position: relative; z-index: 2; }
 
 ul.radio-list { list-style: none; margin: 0; padding: 0; }
 
-.prefix, .suffix { display: block; position: relative; z-index: 1; width: 100%; margin: 0; padding: 0.4em; font-size: 1em; line-height: 1.5; text-align: center; color: gray; background: #dfdfdf; border: 1px solid #d2d2d2; }
+.prefix, .suffix { display: block; position: relative; z-index: 1; width: 100%; margin: 0; padding: 0.4em; font-family: monospace; font-size: 1em; line-height: 1.25; height: 2.25em; text-align: center; color: gray; background: #dfdfdf; border: 1px solid #d2d2d2; }
 
 .prefix { left: 2px; -ms-border-radius: 4px 0 0 4px; -o-border-radius: 4px 0 0 4px; -moz-border-radius: 4px 0 0 4px; -webkit-border-radius: 4px 0 0 4px; border-radius: 4px 0 0 4px; }
 
