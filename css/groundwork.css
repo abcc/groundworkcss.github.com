@@ -466,13 +466,14 @@ html { width: 100%; height: 100%; }
 
 html, body { width: 100% !important; min-height: 100%; background: white; padding: 0; }
 
-hr { border: 0; border-bottom: 1px solid #dddddd; margin: 10px; clear: both; }
+hr { border: 0; border-bottom: 1px solid #dddddd; margin: 10px auto; clear: both; }
 
 img, a img { max-width: 100%; border: none; }
 
 button, .button, a.button, a.button:link, a.button:visited, input[type=submit], input[type=button], input[type=reset] { display: inline-block; word-wrap: break-word; padding: 0.25em 1em; background: #1dabb8; border: 1px solid #198d98; color: white; font-weight: bold; font-size: 1em; text-decoration: none; cursor: pointer; line-height: 1.5; -ms-transition: background-color 0.25s ease-out; -o-transition: background-color 0.25s ease-out; -moz-transition: background-color 0.25s ease-out; -webkit-transition: background-color 0.25s ease-out; transition: background-color 0.25s ease-out; -ms-border-radius: 4px; -o-border-radius: 4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; }
 button:hover, button:focus, .button:hover, .button:focus, a.button:hover, a.button:focus, a.button:link:hover, a.button:link:focus, a.button:visited:hover, a.button:visited:focus, input[type=submit]:hover, input[type=submit]:focus, input[type=button]:hover, input[type=button]:focus, input[type=reset]:hover, input[type=reset]:focus { background: #198d98; text-decoration: none; color: white; }
 button.active, button.active:hover, button.active:focus, .button.active, .button.active:hover, .button.active:focus, a.button.active, a.button.active:hover, a.button.active:focus, a.button:link.active, a.button:link.active:hover, a.button:link.active:focus, a.button:visited.active, a.button:visited.active:hover, a.button:visited.active:focus, input[type=submit].active, input[type=submit].active:hover, input[type=submit].active:focus, input[type=button].active, input[type=button].active:hover, input[type=button].active:focus, input[type=reset].active, input[type=reset].active:hover, input[type=reset].active:focus { background: #198d98; color: white; }
+button.disabled, .button.disabled, a.button.disabled, a.button:link.disabled, a.button:visited.disabled, input[type=submit].disabled, input[type=button].disabled, input[type=reset].disabled { background: #a6a6a6; border-color: gray; color: #d9d9d9; cursor: not-allowed; }
 button.small, .button.small, a.button.small, a.button:link.small, a.button:visited.small, input[type=submit].small, input[type=button].small, input[type=reset].small { font-size: 0.8em; }
 button.large, .button.large, a.button.large, a.button:link.large, a.button:visited.large, input[type=submit].large, input[type=button].large, input[type=reset].large { font-size: 1.5em; }
 button.error, .button.error, a.button.error, a.button:link.error, a.button:visited.error, input[type=submit].error, input[type=button].error, input[type=reset].error { background: #a40400; border: 1px solid #710300; }
@@ -502,6 +503,7 @@ ul.button-list li:last-child a, ol.button-list li:last-child a { border-radius: 
 ul.button-list li a, ol.button-list li a { display: block; word-wrap: break-word; padding: 0.25em 1em; background: #1dabb8; border: 1px solid #198d98; color: white; font-weight: bold; font-size: 1em; text-decoration: none; cursor: pointer; line-height: 1.5; -ms-transition: background-color 0.25s ease-out; -o-transition: background-color 0.25s ease-out; -moz-transition: background-color 0.25s ease-out; -webkit-transition: background-color 0.25s ease-out; transition: background-color 0.25s ease-out; }
 ul.button-list li a:hover, ul.button-list li a:focus, ol.button-list li a:hover, ol.button-list li a:focus { background: #198d98; text-decoration: none; color: white; border: 1px solid #198d98; }
 ul.button-list li a.active, ul.button-list li a.active:hover, ul.button-list li a.active:focus, ol.button-list li a.active, ol.button-list li a.active:hover, ol.button-list li a.active:focus { background: #198d98; color: white; }
+ul.button-list li a.disabled, ol.button-list li a.disabled { background: #a6a6a6; border-color: gray; color: #d9d9d9; cursor: not-allowed; }
 
 nav { background: #1dabb8; border-radius: 4px; }
 nav ul { list-style: none; margin: 0; padding: 0; }
@@ -516,33 +518,63 @@ nav ul ul { display: none; position: absolute; width: 100%; z-index: 10; }
 nav ul ul li:first-child a { border-radius: 0; }
 nav ul ul li:last-child a { border-radius: 0 0 4px 4px; }
 
-form label { display: block; padding: 0.4em 0.2em; font-size: 0.8em; }
-form input, form select, form textarea { display: block; width: 100%; margin: 0; padding: 0.4em; font-size: 1em; border: 1px solid #dddddd; -ms-border-radius: 4px; -o-border-radius: 4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; }
-form textarea { height: 10em; }
+fieldset { border: 1px solid #dddddd; padding: 10px; }
+fieldset legend { font-weight: 900; font-size: 0.8em; color: #a6a6a6; margin-bottom: 0; }
 
-body { font-size: 12px; font-family: Helvetica, Arial, Geneva, sans-serif; line-height: 1.2; color: #2b2b2d; }
+label { display: block; padding: 0.4em 0.2em; }
+
+input, select, textarea { display: block; width: 100%; margin: 0; padding: 0.4em; font-size: 1em; line-height: 1.5; background: white; border: 1px solid #dddddd; -ms-border-radius: 4px; -o-border-radius: 4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; }
+input[type=checkbox], input[type=radio], select[type=checkbox], select[type=radio], textarea[type=checkbox], textarea[type=radio] { display: inline-block; width: 1em; height: 1em; margin: 0 0 0 0.2em; background: white; border: 1px solid #dddddd; -ms-border-radius: 4px; -o-border-radius: 4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; }
+input.error, input.invalid, select.error, select.invalid, textarea.error, textarea.invalid { color: #a40400; background: #ffe2e1; border-color: #a40400; }
+input.success, input.valid, select.success, select.valid, textarea.success, textarea.valid { color: #5fb40e; background: white; border-color: #5fb40e; }
+
+.error input, .error select, .error textarea, .invalid input, .invalid select, .invalid textarea { color: #a40400; background: #ffe2e1; border-color: #a40400; }
+.error .prefix, .error .suffix, .invalid .prefix, .invalid .suffix { color: #ffe2e1; background: #a40400; border-color: #a40400; }
+
+.success input, .success select, .success textarea, .valid input, .valid select, .valid textarea { color: #5fb40e; background: #effde3; border-color: #5fb40e; }
+.success .prefix, .success .suffix, .valid .prefix, .valid .suffix { color: white; background: #5fb40e; border-color: #5fb40e; }
+
+textarea { height: 10em; -ms-box-shadow: 0 0 15px rgba(0, 0, 0, 0.125); filter: Glow(color=#20000000, strength=15); -ms-filter: glow(color=#20000000, strength=15); -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.125); -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.125); -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.125); box-shadow: 0 0 15px rgba(0, 0, 0, 0.125); }
+
+span.select select:focus { -ms-box-shadow: 0 0 15px rgba(0, 0, 0, 0.35); filter: Glow(color=#59000000, strength=15); -ms-filter: glow(color=#59000000, strength=15); -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.35); -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.35); -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.35); box-shadow: 0 0 15px rgba(0, 0, 0, 0.35); }
+
+span.select { display: block; color: gray; background: white; border: 1px solid #d2d2d2; position: relative; -ms-border-radius: 4px; -o-border-radius: 4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; }
+span.select:after { content: '...'; display: block; width: 1.5em; text-align: center; height: 100%; position: absolute; z-index: 1; font-size: 1.5em; line-height: 1.25; top: 0; right: 0; background: #dfdfdf; }
+span.select select { -webkit-appearance: none; border: none; background: none; padding-right: 2.5em; position: relative; z-index: 2; }
+
+ul.radio-list { list-style: none; margin: 0; padding: 0; }
+
+.prefix, .suffix { display: block; position: relative; z-index: 1; width: 100%; margin: 0; padding: 0.4em; font-size: 1em; line-height: 1.5; text-align: center; color: gray; background: #dfdfdf; border: 1px solid #d2d2d2; }
+
+.prefix { left: 2px; -ms-border-radius: 4px 0 0 4px; -o-border-radius: 4px 0 0 4px; -moz-border-radius: 4px 0 0 4px; -webkit-border-radius: 4px 0 0 4px; border-radius: 4px 0 0 4px; }
+
+.suffix { left: -2px; -ms-border-radius: 0 4px 4px 0; -o-border-radius: 0 4px 4px 0; -moz-border-radius: 0 4px 4px 0; -webkit-border-radius: 0 4px 4px 0; border-radius: 0 4px 4px 0; }
+
+body { font-family: Helvetica, Arial, Geneva, sans-serif; font-size: 14px; line-height: 1.2; color: #2b2b2d; }
 
 ::selection { background: #2b2b2d; color: white; }
 
 ::-moz-selection { background: #2b2b2d; color: white; }
 
-a, a:link, a:visited { color: #489ac1; }
+* { outline: none; }
+*:focus { -ms-filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.35)); -o-filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.35)); -moz-filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.35)); -webkit-filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.35)); filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.35)); }
+
+a, a:link, a:visited { color: #489ac1; -ms-transition: color 0.25s; -o-transition: color 0.25s; -moz-transition: color 0.25s; -webkit-transition: color 0.25s; transition: color 0.25s; }
 a:hover, a:focus, a:link:hover, a:link:focus, a:visited:hover, a:visited:focus { text-decoration: underline; }
 
 h1, h2, h3, h4, h5, h6 { line-height: 1.1; margin-bottom: 15px; }
-h1 small, h2 small, h3 small, h4 small, h5 small, h6 small { font-size: 0.7em; color: #69696e; }
 
-h1 { font-weight: 200; font-size: 28.0px; }
+h1 { font-weight: 200; font-size: 32.66667px; }
 
-h2 { font-weight: 200; font-size: 24px; }
+h2 { font-weight: 200; font-size: 28px; }
 
-h3 { font-weight: 500; font-size: 18px; }
+h3 { font-weight: 500; font-size: 21px; }
 
-h4 { font-weight: 500; font-size: 16.0px; }
+h4 { font-weight: 500; font-size: 18.66667px; }
 
-h5 { font-weight: 900; font-size: 14.0px; }
+h5 { font-weight: 900; font-size: 16.33333px; }
 
-h6 { font-weight: 900; font-size: 14.0px; text-transform: uppercase; }
+h6 { font-weight: 900; font-size: 16.33333px; text-transform: uppercase; }
 
 p, ul, ol, dl { margin-bottom: 10px; font-weight: normal; font-size: 1em; line-height: 1.6; }
 
@@ -561,7 +593,7 @@ ol.list > li:before { content: counter(li); counter-increment: li; position: abs
 dl dt { font-weight: bold; }
 dl dd { padding-left: 1em; font-family: monospace; margin-bottom: 10px; }
 
-blockquote { padding: 1.3em 4em 1em; color: #2b2b2d; font-size: 13.8px; font-weight: bold; line-height: 1.4; position: relative; z-index: 0; }
+blockquote { padding: 1.3em 4em 1em; color: #2b2b2d; font-size: 16.1px; font-weight: bold; line-height: 1.4; position: relative; z-index: 0; }
 blockquote:before { content: '\201C'; color: #cccccc; font-size: 6em; display: block; position: absolute; top: -0.15em; left: 0.1em; z-index: -1; }
 blockquote:after { content: '\201D'; color: #cccccc; font-size: 6em; display: block; position: absolute; top: -0.15em; right: 0.1em; z-index: -1; }
 
@@ -579,11 +611,15 @@ sup { font-size: 0.8em; }
 
 sub { font-size: 0.8em; }
 
-code { color: white; background: black; font-size: 0.8em; padding: 0.5em; display: block; border-left: 2.5em solid gray; counter-reset: linenumber; }
+code { color: white; background: black; font-size: 0.9em; padding: 0.5em; display: block; border-left: 2.5em solid gray; counter-reset: linenumber; }
 code.inline { display: inline-block; background: #8d8d8d; border: none; padding: 0 0.3em; margin: 0 0.2em; font-size: inherit; line-height: inherit; }
 
 pre { white-space: pre-wrap; min-height: 1em; }
 pre:before { counter-increment: linenumber; content: counter(linenumber) "."; display: inline-block; width: 2em; text-align: right; position: absolute; left: 1em; color: white; }
+
+.error, .invalid { color: #a40400; }
+
+.success, .valid { color: #5fb40e; }
 
 @media only screen and (max-width: 767px) { .column:not(.small-tablet):not(.mobile), .whole:not(.small-tablet):not(.mobile), .wholes:not(.small-tablet):not(.mobile), .half:not(.small-tablet):not(.mobile), .halves:not(.small-tablet):not(.mobile), .third:not(.small-tablet):not(.mobile), .thirds:not(.small-tablet):not(.mobile), .fourth:not(.small-tablet):not(.mobile), .fourths:not(.small-tablet):not(.mobile), .fifth:not(.small-tablet):not(.mobile), .fifths:not(.small-tablet):not(.mobile), .sixth:not(.small-tablet):not(.mobile), .sixths:not(.small-tablet):not(.mobile), .seventh:not(.small-tablet):not(.mobile), .sevenths:not(.small-tablet):not(.mobile), .eighth:not(.small-tablet):not(.mobile), .eighths:not(.small-tablet):not(.mobile), .ninth:not(.small-tablet):not(.mobile), .ninths:not(.small-tablet):not(.mobile), .tenth:not(.small-tablet):not(.mobile), .tenths:not(.small-tablet):not(.mobile), .eleventh:not(.small-tablet):not(.mobile), .elevenths:not(.small-tablet):not(.mobile), .twelfth:not(.small-tablet):not(.mobile), .twelfths:not(.small-tablet):not(.mobile), .columns:not(.small-tablet):not(.mobile), .half:not(.small-tablet):not(.mobile), .halves:not(.small-tablet):not(.mobile), .third:not(.small-tablet):not(.mobile), .thirds:not(.small-tablet):not(.mobile), .fourth:not(.small-tablet):not(.mobile), .fourths:not(.small-tablet):not(.mobile), .fifth:not(.small-tablet):not(.mobile), .fifths:not(.small-tablet):not(.mobile), .sixth:not(.small-tablet):not(.mobile), .sixths:not(.small-tablet):not(.mobile), .seventh:not(.small-tablet):not(.mobile), .sevenths:not(.small-tablet):not(.mobile), .eighth:not(.small-tablet):not(.mobile), .eighths:not(.small-tablet):not(.mobile), .ninth:not(.small-tablet):not(.mobile), .ninths:not(.small-tablet):not(.mobile), .tenth:not(.small-tablet):not(.mobile), .tenths:not(.small-tablet):not(.mobile), .eleventh:not(.small-tablet):not(.mobile), .elevenths:not(.small-tablet):not(.mobile), .twelfth:not(.small-tablet):not(.mobile), .twelfths:not(.small-tablet):not(.mobile) { width: auto !important; float: none; clear: both; }
   .column:not(.small-tablet):not(.mobile).right-one, .whole:not(.small-tablet):not(.mobile).right-one, .wholes:not(.small-tablet):not(.mobile).right-one, .half:not(.small-tablet):not(.mobile).right-one, .halves:not(.small-tablet):not(.mobile).right-one, .third:not(.small-tablet):not(.mobile).right-one, .thirds:not(.small-tablet):not(.mobile).right-one, .fourth:not(.small-tablet):not(.mobile).right-one, .fourths:not(.small-tablet):not(.mobile).right-one, .fifth:not(.small-tablet):not(.mobile).right-one, .fifths:not(.small-tablet):not(.mobile).right-one, .sixth:not(.small-tablet):not(.mobile).right-one, .sixths:not(.small-tablet):not(.mobile).right-one, .seventh:not(.small-tablet):not(.mobile).right-one, .sevenths:not(.small-tablet):not(.mobile).right-one, .eighth:not(.small-tablet):not(.mobile).right-one, .eighths:not(.small-tablet):not(.mobile).right-one, .ninth:not(.small-tablet):not(.mobile).right-one, .ninths:not(.small-tablet):not(.mobile).right-one, .tenth:not(.small-tablet):not(.mobile).right-one, .tenths:not(.small-tablet):not(.mobile).right-one, .eleventh:not(.small-tablet):not(.mobile).right-one, .elevenths:not(.small-tablet):not(.mobile).right-one, .twelfth:not(.small-tablet):not(.mobile).right-one, .twelfths:not(.small-tablet):not(.mobile).right-one, .columns:not(.small-tablet):not(.mobile).right-one, .half:not(.small-tablet):not(.mobile).right-one, .halves:not(.small-tablet):not(.mobile).right-one, .third:not(.small-tablet):not(.mobile).right-one, .thirds:not(.small-tablet):not(.mobile).right-one, .fourth:not(.small-tablet):not(.mobile).right-one, .fourths:not(.small-tablet):not(.mobile).right-one, .fifth:not(.small-tablet):not(.mobile).right-one, .fifths:not(.small-tablet):not(.mobile).right-one, .sixth:not(.small-tablet):not(.mobile).right-one, .sixths:not(.small-tablet):not(.mobile).right-one, .seventh:not(.small-tablet):not(.mobile).right-one, .sevenths:not(.small-tablet):not(.mobile).right-one, .eighth:not(.small-tablet):not(.mobile).right-one, .eighths:not(.small-tablet):not(.mobile).right-one, .ninth:not(.small-tablet):not(.mobile).right-one, .ninths:not(.small-tablet):not(.mobile).right-one, .tenth:not(.small-tablet):not(.mobile).right-one, .tenths:not(.small-tablet):not(.mobile).right-one, .eleventh:not(.small-tablet):not(.mobile).right-one, .elevenths:not(.small-tablet):not(.mobile).right-one, .twelfth:not(.small-tablet):not(.mobile).right-one, .twelfths:not(.small-tablet):not(.mobile).right-one { left: 0; }

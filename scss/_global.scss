@@ -22,7 +22,7 @@ html, body {
 hr {
   border:0;
   border-bottom:1px solid $border-color;
-  margin:$gutter;
+  margin:$gutter auto;
   clear:both;
 }
 img, a img {

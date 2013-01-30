@@ -26,8 +26,8 @@
         <div class="two thirds double pad-top">
           <nav>
               <ul class="row">
-                  <li class="one mobile third"><a href="./">Home</a></li
-                  ><li class="one mobile third"><a class="active" href="./components.html">Components <i class="icon-caret-down"></i></a>
+                  <li class="one mobile half"><a href="./">Home</a></li
+                  ><li class="one mobile half"><a class="active" href="./components.html">Components <i class="icon-caret-down"></i></a>
                     <ul>
                       <li><a href="./grid.html">Grid</a></li>
                       <li><a href="./media-queries.html">Media Queries</a></li>
@@ -44,8 +44,7 @@
                       <li><a href="./orbit-js.html">Orbit</a></li>
                       <li><a href="./colorbox-js.html">ColorBox</a></li>
                     </ul>
-                  </li
-                  ><li class="one mobile third"><a href="./documentation.html">Documentation</a></li>
+                  </li>
 
                   <!-- <li class="one small-tablet sixth"><a href="./layout-1.html">Layout 1</a></li
                   ><li class="one small-tablet sixth"><a href="./layout-2.html">Layout 2</a></li
@@ -66,15 +65,25 @@
         <p>Who doesn't need buttons? Groundwork comes packed with useful button styles that can be easily customized to fit your needs.</p>
         <h6>Example usage:</h6>
         <code>
-<pre>&lt;<tag>a</tag> class="<span>small button</span>"&gt;<content>Small Button</content>&lt;/<tag>a</tag>&gt;</pre>
-<pre>&lt;<tag>a</tag> class="<span>button</span>"&gt;<content>Normal Button</content>&lt;/<tag>a</tag>&gt;</pre>
-<pre>&lt;<tag>a</tag> class="<span>large button</span>"&gt;<content>Large Button</content>&lt;/<tag>a</tag>&gt;</pre>
+<pre>&lt;<tag>a</tag> class=&quot;<span>small button</span>&quot;&gt;<content>Small Button</content>&lt;/<tag>a</tag>&gt;</pre>
+<pre>&lt;<tag>a</tag> class=&quot;<span>success button</span>&quot;&gt;<content>Normal Success</content>&lt;/<tag>a</tag>&gt;</pre>
+<pre>&lt;<tag>a</tag> class=&quot;<span>large error button</span>&quot;&gt;<content>Large Error</content>&lt;/<tag>a</tag>&gt;</pre>
+<pre>&lt;<tag>ul</tag> class=&quot;<span>button-list</span>&quot;&gt;</pre>
+<pre>  &lt;<tag>li</tag>&gt;&lt;<tag>a</tag> href=&quot;<span>#</span>&quot; class=&quot;<span>active</span>&quot;&gt;<content>Button 1</content>&lt;/<tag>a</tag>&gt;&lt;/<tag>li</tag>&gt;</pre>
+<pre>  &lt;<tag>li</tag>&gt;&lt;<tag>a</tag> href=&quot;<span>#</span>&quot;&gt;<content>Button 2</content>&lt;/<tag>a</tag>&gt;&lt;/<tag>li</tag>&gt;</pre>
+<pre>  &lt;<tag>li</tag>&gt;&lt;<tag>a</tag> href=&quot;<span>#</span>&quot; class=&quot;<span>disabled</span>&quot;&gt;<content>Button 3</content>&lt;/<tag>a</tag>&gt;&lt;/<tag>li</tag>&gt;</pre>
+<pre>&lt;/<tag>ul</tag>&gt;</pre>
         </code>
         <hr/>
         <h6>Result:</h6>
         <p><a class="small button">Small Button</a></p>
-        <p><a class="button">Normal Button</a></p>
-        <p><a class="large button">Large Button</a></p>
+        <p><a class="success button">Normal Success</a></p>
+        <p><a class="large error button">Large Error</a></p>
+        <ul class="button-list">
+          <li><a href="#" class="active">Button 1</a></li>
+          <li><a href="#">Button 2</a></li>
+          <li><a href="#" class="disabled">Button 3</a></li>
+        </ul>
       </div>
       <div class="two thirds padded">
         <h2>Button Sizes, Types &amp; Styles</h2>
@@ -91,6 +100,7 @@
             <p><button class="error">Error Button</button></p>
             <p><button class="warning">Warning Button</button></p>
             <p><button class="success">Success Button</button></p>
+            <p><button class="disabled">Disabled Button</button></p>
           </div>
           <div class="one third padded">
             <h2>Button Styles</h2>

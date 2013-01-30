@@ -2,16 +2,7 @@
 
 @font-face { font-family: 'Six Caps'; font-style: normal; font-weight: 400; src: url(http://themes.googleusercontent.com/static/fonts/sixcaps/v4/2C7zc4K0sAvvEpbjOFJYxPesZW2xOQ-xsNqO47m55DA.eot); src: local("Six Caps"), local("SixCaps"), url(http://themes.googleusercontent.com/static/fonts/sixcaps/v4/2C7zc4K0sAvvEpbjOFJYxPesZW2xOQ-xsNqO47m55DA.eot) format("embedded-opentype"), url(http://themes.googleusercontent.com/static/fonts/sixcaps/v4/tMrhQDUBAHnnGuM33-yobPesZW2xOQ-xsNqO47m55DA.woff) format("woff"), url(http://themes.googleusercontent.com/static/fonts/sixcaps/v4/o_4b_kcfA7KqUo2NQLuC6HYhjbSpvc47ee6xR_80Hnw.ttf) format("truetype"); }
 
-body { background: #e7e7e7; font-size: 16px; color: #2c2c2f; }
-
-.heading { font-size: 3em; line-height: 1.5; text-shadow: 0 0 5px rgba(0, 0, 0, 0.25); }
-.heading sup { font-size: 0.35em; }
-
-.responsive:not('.heading') { line-height: 1; }
-
-.logo { display: inline-block; width: 1.5em; height: 1.5em; background: transparent url("../images/groundwork-logo.svg") bottom right no-repeat; background-size: 100% 100%; text-indent: -9999em; overflow: hidden; -ms-filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.25)); -o-filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.25)); -moz-filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.25)); -webkit-filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.25)); filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.25)); }
-
-.hero { text-shadow: 0 0 5px rgba(0, 0, 0, 0.25); }
+body { background: #e7e7e7; color: #2c2c2f; }
 
 hr { margin: 10px auto; border: none; border-bottom: 1px solid #c7c7c7; }
 
@@ -48,14 +39,24 @@ hr { margin: 10px auto; border: none; border-bottom: 1px solid #c7c7c7; }
 .the-icons li:hover:after { content: attr(data-class); display: block; position: absolute; width: 100%; text-align: center; left: 0; }
 .the-icons li i { font-size: 2.5em; }
 
-a, a:link, a:visited { color: #198d98; text-decoration: none; }
-a:hover, a:focus, a:link:hover, a:link:focus, a:visited:hover, a:visited:focus { color: #24cada; text-decoration: none; }
+a, a:link, a:visited { color: #282830; text-decoration: none; }
+a:hover, a:focus, a:link:hover, a:link:focus, a:visited:hover, a:visited:focus { color: #198d98; text-decoration: none; }
+
+h1.heading { font-size: 3em; text-shadow: 0 0 5px rgba(0, 0, 0, 0.25); }
+h1.heading a, h1.heading a:link, h1.heading a:visited { color: #282830; }
+h1.heading a a:hover, h1.heading a a:focus, h1.heading a:link a:hover, h1.heading a:link a:focus, h1.heading a:visited a:hover, h1.heading a:visited a:focus { color: #282830; }
+h1.heading sup { font-size: 0.35em; }
+h1.heading .logo { display: inline-block; width: 1em; height: 1em; position: relative; top: 0.1em; background: transparent url("../images/groundwork-logo.svg") bottom right no-repeat; background-size: 100% 100%; text-indent: -9999em; overflow: hidden; -ms-filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.25)); -o-filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.25)); -moz-filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.25)); -webkit-filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.25)); filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.25)); }
+
+.responsive:not('.heading') { line-height: 1; }
+
+.hero { text-shadow: 0 0 5px rgba(0, 0, 0, 0.25); }
+.hero .large.button { line-height: 2.5; }
 
 h1, h2, h3, h4, h5, h6 { /* might add inline-font-files() at some point */ font-family: Average Sans, Six Caps, Arial, Helvetica, Geneva, sans-serif; color: #282830; }
-h1 a, h1 a:link, h1 a:visited, h2 a, h2 a:link, h2 a:visited, h3 a, h3 a:link, h3 a:visited, h4 a, h4 a:link, h4 a:visited, h5 a, h5 a:link, h5 a:visited, h6 a, h6 a:link, h6 a:visited { color: inherit; }
 
-p a, p a:link, p a:visited, ul a, ul a:link, ul a:visited, ol a, ol a:link, ol a:visited, dl a, dl a:link, dl a:visited { color: #198d98; border-bottom: 1px dotted #198d98; }
-p a:hover, p a:focus, p a:link:hover, p a:link:focus, p a:visited:hover, p a:visited:focus, ul a:hover, ul a:focus, ul a:link:hover, ul a:link:focus, ul a:visited:hover, ul a:visited:focus, ol a:hover, ol a:focus, ol a:link:hover, ol a:link:focus, ol a:visited:hover, ol a:visited:focus, dl a:hover, dl a:focus, dl a:link:hover, dl a:link:focus, dl a:visited:hover, dl a:visited:focus { border-bottom: 1px dotted #0e5056; }
+p a, p a:link, p a:visited, ul a, ul a:link, ul a:visited, ol a, ol a:link, ol a:visited, dl a, dl a:link, dl a:visited { color: #282830; border-bottom: 1px dotted #282830; -ms-transition: "color 0.25s, border-color 0.25s"; -o-transition: "color 0.25s, border-color 0.25s"; -moz-transition: "color 0.25s, border-color 0.25s"; -webkit-transition: "color 0.25s, border-color 0.25s"; transition: "color 0.25s, border-color 0.25s"; }
+p a:hover, p a:focus, p a:link:hover, p a:link:focus, p a:visited:hover, p a:visited:focus, ul a:hover, ul a:focus, ul a:link:hover, ul a:link:focus, ul a:visited:hover, ul a:visited:focus, ol a:hover, ol a:focus, ol a:link:hover, ol a:link:focus, ol a:visited:hover, ol a:visited:focus, dl a:hover, dl a:focus, dl a:link:hover, dl a:link:focus, dl a:visited:hover, dl a:visited:focus { color: #198d98; border-bottom: 1px dotted #198d98; }
 
 ul.list { list-style-image: url("../images/groundy/check_mark.png"); }
 
@@ -123,6 +124,7 @@ nav ul ul li:last-child a { border-radius: 0 0 0.4em 0.4em; }
 button, .button, a.button, a.button:link, a.button:visited, input[type=submit], input[type=button], input[type=reset] { background: #1dabb8; border: 1px solid #198d98; color: white; text-shadow: 0 0 5px rgba(0, 0, 0, 0.25); }
 button:hover, button:focus, .button:hover, .button:focus, a.button:hover, a.button:focus, a.button:link:hover, a.button:link:focus, a.button:visited:hover, a.button:visited:focus, input[type=submit]:hover, input[type=submit]:focus, input[type=button]:hover, input[type=button]:focus, input[type=reset]:hover, input[type=reset]:focus { background: #198d98; color: white; }
 button.active, button.active:hover, button.active:focus, .button.active, .button.active:hover, .button.active:focus, a.button.active, a.button.active:hover, a.button.active:focus, a.button:link.active, a.button:link.active:hover, a.button:link.active:focus, a.button:visited.active, a.button:visited.active:hover, a.button:visited.active:focus, input[type=submit].active, input[type=submit].active:hover, input[type=submit].active:focus, input[type=button].active, input[type=button].active:hover, input[type=button].active:focus, input[type=reset].active, input[type=reset].active:hover, input[type=reset].active:focus { background: #282830; border-color: #3f3f4c; }
+button.disabled, .button.disabled, a.button.disabled, a.button:link.disabled, a.button:visited.disabled, input[type=submit].disabled, input[type=button].disabled, input[type=reset].disabled { background: #a6a6a6; border-color: gray; color: #d9d9d9; }
 button.white, .button.white, a.button.white, a.button:link.white, a.button:visited.white, input[type=submit].white, input[type=button].white, input[type=reset].white { background: white; border: 1px solid #e7e7e7; }
 button.white:hover, button.white:focus, .button.white:hover, .button.white:focus, a.button.white:hover, a.button.white:focus, a.button:link.white:hover, a.button:link.white:focus, a.button:visited.white:hover, a.button:visited.white:focus, input[type=submit].white:hover, input[type=submit].white:focus, input[type=button].white:hover, input[type=button].white:focus, input[type=reset].white:hover, input[type=reset].white:focus { background: #e7e7e7; }
 button.black, .button.black, a.button.black, a.button:link.black, a.button:visited.black, input[type=submit].black, input[type=button].black, input[type=reset].black { background: black; border: 1px solid #2c2c2f; }
@@ -160,6 +162,7 @@ button.lt-red:hover, button.lt-red:focus, .button.lt-red:hover, .button.lt-red:f
 button.dk-red, .button.dk-red, a.button.dk-red, a.button:link.dk-red, a.button:visited.dk-red, input[type=submit].dk-red, input[type=button].dk-red, input[type=reset].dk-red { background: #881a30; border: 1px solid #c82647; }
 button.dk-red:hover, button.dk-red:focus, .button.dk-red:hover, .button.dk-red:focus, a.button.dk-red:hover, a.button.dk-red:focus, a.button:link.dk-red:hover, a.button:link.dk-red:focus, a.button:visited.dk-red:hover, a.button:visited.dk-red:focus, input[type=submit].dk-red:hover, input[type=submit].dk-red:focus, input[type=button].dk-red:hover, input[type=button].dk-red:focus, input[type=reset].dk-red:hover, input[type=reset].dk-red:focus { background: #c82647; }
 button.dropdown ul, .button.dropdown ul, a.button.dropdown ul, a.button:link.dropdown ul, a.button:visited.dropdown ul, input[type=submit].dropdown ul, input[type=button].dropdown ul, input[type=reset].dropdown ul { -ms-filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.25)); -o-filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.25)); -moz-filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.25)); -webkit-filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.25)); filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.25)); }
+button.dropdown ul li a.disabled, .button.dropdown ul li a.disabled, a.button.dropdown ul li a.disabled, a.button:link.dropdown ul li a.disabled, a.button:visited.dropdown ul li a.disabled, input[type=submit].dropdown ul li a.disabled, input[type=button].dropdown ul li a.disabled, input[type=reset].dropdown ul li a.disabled { background: #a6a6a6; border-color: gray; color: #cccccc; }
 
 .invert-color { color: white; }
 .invert-color * { color: inherit; }

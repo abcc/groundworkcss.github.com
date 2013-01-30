@@ -1,5 +1,5 @@
 // ===================================
-//       Groundwork Buttons
+//         Groundwork Buttons
 // ===================================
 
 
@@ -27,6 +27,12 @@ button, .button, a.button, a.button:link, a.button:visited, input[type=submit], 
   &.active, &.active:hover, &.active:focus {
     background:$button-active;
     color:$button-active-text;
+  }
+  &.disabled {
+    background:lighten(gray, 15%);
+    border-color:gray;
+    color:lighten(gray, 35%);
+    cursor:not-allowed;
   }
   &.small {
     font-size:0.8em;
@@ -156,6 +162,12 @@ ul.button-list, ol.button-list {
       &.active, &.active:hover, &.active:focus {
         background:$button-active;
         color:$button-active-text;
+      }
+      &.disabled {
+        background:lighten(gray, 15%);
+        border-color:gray;
+        color:lighten(gray, 35%);
+        cursor:not-allowed;
       }
     }
   }

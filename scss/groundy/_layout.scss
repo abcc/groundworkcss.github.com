@@ -7,36 +7,7 @@
 
 body {
   background:$lt-gray;
-  font-size:16px;
   color:$dk-gray;
-}
-
-.heading {
-  font-size:3em;
-  line-height:1.5;
-  text-shadow:0 0 5px rgba(0,0,0,0.25);
-  sup {
-    font-size:0.35em;
-  }
-}
-
-.responsive:not('.heading') {
-  line-height:1;
-}
-
-.logo {
-  display:inline-block;
-  width:1.5em;
-  height:1.5em;
-  background:transparent url('../images/groundwork-logo.svg') bottom right no-repeat;
-  background-size:100% 100%;
-  text-indent:-9999em;
-  overflow:hidden;
-  @include filter-shadow(rgba(0,0,0,0.25), 5px, 0, 0); // color, blur, x, y
-}
-
-.hero {
-  text-shadow:0 0 5px rgba(0,0,0,0.25);
 }
 
 hr {

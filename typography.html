@@ -26,8 +26,8 @@
         <div class="two thirds double pad-top">
           <nav>
               <ul class="row">
-                  <li class="one mobile third"><a href="./">Home</a></li
-                  ><li class="one mobile third"><a class="active" href="./components.html">Components <i class="icon-caret-down"></i></a>
+                  <li class="one mobile half"><a href="./">Home</a></li
+                  ><li class="one mobile half"><a class="active" href="./components.html">Components <i class="icon-caret-down"></i></a>
                     <ul>
                       <li><a href="./grid.html">Grid</a></li>
                       <li><a href="./media-queries.html">Media Queries</a></li>
@@ -44,8 +44,7 @@
                       <li><a href="./orbit-js.html">Orbit</a></li>
                       <li><a href="./colorbox-js.html">ColorBox</a></li>
                     </ul>
-                  </li
-                  ><li class="one mobile third"><a href="./documentation.html">Documentation</a></li>
+                  </li>
 
                   <!-- <li class="one small-tablet sixth"><a href="./layout-1.html">Layout 1</a></li
                   ><li class="one small-tablet sixth"><a href="./layout-2.html">Layout 2</a></li
@@ -66,20 +65,14 @@
         <p>Keeping the typography consistent throughout a website is important. Groundwork helps with that.</p>
         <h6>Example usage:</h6>
         <code>
-<pre>&lt;<tag>h1</tag>&gt;<content>Heading 1</content> &lt;<tag>sup</tag>&gt;<content>w/superscript</content>&lt;/<tag>sup</tag>&gt;&lt;/<tag>h1</tag>&gt;</pre>
-<pre>&lt;<tag>h1</tag>&gt;&lt;<tag>small</tag>&gt;<content>Small Heading 1</content>&lt;/<tag>small</tag>&gt;&lt;/<tag>h1</tag>&gt;</pre>
-<pre>&lt;<tag>h2</tag>&gt;<content>Heading 2</content>&lt;/<tag>h2</tag>&gt;</pre>
+<pre>&lt;<tag>h1</tag>&gt;<content>Heading 1</content> &lt;<tag>sup</tag>&gt;&lt;<tag>small</tag>&gt;<content>w/small superscript</content>&lt;/<tag>small</tag>&gt;&lt;/<tag>sup</tag>&gt;&lt;/<tag>h1</tag>&gt;</pre>
 <pre>&lt;<tag>p</tag>&gt;<content>Paragraph text with</content> &lt;<tag>big</tag>&gt;<content>big text</content>&lt;/<tag>big</tag>&gt; <content>and</content> &lt;<tag>small</tag>&gt;<content>small text</content>&lt;/<tag>small</tag>&gt;&lt;/<tag>p</tag>&gt;</pre>
-<pre>&lt;<tag>p</tag> class="<span>large</span>"&gt;<content>Large paragraph text&lt;/<tag>p</tag>&gt;</pre>
 <pre>&lt;<tag>p</tag> class="<span>small</span>"&gt;<content>Small paragraph text&lt;/<tag>p</tag>&gt;</pre>
         </code>
         <hr/>
         <h6>Result:</h6>
-        <h1>Heading 1 <sup>w/superscript</sup></h1>
-        <h1><small>Small Heading 1</small></h1>
-        <h2>Heading 2</h2>
+        <h1>Heading 1 <sup><small>w/small superscript</small></sup></h1>
         <p>Paragraph text with <big>big text</big> and <small>small text</small></p>
-        <p class="large">Big paragraph text</p>
         <p class="small">Small paragraph text</p>
       </div>
       <div class="two thirds padded">
@@ -189,6 +182,7 @@
         <h2>Code</h2>
         <code>
 <pre>&lt;<tag>div</tag> class="<span>example</span>"&gt;<content>This is a code snippet</content>&lt;/<tag>div</tag>&gt;</pre>
+<pre>&lt;<tag>div</tag> class="<span>example</span>"&gt;<content>Line numbering increments with each contained <em>&lt;pre&gt;</em> element</content>&lt;/<tag>div</tag>&gt;</pre>
         </code>
 
         <hr/>

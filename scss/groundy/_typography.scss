@@ -6,28 +6,64 @@
 
 
 a, a:link, a:visited {
-  color:$blue;
+  color:$navy;
   text-decoration:none;
   &:hover, &:focus {
-    color:$lt-blue;
+    color:$blue;
     text-decoration:none;
+  }
+}
+
+h1.heading {
+  font-size:3em;
+  text-shadow:0 0 5px rgba(0,0,0,0.25);
+  a, a:link, a:visited {
+    color:$navy;
+    a:hover, a:focus {
+      color:$navy;
+    }
+  }
+  sup {
+    font-size:0.35em;
+  }
+  .logo {
+    display:inline-block;
+    width:1em;
+    height:1em;
+    position:relative;
+    top:0.1em;
+    background:transparent url('../images/groundwork-logo.svg') bottom right no-repeat;
+    background-size:100% 100%;
+    text-indent:-9999em;
+    overflow:hidden;
+    @include filter-shadow(rgba(0,0,0,0.25), 5px, 0, 0); // color, blur, x, y
+  }
+}
+
+.responsive:not('.heading') {
+  line-height:1;
+}
+
+.hero {
+  text-shadow:0 0 5px rgba(0,0,0,0.25);
+  .large.button {
+    line-height:2.5;
   }
 }
 
 h1, h2, h3, h4, h5, h6 {
   @include font-stack('Average Sans', 'Six Caps');
   color:$navy;
-  a, a:link, a:visited {
-    color:inherit;
-  }
 }
 
 p, ul, ol, dl {
   a, a:link, a:visited {
-    color:$blue;
-    border-bottom:1px dotted $blue;
+    color:$navy;
+    border-bottom:1px dotted $navy;
+    @include transition('color 0.25s, border-color 0.25s');
     &:hover, &:focus {
-      border-bottom:1px dotted $dk-blue;
+      color:$blue;
+      border-bottom:1px dotted $blue;
     }
   }
 }

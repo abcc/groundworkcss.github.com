@@ -6,8 +6,8 @@
 
 
 body {
-  font-size:$font-size;
   font-family:$font-family;
+  font-size:$font-size;
   line-height:1.2;
   color:$font-color;
 }
@@ -19,8 +19,15 @@ body {
   background:$selection-color;
   color:white;
 }
+* {
+  outline:none;
+  &:focus {
+    @include filter-shadow(rgba(0,0,0,0.35), 15px, 0, 0);
+  }
+}
 a, a:link, a:visited {
   color:$link-color;
+  @include transition(color 0.25s);
   &:hover, &:focus {
     text-decoration:underline;
   }
@@ -28,10 +35,6 @@ a, a:link, a:visited {
 h1, h2, h3, h4, h5, h6 {
   line-height:1.1;
   margin-bottom:15px;
-  small {
-    font-size:0.7em;
-    color:lighten($font-color, 25%);
-  }
 }
 h1 {
   font-weight:200;
@@ -154,7 +157,7 @@ sub { font-size:0.8em; }
 code {
   color:white;
   background:black;
-  font-size:0.8em;
+  font-size:0.9em;
   padding:0.5em;
   display:block;
   border-left:2.5em solid gray;
@@ -182,4 +185,10 @@ pre {
     left:1em;
     color:white;
   }
+}
+.error, .invalid {
+  color:$error-color;
+}
+.success, .valid {
+  color:$success-color;
 }

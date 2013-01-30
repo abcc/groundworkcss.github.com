@@ -1,0 +1,27 @@
+// ===================================
+//          Groundwork Tabs
+// ===================================
+
+
+
+
+.tabs {
+  ul {
+    margin:0;
+    padding:0;
+    list-style:none;
+    &:after {
+      content:'';
+      display:block;
+      clear:both;
+    }
+    li {
+      display:block;
+      float:left;
+      a {
+        display:block;
+        @include rounded($radius $radius 0 0);
+      }
+    }
+  }
+}
