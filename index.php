@@ -6,8 +6,8 @@
     <div class="container">
       <div class="row">
         <div class="one third padded align-center">
-          <h1 class="responsive" data-scale="3.75" data-min="20" data-max="170" style="font-size:5.75em;">Say Hello</h1>
-          <h3 class="responsive" data-scale="13.6" data-min="15" data-max="50"  style="font-size:1.7em;">To responsive design made easy.</h3>
+          <h1 class="responsive" data-scale="3.825" data-min="20" data-max="170" style="font-size:99px;">Say Hello</h1>
+          <h3 class="responsive" data-scale="13.6" data-min="15" data-max="50"  style="font-size:27px;">To responsive design made easy.</h3>
           <a class="large blue block button" href="https://github.com/ghepting/groundwork/archive/master.zip">Download <i class="icon-download-alt"></i></a>
           <div class="row">
             <div class="three small-tablet sevenths gap-top pad-right no-padding-mobile">
@@ -35,7 +35,7 @@
           <p class="pad-left pad-right">Groundwork has been built from the ground up with the incredibly powerful CSS preprocessor, Sass. Sass is an extension of CSS3, adding nested rules, variables, mixins, selector inheritance, and more. It’s translated to well-formatted, standard CSS using the command line tool or a web-framework plugin.</p>
         </div>
         <div class="one third padded">
-          <a href="./components.html">
+          <a href="./components">
             <div class="large circle"><div class="red cell"><i class="icon-laptop"></i></div></div>
             <h1 class="align-center">Flexible &amp; Responsive</h1>
           </a>
@@ -63,7 +63,7 @@
               <p>Groundwork's flexible grid system enables you to do rapid development and scales to fit any screen size, from handheld devices to large format televisions.</p>
             </div>
             <div class="one small-tablet fourth left-three padded align-center">
-              <a href="./grid.html"><div class="large square"><div class="green rounded cell"><i class="icon-th"></i></div></div></a>
+              <a href="./grid"><div class="large square"><div class="green rounded cell"><i class="icon-th"></i></div></div></a>
             </div>
           </div>
         </div>
@@ -74,7 +74,7 @@
               <p>The grid allows you to quickly and easily adapt page layouts for mobile devices as well as the desktop and enables you to build one site that looks great on virtually any device.</p>
             </div>
             <div class="one small-tablet fourth left-three padded align-center">
-              <a href="./grid.html"><div class="large square"><div class="navy rounded cell"><i class="icon-mobile-phone"></i></div></div></a>
+              <a href="./grid"><div class="large square"><div class="navy rounded cell"><i class="icon-mobile-phone"></i></div></div></a>
             </div>
           </div>
         </div>

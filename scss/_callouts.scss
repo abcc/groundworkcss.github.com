@@ -5,7 +5,7 @@
 
 
 
-.panel {
+.callout {
   position:relative;
   word-wrap:break-word;
   padding:1em;
@@ -44,7 +44,6 @@
   // content overrides
   h1, h2, h3, h4, h5, h6 {
     color:$button-text;
-    text-shadow:none;
   }
   *:last-child {
     margin-bottom:0;

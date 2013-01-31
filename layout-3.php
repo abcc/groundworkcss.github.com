@@ -1,38 +1,7 @@
-<!doctype html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-  <title>Groundwork CSS</title>
-  <!-- Modernizr -->
-  <script src="js/libs/modernizr-2.6.2.min.js"></script>
-  <!-- jQuery -->
-  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-  <script type="text/javascript">window.jQuery || document.write('<script src="./js/libs/jquery-1.8.2.min.js"><\/script>')</script>
-  <!-- Groundwork CSS -->
-  <link type="text/css" rel="stylesheet" href="./css/groundwork.css">
-  <!-- Groundy theme files -->
-  <link type="text/css" rel="stylesheet" href="./css/groundy.css">
-</head>
-<body>
-
-  <header class="white band padded">
-    <div class="container">
-      <h1 class="big heading"><a href="./" class="logo">Groundwork</a> Groundwork<sup>Beta</sup></h1>
-      <nav>
-          <ul class="row">
-              <li class="one small-tablet sixth"><a href="./">Home</a></li
-              ><li class="one small-tablet sixth"><a href="./layout-1.html">Layout 1</a></li
-              ><li class="one small-tablet sixth"><a href="./layout-2.html">Layout 2</a></li
-              ><li class="one small-tablet sixth"><a class="active" href="./layout-3.html">Layout 3</a></li
-              ><li class="one small-tablet sixth"><a href="./layout-4.html">Layout 4</a></li
-              ><li class="one small-tablet sixth"><a href="./layout-5.html">Layout 5</a></li>
-          </ul>
-      </nav>
-    </div>
-  </header>
-
+<?php require_once("_doctype.php"); ?>
+  <title>Groundwork CSS &hearts;</title>
+<?php require_once("_head.php"); ?>
+<?php require_once("_header.php"); ?>
   <div class="container">
 
     <article class="row">
@@ -104,25 +73,4 @@
     </footer>
 
   </div>
-
-  <!-- scripts -->
-  <script type="text/javascript" src="./js/plugins/jquery.orbit-1.4.0.js"></script>
-  <script type="text/javascript" src="./js/groundwork.js"></script>
-
-  <!-- google analytics -->
-  <script type="text/javascript">
-
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-17121602-5']);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-
-  </script>
-
-</body>
-</html>
+<?php require_once("_scripts.php"); ?>
