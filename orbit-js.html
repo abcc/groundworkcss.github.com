@@ -55,6 +55,47 @@
       <div class="one third padded">
         <h1><i class="icon-picture"></i> Orbit</h1>
         <p>Quite simply the best image and content slider out there. Orbit was created by the brilliant folks at <a href="http://www.zurb.com/" target="_blank">Zurb</a> and is also a component of Groundwork's <abbr title="Best friend forever">bff</abbr>, <a href="http://foundation.zurb.com/" target="_blank">Foundation</a>.</p>
+        <h2>Example Usage:</h2>
+        <code>
+<pre>&lt;<tag>div</tag> id=&quot;<span>exampleSlider</span>&quot;&gt;</pre>
+<pre>  &lt;<tag>div</tag> class=&quot;<span>callout</span>&quot;&gt;</pre>
+<pre>    &lt;<tag>h1</tag>&gt;<content>Content Slide</content>&lt;/<tag>h1</tag>&gt;</pre>
+<pre>    &lt;<tag>p</tag>&gt;<content>This slide has HTML content instead of an image and has also had &lt;<tag>code</tag> class=&quot;<span>inline</span>&quot;&gt;.callout&lt;/<tag>code</tag>&gt; applied to it.</content>&lt;/<tag>p</tag>&gt;</pre>
+<pre>    &lt;<tag>p</tag>&gt;&lt;<tag>a</tag> href=&quot;<span>#</span>&quot; class=&quot;<span>success button</span>&quot;&gt;<content>Click Me</content>&lt;/<tag>a</tag>&gt;&lt;/<tag>p</tag>&gt;</pre>
+<pre>  &lt;/<tag>div</tag>&gt;</pre>
+<pre>  &lt;<tag>div</tag> class=&quot;<span>warning callout</span>&quot;&gt;</pre>
+<pre>    &lt;<tag>h1</tag>&gt;<content>Another Content Slide</content>&lt;/<tag>h1</tag>&gt;</pre>
+<pre>    &lt;<tag>p</tag>&gt;<content>This slide has HTML content instead of an image and has also had &lt;<tag>code</tag> class=&quot;<span>inline</span>&quot;&gt;.warning.callout&lt;/<tag>code</tag>&gt; applied to it.</content>&lt;/<tag>p</tag>&gt;</pre>
+<pre>    &lt;<tag>p</tag>&gt;&lt;<tag>a</tag> href=&quot;<span>#</span>&quot; class=&quot;<span>large button</span>&quot;&gt;<content>Click Me</content>&lt;/<tag>a</tag>&gt;&lt;/<tag>p</tag>&gt;</pre>
+<pre>  &lt;/<tag>div</tag>&gt;</pre>
+<pre>&lt;/<tag>div</tag>&gt;</pre>
+<content>
+<pre>&lt;<tag>script</tag>&gt;</pre>
+<pre>  <span>$</span>(<function>document</function>).ready(<function>function</function>() {</pre>
+<pre>    <span>$</span>('<string>#exampleSlider</string>').orbit();</pre>
+<pre>  });</pre>
+<pre>&lt;/<tag>script</tag>&gt;</pre>
+</content>
+        </code>
+        <hr/>
+        <h2>Result:</h2>
+        <div id="exampleSlider">
+          <div class="callout">
+            <h1>Content Slide</h1>
+            <p>This slide has HTML content instead of an image and has also had <code class="inline">.callout</code> applied to it.</p>
+            <p><a href="#" class="success button">Click Me</a></p>
+          </div>
+          <div class="warning callout">
+            <h1>Another Content Slide</h1>
+            <p>This slide has HTML content instead of an image and has also had <code class="inline">.warning.callout</code> applied to it.</p>
+            <p><a href="#" class="large button">Click Me</a></p>
+          </div>
+        </div>
+        <script>
+          $(document).ready(function() {
+            $('#exampleSlider').orbit();
+          });
+        </script>
       </div>
       <div class="two thirds padded">
         <h2>Orbit</h2>
@@ -66,6 +107,16 @@
 <pre>  &lt;<tag>img</tag> src=&quot;<span>http://placehold.it/1200x400/bada55/ffffff/&amp;text=Slide+2</span>&quot; alt=&quot;&quot; /&gt;</pre>
 <pre>  &lt;<tag>img</tag> src=&quot;<span>http://placehold.it/1200x400/c82647/ffffff/&amp;text=Slide+3</span>&quot; alt=&quot;&quot; /&gt;</pre>
 <pre>  &lt;<tag>img</tag> src=&quot;<span>http://placehold.it/1200x400/198d98/ffffff/&amp;text=Slide+4</span>&quot; alt=&quot;&quot; /&gt;</pre>
+<pre>  &lt;<tag>div</tag> class=&quot;<span>callout</span>&quot;&gt;</pre>
+<pre>    &lt;<tag>h1</tag>&gt;<content>Content Slide</content>&lt;/<tag>h1</tag>&gt;</pre>
+<pre>    &lt;<tag>p</tag>&gt;<content>This slide has HTML content instead of an image and has also had &lt;<tag>code</tag> class=&quot;<span>inline</span>&quot;&gt;.callout&lt;/<tag>code</tag>&gt; applied to it.</content>&lt;/<tag>p</tag>&gt;</pre>
+<pre>    &lt;<tag>p</tag>&gt;&lt;<tag>a</tag> href=&quot;<span>#</span>&quot; class=&quot;<span>success button</span>&quot;&gt;<content>Click Me</content>&lt;/<tag>a</tag>&gt;&lt;/<tag>p</tag>&gt;</pre>
+<pre>  &lt;/<tag>div</tag>&gt;</pre>
+<pre>  &lt;<tag>div</tag> class=&quot;<span>warning callout</span>&quot;&gt;</pre>
+<pre>    &lt;<tag>h1</tag>&gt;<content>Another Content Slide</content>&lt;/<tag>h1</tag>&gt;</pre>
+<pre>    &lt;<tag>p</tag>&gt;<content>This slide has HTML content instead of an image and has also had &lt;<tag>code</tag> class=&quot;<span>inline</span>&quot;&gt;.warning.callout&lt;/<tag>code</tag>&gt; applied to it.</content>&lt;/<tag>p</tag>&gt;</pre>
+<pre>    &lt;<tag>p</tag>&gt;&lt;<tag>a</tag> href=&quot;<span>#</span>&quot; class=&quot;<span>large button</span>&quot;&gt;<content>Click Me</content>&lt;/<tag>a</tag>&gt;&lt;/<tag>p</tag>&gt;</pre>
+<pre>  &lt;/<tag>div</tag>&gt;</pre>
 <pre>&lt;/<tag>div</tag>&gt;</pre>
         </code>
         <hr/>
@@ -75,9 +126,25 @@
           <img src="http://placehold.it/780x350/bada55/ffffff/&text=Slide+2" alt="" />
           <img src="http://placehold.it/780x350/c82647/ffffff/&text=Slide+3" alt="" />
           <img src="http://placehold.it/780x350/198d98/ffffff/&text=Slide+4" alt="" />
+          <div class="callout">
+            <h1>Content Slide</h1>
+            <p>This slide has HTML content instead of an image and has also had <code class="inline">.callout</code> applied to it.</p>
+            <p><a href="#" class="success button">Click Me</a></p>
+          </div>
+          <div class="warning callout">
+            <h1>Another Content Slide</h1>
+            <p>This slide has HTML content instead of an image and has also had <code class="inline">.warning.callout</code> applied to it.</p>
+            <p><a href="#" class="large button">Click Me</a></p>
+          </div>
         </div>
+        <hr/>
+        <h2>Setting Up Your Slider</h2>
+        <p>Your Orbit slider is simply a div with a class or unique identifier. For our examples we'll use <code class="inline">&lt;div class="slider"&gt;</code>, an example of which you can see above.</p>
+        <h4>Activating Orbit</h4>
+        <p>With your <code class="inline">.slider</code> element in place, we just need to call Orbit. Remember: your call to Orbit needs to come after jQuery and Orbit scripts. By default, those are at the end of your document, so this code snippet should come at the very end. That's all you need to trigger Orbit on a series of images. It includes the timer element, and the left and right hand paddles.</p>
+        <hr/>
         <h2>Options</h2>
-        <p>Orbit has a number of options available, which you can specify when you call .orbit(). In the example above, we kept all of the default values, but you can optionally use any of these options:</p>
+        <p>Orbit has a number of options available, which you can specify when you call <code class="inline">.orbit()</code>. In the example above, we kept all of the default values, but you can optionally use any of these options:</p>
         <table>
           <thead>
             <tr>
@@ -88,7 +155,7 @@
           </thead>
           <tbody>
             <tr>
-              <td>animation</td>
+              <th>animation</th>
               <td>fade<br>
                   horizontal-slide<br>
                   vertical-slide<br>
@@ -97,64 +164,64 @@
               <td>The animation used for transitions</td>
             </tr>
             <tr>
-              <td>animationSpeed</td>
+              <th>animationSpeed</th>
               <td>800</td>
               <td>How fast animations happen</td>
             </tr>
             <tr>
-              <td>timer</td>
+              <th>timer</th>
               <td>true<br>
                   false
               </td>
               <td>Do you want a timer or not?</td>
             </tr>
             <tr>
-              <td>resetTimerOnClick</td>
+              <th>resetTimerOnClick</th>
               <td>true<br>
                   false
               </td>
               <td>Reset timer or pause on click</td>
             </tr>
             <tr>
-              <td>advanceSpeed</td>
+              <th>advanceSpeed</th>
               <td>4000</td>
               <td>If timer is enables, time between transitions</td>
             </tr>
             <tr>
-              <td>pauseOnHover</td>
+              <th>pauseOnHover</th>
               <td>true<br>
                   false
               </td>
               <td>Do you want hover to pause slider?</td>
             </tr>
             <tr>
-              <td>startClockOnMouseOut</td>
+              <th>startClockOnMouseOut</th>
               <td>true<br>
                   false
               </td>
               <td>If clock should start on MouseOut</td>
             </tr>
             <tr>
-              <td>startClockOnMouseOutAfter</td>
+              <th>startClockOnMouseOutAfter</th>
               <td>1000</td>
               <td>How long after MouseOut should timer start again?</td>
             </tr>
             <tr>
-              <td>directionalNav</td>
+              <th>directionalNav</th>
               <td>true<br>
                   false
               </td>
               <td>Do you want directional nav?</td>
             </tr>
             <tr>
-              <td>captions</td>
+              <th>captions</th>
               <td>true<br>
                   false
               </td>
               <td>Do you want captions?</td>
             </tr>
             <tr>
-              <td>captionAnimation</td>
+              <th>captionAnimation</th>
               <td>fade<br>
                   slideOpen<br>
                   none
@@ -162,35 +229,35 @@
               <td>Animation style for caption entrance</td>
             </tr>
             <tr>
-              <td>captionAnimationSpeed</td>
+              <th>captionAnimationSpeed</th>
               <td>800</td>
               <td>How quickly should captions animate?</td>
             </tr>
             <tr>
-              <td>bullets</td>
+              <th>bullets</th>
               <td>true<br>
                   false
               </td>
               <td>Do you want bullet navigation?</td>
             </tr>
             <tr>
-              <td>bulletThumbs</td>
+              <th>bulletThumbs</th>
               <td>true<br>
                   false</td>
               <td>Do you want thumbnails bullets?</td>
             </tr>
             <tr>
-              <td>bulletThumbLocation</td>
+              <th>bulletThumbLocation</th>
               <td>''</td>
               <td>Location of where thumbs will be from Orbit file</td>
             </tr>
             <tr>
-              <td>afterSlideChange</td>
+              <th>afterSlideChange</th>
               <td>function(){},</td>
               <td>Empty Function for you to use after slide change</td>
             </tr>
             <tr>
-              <td>fluid</td>
+              <th>fluid</th>
               <td>true<br>
                   false<br>
                   Aspect Ratio
@@ -199,6 +266,110 @@
             </tr>
           </tbody>
         </table>
+        <br/>
+        <h2>Example Usage:</h2>
+        <code>
+<content>
+<pre>$('<string>#featured</string>').orbit({</pre>
+<pre>  animation: <string>'fade'</string>,               <comment>// fade, horizontal-slide, vertical-slide, horizontal-push</comment></pre>
+<pre>  animationSpeed: <val>800</val>,             <comment>// how fast animtions are</comment></pre>
+<pre>  timer: <val>true</val>,                     <comment>// true or false to have the timer</comment></pre>
+<pre>  resetTimerOnClick: <val>false</val>,        <comment>// true resets the timer instead of pausing slideshow progress</comment></pre>
+<pre>  advanceSpeed: <val>4000</val>,              <comment>// if timer is enabled, time between transitions</comment></pre>
+<pre>  pauseOnHover: <val>false</val>,             <comment>// if you hover pauses the slider</comment></pre>
+<pre>  startClockOnMouseOut: <val>false</val>,     <comment>// if clock should start on MouseOut</comment></pre>
+<pre>  startClockOnMouseOutAfter: <val>1000</val>, <comment>// how long after MouseOut should the timer start again</comment></pre>
+<pre>  directionalNav: <val>true</val>,            <comment>// manual advancing directional navs</comment></pre>
+<pre>  captions: <val>true</val>,                  <comment>// do you want captions?</comment></pre>
+<pre>  captionAnimation: <string>'fade'</string>,        <comment>// fade, slideOpen, none</comment></pre>
+<pre>  captionAnimationSpeed: <val>800</val>,      <comment>// if so how quickly should they animate in</comment></pre>
+<pre>  bullets: <val>false</val>,                  <comment>// true or false to activate the bullet navigation</comment></pre>
+<pre>  bulletThumbs: <val>false</val>,             <comment>// thumbnails for the bullets</comment></pre>
+<pre>  bulletThumbLocation: <string>''</string>,         <comment>// location from this file where thumbs will be</comment></pre>
+<pre>  <method>afterSlideChange</method>: <function>function()</function>{    <comment>// callback function</comment></pre>
+<pre>    <comment>// do something</comment></pre>
+<pre>  },  </pre>
+<pre>  fluid: true                      <comment>// or set a aspect ratio for content slides (ex: '4x3')</comment></pre>
+<pre>});</pre>
+</content>
+        </code>
+        <hr/>
+        <h2>Custom Bullets</h2>
+        <p>By setting bulletThumbs to true and a path for bulletThumbLocation, orbit will pull in custom bullets for the slider and apply them to a generated ul.orbit-bullets element which you can customize with CSS.</p>
+        <code>
+<pre>&lt;<tag>ul</tag> class=&quot;<span>orbit-bullets</span>&quot;&gt;</pre>
+<pre>  &lt;<tag>li</tag> class=&quot;<span>has-thumb active</span>&quot; style=&quot;<span>background-image: url(/path/to/bullets/bullet-one.jpg); background-position: initial initial; background-repeat: no-repeat no-repeat; </span>&quot;&gt;<content>1</content>&lt;/<tag>li</tag>&gt;</pre>
+<pre>  &lt;<tag>li</tag> class=&quot;<span>has-thumb</span>&quot; style=&quot;<span>background-image: url(/path/to/bullets/bullet-two.jpg); background-position: initial initial; background-repeat: no-repeat no-repeat; </span>&quot;&gt;<content>2</content>&lt;/<tag>li</tag>&gt;</pre>
+<pre>  &lt;<tag>li</tag> class=&quot;<span>has-thumb</span>&quot; style=&quot;<span>background-image: url(/path/to/bullets/bullet-three.jpg); background-position: initial initial; background-repeat: no-repeat no-repeat; </span>&quot;&gt;<content>3</content>&lt;/<tag>li</tag>&gt;</pre>
+<pre>&lt;/<tag>ul</tag>&gt;</pre>
+        </code>
+        <br/>
+        <p>Each li in the list is associated with an index of a slide in your slider. The filenames for the images are specified on the slider element itself with a data-thumb attribute.</p>
+        <code>
+<pre>&lt;<tag>div</tag> id=&quot;<span>featuredBullets</span>&quot;&gt;</pre>
+<pre>  &lt;img src&quot;<span>slide-1.jpg</span>&quot; data-thumb=&quot;<span>bullet-one.jpg</span>&quot; /&gt;</pre>
+<pre>  &lt;img src&quot;<span>slide-2.jpg</span>&quot; data-thumb=&quot;<span>bullet-two.jpg</span>&quot; /&gt;</pre>
+<pre>  &lt;img src&quot;<span>slide-3.jpg</span>&quot; data-thumb=&quot;<span>bullet-three.jpg</span>&quot; /&gt;</pre>
+<pre>&lt;/<tag>div</tag>&gt;</pre>
+        </code>
+        <hr/>
+        <h2>Adding Captions</h2>
+        <p>Another awesome feature in Orbit is the ability to add captions for each slide. The process is simple, just add data-caption="#captionId" to the content div or img. Then, below your div id="featured", add span class="orbit-caption" id="captionId" that will hold your caption content. You can add as many as slides you have available, just make sure the data-caption and the id of the span are the same and that you add # to the data-caption like in the code below.</p>
+        <code>
+<pre>&lt;<tag>div</tag> id=&quot;<span>featuredContent</span>&quot;&gt;</pre>
+<pre>  &lt;<tag>div</tag> data-caption=&quot;<span>#captionOne</span>&quot;&gt;</pre>
+<pre>    &lt;<tag>h4</tag>&gt;<content>This is a content slider.</content>&lt;/<tag>h4</tag>&gt;</pre>
+<pre>    &lt;<tag>p</tag>&gt;<content>Each slide holds arbitrary content, like text or actions.</content>&lt;/<tag>p</tag>&gt;</pre>
+<pre>  &lt;/<tag>div</tag>&gt;</pre>
+<pre>  &lt;<tag>div</tag> data-caption=&quot;<span>#captionTwo</span>&quot;&gt;</pre>
+<pre>    &lt;<tag>h4</tag>&gt;<content>We can include text and buttons, like this!</content>&lt;/<tag>h4</tag>&gt;</pre>
+<pre>    &lt;<tag>p</tag>&gt;<content>We take no responsibility for what happens if you click this button.</content>&lt;/<tag>p</tag>&gt;</pre>
+<pre>    &lt;<tag>p</tag>&gt;&lt;a href=&quot;<span>http://www.youtube.com/watch?v=dQw4w9WgXcQ</span>&quot; class=&quot;<span>button</span>&quot; target=&quot;_blank&quot;&gt;Rock My World!&lt;/a&gt;&lt;/<tag>p</tag>&gt;</pre>
+<pre>  &lt;/<tag>div</tag>&gt;</pre>
+<pre>  &lt;<tag>div</tag> data-caption=&quot;<span>#captionThree</span>&quot;&gt;</pre>
+<pre>    &lt;<tag>h4</tag>&gt;<content>What? You did not click it?</content>&lt;/<tag>h4</tag>&gt;</pre>
+<pre>    &lt;<tag>p</tag>&gt;<content>We gave you the benefit of the doubt. Maybe you did, and now you are back!</content>&lt;/<tag>p</tag>&gt;</pre>
+<pre>  &lt;/<tag>div</tag>&gt;</pre>
+<pre>&lt;/<tag>div</tag>&gt;</pre>
+<pre></pre>
+<pre>&lt;<tag>span</tag> class&quot;<span>orbit-caption</span>&quot; id=&quot;<span>captionOne</span>&quot;&gt;<content>Here is a caption...</content>&lt;/<tag>span</tag>&gt;</pre>
+<pre>&lt;<tag>span</tag> class&quot;<span>orbit-caption</span>&quot; id=&quot;<span>captionTwo</span>&quot;&gt;<content>Here is a caption2...</content>&lt;/<tag>span</tag>&gt;</pre>
+<pre>&lt;<tag>span</tag> class&quot;<span>orbit-caption</span>&quot; id=&quot;<span>captionThree</span>&quot;&gt;<content>Here is a caption3...</content>&lt;/<tag>span</tag>&gt;</pre>
+        </code>
+        <hr/>
+        <h2>Directional Navigation on Hover</h2>
+        <p>Want to have your Orbit navigation appear on hover? We've got you covered! It isn't part of the JS options or anything like that, just simple CSS. Below is the Scss/CSS needed for the effect.</p>
+        <code>
+<content>
+<pre><comment>/* Scss */</comment></pre>
+<pre><class>.orbit-wrapper</class> {</pre>
+<pre>  <class>.slider-nav</class> <tag>span</tag> { <tag>@include</tag> <function>opacity</function>(<val>0</val>); <tag>@include</tag> <function>single-transition</function>(<arg>opacity</arg>, 400<tag>ms</tag>); }</pre>
+<pre>  &<class>:hover</class> <class>.slider-nav</class> <tag>span</tag> { <tag>@include</tag> <function>opacity</function>(<val>1</val>); }</pre>
+<pre>}</pre>
+<pre></pre>
+<pre><comment>/* CSS */</comment></pre>
+<pre><class>.orbit-wrapper .slider-nav</class> <tag>span</tag> { <function>filter</function>: <content>progid:DXImageTransform.Microsoft.</content><function>Alpha</function>(<arg>Opacity=0</arg>); <prop>opacity</prop>: <val>0</val>; <prop>-webkit-transition</prop>: <prop>opacity <val>400</val><tag>ms</tag></prop>; <prop>-moz-transition</prop>: <prop>opacity <val>400</val><tag>ms</tag></prop>; <prop>-o-transition</prop>: <prop>opacity <val>400</val><tag>ms</tag></prop>; <prop>transition</prop>: <prop>opacity <val>400</val><tag>ms</tag></prop>; }</pre>
+<pre><class>.orbit-wrapper:hover .slider-nav</class> <tag>span</tag> { <function>filter</function>: <content>progid:DXImageTransform.Microsoft.</content><function>Alpha</function>(<arg>Opacity=100</arg>); <prop>opacity</prop>: <val>1</val>; }</pre>
+</content>
+        </code>
+        <hr/>
+        <h2>Graceful Orbit Loading State</h2>
+        <p>Since Orbit executes through Javascript, before it kicks in you might see your images or content all stacked on top of each other. To avoid this you can make use of a property of Orbit: it adds a class of .orbit once it executes, meaning you can target your div#featured with specific styles that will be overriden when the class is added.</p>
+        <p>For example, if we want Orbit to load a simple light grey screen with a spinner, the CSS would look like this:</p>
+        <code>
+<content>
+<pre><class>#featured</class> { <prop>background</prop>: <prop>url</prop>(<arg>spinner.gif</arg>) <prop>center center <val>#f4f4f4</val>; height: <val>300</val><tag>px</tag></prop>; }</pre>
+<pre><class>#featured</class> <tag>img</tag> { <prop>display</prop>: <prop>none</prop>; }</pre>
+<pre></pre>
+<pre><class>#featured.orbit</class> { <prop>background</prop>: <prop>none</prop>; }</pre>
+<pre><class>#featured.orbit</class> <tag>img</tag> { <prop>display</prop>: <prop>block</prop>; }</pre>
+</content>
+        </code>
+        <p>We hide the images by default, and give the #featured block a fixed height and background with a spinner. Once Orbit loads the images are displayed and we remove that background.</p>
+
+        <hr/>
+        
+        <p>Checkout <a href="http://www.zurb.com/playground" target="_blank">The Playground</a> for more cool stuff Zurb has done. <i class="icon-heart"></i></p>
       </div>
     </div>
   </div>

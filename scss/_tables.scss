@@ -11,10 +11,14 @@ table {
   max-width:100%;
   padding:0;
   margin:0;
+  font-size:1em;
   th, td {
     padding:$gutter;
     background:darken(white, 1%);
     word-wrap:break-word;
+  }
+  th {
+    text-align:left;
   }
   td {
     font-size:0.9em;
@@ -27,10 +31,12 @@ table {
   thead {
     tr {
       th {
-        background:$button-color;
-        color:$button-text;
         font-size:1.1em;
         font-weight:bold;
+      }
+      th, td {
+        background:$button-color;
+        color:$button-text;
       }
       td {
         font-weight:normal;
@@ -45,7 +51,7 @@ table {
   tbody {
     tr {
       th {
-
+        font-size:0.9em;
       }
       td {
         

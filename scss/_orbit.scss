@@ -1,9 +1,7 @@
 .slider {
-  > div, > a, > img {
-    display:none;
-    &:first-child {
-      display:block;
-    }
+  display:none;
+  &.orbit {
+    display:block;
   }
 }
 
@@ -11,12 +9,6 @@
   width: 1px;
   height: 1px;
   position: relative;
-  .slider {
-    > div, > a, > img {
-      display:block;
-      width:100%;
-    }
-  }
 }
 
 .orbit {

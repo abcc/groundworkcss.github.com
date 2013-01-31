@@ -71,9 +71,12 @@ code tag { color: #e05b76; }
 code span { color: #bada55; }
 code span.key { color: #e05b76; }
 code content { color: white; }
-code comment { color: #6a6a6a; }
+code function, code prop { color: #24cada; }
+code class, code method { color: #bada55; }
 code val { color: #ae81ff; }
-code class { color: #bada55; }
+code string { color: #e6db74; }
+code arg { color: #f0971e; font-style: italic; }
+code comment { color: #6a6a6a; }
 code.inline { background: #dadada; color: #282830; }
 
 nav ul li a, nav ul li a:link, nav ul li a:visited { background: #1dabb8; border: 1px solid #198d98; color: white; text-shadow: 0 0 5px rgba(0, 0, 0, 0.25); }

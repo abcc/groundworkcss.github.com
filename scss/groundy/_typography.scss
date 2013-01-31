@@ -102,14 +102,24 @@ code {
   content {
     color:$white;
   }
-  comment {
-    color:lighten($gray, 10%);
+  function, prop {
+    color:$lt-blue;
+  }
+  class, method {
+    color:$green;
   }
   val {
     color:$purple;
   }
-  class {
-    color:$green;
+  string {
+    color:$yellow;
+  }
+  arg {
+    color:$orange;
+    font-style:italic;
+  }
+  comment {
+    color:lighten($gray, 10%);
   }
   &.inline {
     background:darken($lt-gray, 5%);
