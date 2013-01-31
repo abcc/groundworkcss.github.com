@@ -1,8 +1,17 @@
+.slider {
+  > div, > a, > img {
+    display:none;
+    &:first-child {
+      display:block;
+    }
+  }
+}
+
 .orbit-wrapper {
   width: 1px;
   height: 1px;
   position: relative;
-  #slider {
+  .slider {
     > div, > a, > img {
       display:block;
       width:100%;

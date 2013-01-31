@@ -38,10 +38,10 @@
                       <li><a href="./ui-elements">UI Elements</a></li>
                       <li><a href="./icons">Icons</a></li>
                       <li><a href="./responsiveText-js">ResponsiveText</a></li>
-                      <li><a href="./popovers-js">Popovers</a></li>
-                      <li><a href="./tooltips-js">Tooltips</a></li>
                       <li><a href="./orbit-js">Orbit</a></li>
-                      <li><a href="./colorbox-js">ColorBox</a></li>
+                      <!-- <li><a href="./popovers-js">Popovers</a></li>
+                      <li><a href="./tooltips-js">Tooltips</a></li>
+                      <li><a href="./colorbox-js">ColorBox</a></li> -->
                     </ul>
                   </li>
               </ul>
@@ -65,9 +65,11 @@
               <a class="block button" href="http://twitter.com/groundworkCSS/" target="_blank">Follow <i class="icon-twitter"></i></a>
             </div>
           </div>
+          <!-- <br/>
+          <p class="align-left">Have a look at the complete set of <a href="./components" class="invert-color">CSS and Javascript components</a> that are packed into Groundwork.</p> -->
         </div>
         <div class="two thirds padded align-center">
-          <img src="./images/responsive-design-sample.png" alt="Groundwork CSS - A Responsive Design Framework" class="glow double gap-top" style="margin-bottom:-42px;" />
+          <a href="./components"><img src="./images/responsive-design-sample.png" alt="Groundwork CSS - A Responsive Design Framework" class="glow double gap-top" style="margin-bottom:-42px;" /></a>
         </div>
       </div>
     </div>
@@ -78,8 +80,10 @@
       <div class="space gap-top"></div>
       <section class="row">
         <div class="one third padded">
-          <div class="large circle"><div class="blue-3 cell"><i class="icon-plus-sign-alt"></i></div></div>
-          <h1 class="align-center">Built with SASS &amp; Compass</h1>
+          <a href="./sass-compass">
+            <div class="large circle"><div class="blue-3 cell"><i class="icon-plus-sign-alt"></i></div></div>
+            <h1 class="align-center">Built with SASS &amp; Compass</h1>
+          </a>
           <p class="pad-left pad-right">Groundwork has been built from the ground up with the incredibly powerful CSS preprocessor, Sass. Sass is an extension of CSS3, adding nested rules, variables, mixins, selector inheritance, and more. It’s translated to well-formatted, standard CSS using the command line tool or a web-framework plugin.</p>
         </div>
         <div class="one third padded">
@@ -173,4 +177,25 @@
       </div>
     </section>
   </div>
-<!-- "_scripts.kit" -->
+  <!-- scripts -->
+  <script type="text/javascript" src="./js/plugins/jquery.orbit-1.4.0.js"></script>
+  <script type="text/javascript" src="./js/plugins/jquery.responsiveText.js"></script>
+  <script type="text/javascript" src="./js/groundwork.js"></script>
+
+  <!-- google analytics -->
+  <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-17121602-5']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+
+</body>
+</html>

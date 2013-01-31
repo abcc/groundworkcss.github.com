@@ -105,6 +105,12 @@ code {
   comment {
     color:lighten($gray, 10%);
   }
+  val {
+    color:$purple;
+  }
+  class {
+    color:$green;
+  }
   &.inline {
     background:darken($lt-gray, 5%);
     color:$navy;

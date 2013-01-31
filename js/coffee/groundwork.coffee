@@ -116,4 +116,4 @@ $(document).ready ->
     $(this).text $(this).attr("data-text")
 
 $(window).load ->
-  $('#slider').orbit()
+  $('.slider').orbit()

@@ -1,11 +1,12 @@
-#
-# jQuery responsiveText - http://github.com/ghepting/responsiveText
-# 
-# Open source under the BSD License. 
-# 
-#	Copyright © 2012 Gary Hepting
-#	All rights reserved.
-#
+###
+ *
+ *  jQuery ResponsiveText by Gary Hepting - https://github.com/ghepting/responsiveText
+ *  
+ *  Open source under the BSD License. 
+ *
+ *  Copyright © 2013 Gary Hepting. All rights reserved.
+ *
+###
 
 (($) ->
   elems = []

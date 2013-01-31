@@ -577,7 +577,8 @@ blockquote { padding: 1.3em 4em 1em; color: #2b2b2d; font-size: 16.1px; font-wei
 blockquote:before { content: '\201C'; color: #cccccc; font-size: 6em; display: block; position: absolute; top: -0.15em; left: 0.1em; z-index: -1; }
 blockquote:after { content: '\201D'; color: #cccccc; font-size: 6em; display: block; position: absolute; top: -0.15em; right: 0.1em; z-index: -1; }
 
-cite { display: block; margin-top: 0.3em; font-size: 0.9em; font-weight: normal; font-style: normal; color: #505054; }
+cite { display: block; position: relative; left: -1em; margin-top: 0.25em; font-size: 0.95em; font-weight: normal; font-style: normal; color: #505054; }
+cite:before { content: '\2014'; }
 
 small, .small { font-size: 0.8em; }
 
@@ -1385,8 +1386,11 @@ ul.icons li [class^="icon-"], ul.icons li [class*=" icon-"] { width: .75em; }
 
 .icon-folder-open-alt:before { content: "\f115"; }
 
+.slider > div, .slider > a, .slider > img { display: none; }
+.slider > div:first-child, .slider > a:first-child, .slider > img:first-child { display: block; }
+
 .orbit-wrapper { width: 1px; height: 1px; position: relative; }
-.orbit-wrapper #slider > div, .orbit-wrapper #slider > a, .orbit-wrapper #slider > img { display: block; width: 100%; }
+.orbit-wrapper .slider > div, .orbit-wrapper .slider > a, .orbit-wrapper .slider > img { display: block; width: 100%; }
 
 .orbit { width: 1px; height: 1px; position: relative; overflow: hidden; margin-bottom: 17px; }
 .orbit.with-bullets { margin-bottom: 40px; }

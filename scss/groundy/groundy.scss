@@ -37,6 +37,8 @@ $red:           #c82647;
 $lt-red:        lighten($red, 15%);
 $dk-red:        darken($red, 15%);
 
+$purple:        #AE81FF;
+
 @import "web-fonts";
 @import "layout";
 @import "typography";

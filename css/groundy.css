@@ -72,6 +72,8 @@ code span { color: #bada55; }
 code span.key { color: #e05b76; }
 code content { color: white; }
 code comment { color: #6a6a6a; }
+code val { color: #ae81ff; }
+code class { color: #bada55; }
 code.inline { background: #dadada; color: #282830; }
 
 nav ul li a, nav ul li a:link, nav ul li a:visited { background: #1dabb8; border: 1px solid #198d98; color: white; text-shadow: 0 0 5px rgba(0, 0, 0, 0.25); }
@@ -163,8 +165,11 @@ button.dk-red:hover, button.dk-red:focus, .button.dk-red:hover, .button.dk-red:f
 button.dropdown ul, .button.dropdown ul, a.button.dropdown ul, a.button:link.dropdown ul, a.button:visited.dropdown ul, input[type=submit].dropdown ul, input[type=button].dropdown ul, input[type=reset].dropdown ul { -ms-filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.25)); -o-filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.25)); -moz-filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.25)); -webkit-filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.25)); filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.25)); }
 button.dropdown ul li a.disabled, .button.dropdown ul li a.disabled, a.button.dropdown ul li a.disabled, a.button:link.dropdown ul li a.disabled, a.button:visited.dropdown ul li a.disabled, input[type=submit].dropdown ul li a.disabled, input[type=button].dropdown ul li a.disabled, input[type=reset].dropdown ul li a.disabled { background: #a6a6a6; border-color: gray; color: #cccccc; }
 
-.invert-color { color: white; }
-.invert-color * { color: inherit; }
+.invert-color, a.invert-color, a.invert-color:link, a.invert-color:visited { color: white; }
+.invert-color *, a.invert-color *, a.invert-color:link *, a.invert-color:visited * { color: inherit; }
+
+a.invert-color, a.invert-color:link, a.invert-color:visited, a.invert-color:link, a.invert-color:visited { border-color: white; }
+a.invert-color:hover, a.invert-color:focus, a.invert-color:link:hover, a.invert-color:link:focus, a.invert-color:visited:hover, a.invert-color:visited:focus { color: white; border-color: white; }
 
 .white-color { color: white; }
 

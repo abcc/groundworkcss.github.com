@@ -38,10 +38,10 @@
                       <li><a href="./ui-elements">UI Elements</a></li>
                       <li><a href="./icons">Icons</a></li>
                       <li><a href="./responsiveText-js">ResponsiveText</a></li>
-                      <li><a href="./popovers-js">Popovers</a></li>
-                      <li><a href="./tooltips-js">Tooltips</a></li>
                       <li><a href="./orbit-js">Orbit</a></li>
-                      <li><a href="./colorbox-js">ColorBox</a></li>
+                      <!-- <li><a href="./popovers-js">Popovers</a></li>
+                      <li><a href="./tooltips-js">Tooltips</a></li>
+                      <li><a href="./colorbox-js">ColorBox</a></li> -->
                     </ul>
                   </li>
               </ul>
@@ -50,5 +50,177 @@
       </div>
     </div>
   </header>
+  <div class="container">
+    <div class="row">
+      <div class="one third padded">
+        <h1><i class="icon-picture"></i> Orbit</h1>
+        <p>Quite simply the best image and content slider out there. Orbit was created by the brilliant folks at <a href="http://www.zurb.com/" target="_blank">Zurb</a> and is also a component of Groundwork's <abbr title="Best friend forever">bff</abbr>, <a href="http://foundation.zurb.com/" target="_blank">Foundation</a>.</p>
+      </div>
+      <div class="two thirds padded">
+        <h2>Orbit</h2>
+        <p>Orbit is an easy to use, powerful image slider built to be responsive.</p>
+        <h2>Example Usage:</h2>
+        <code>
+<pre>&lt;<tag>div</tag> class=&quot;<span>slider</span>&quot;&gt;</pre>
+<pre>  &lt;<tag>img</tag> src=&quot;<span>http://placehold.it/1200x400/24cada/ffffff/&amp;text=Slide+1</span>&quot; alt=&quot;&quot; /&gt;</pre>
+<pre>  &lt;<tag>img</tag> src=&quot;<span>http://placehold.it/1200x400/bada55/ffffff/&amp;text=Slide+2</span>&quot; alt=&quot;&quot; /&gt;</pre>
+<pre>  &lt;<tag>img</tag> src=&quot;<span>http://placehold.it/1200x400/c82647/ffffff/&amp;text=Slide+3</span>&quot; alt=&quot;&quot; /&gt;</pre>
+<pre>  &lt;<tag>img</tag> src=&quot;<span>http://placehold.it/1200x400/198d98/ffffff/&amp;text=Slide+4</span>&quot; alt=&quot;&quot; /&gt;</pre>
+<pre>&lt;/<tag>div</tag>&gt;</pre>
+        </code>
+        <hr/>
+        <h2>Result:</h2>
+        <div class="slider">
+          <img src="http://placehold.it/780x350/24cada/ffffff/&text=Slide+1" alt="" />
+          <img src="http://placehold.it/780x350/bada55/ffffff/&text=Slide+2" alt="" />
+          <img src="http://placehold.it/780x350/c82647/ffffff/&text=Slide+3" alt="" />
+          <img src="http://placehold.it/780x350/198d98/ffffff/&text=Slide+4" alt="" />
+        </div>
+        <h2>Options</h2>
+        <p>Orbit has a number of options available, which you can specify when you call .orbit(). In the example above, we kept all of the default values, but you can optionally use any of these options:</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Options</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>animation</td>
+              <td>fade<br>
+                  horizontal-slide<br>
+                  vertical-slide<br>
+                  horizontal-push
+              </td>
+              <td>The animation used for transitions</td>
+            </tr>
+            <tr>
+              <td>animationSpeed</td>
+              <td>800</td>
+              <td>How fast animations happen</td>
+            </tr>
+            <tr>
+              <td>timer</td>
+              <td>true<br>
+                  false
+              </td>
+              <td>Do you want a timer or not?</td>
+            </tr>
+            <tr>
+              <td>resetTimerOnClick</td>
+              <td>true<br>
+                  false
+              </td>
+              <td>Reset timer or pause on click</td>
+            </tr>
+            <tr>
+              <td>advanceSpeed</td>
+              <td>4000</td>
+              <td>If timer is enables, time between transitions</td>
+            </tr>
+            <tr>
+              <td>pauseOnHover</td>
+              <td>true<br>
+                  false
+              </td>
+              <td>Do you want hover to pause slider?</td>
+            </tr>
+            <tr>
+              <td>startClockOnMouseOut</td>
+              <td>true<br>
+                  false
+              </td>
+              <td>If clock should start on MouseOut</td>
+            </tr>
+            <tr>
+              <td>startClockOnMouseOutAfter</td>
+              <td>1000</td>
+              <td>How long after MouseOut should timer start again?</td>
+            </tr>
+            <tr>
+              <td>directionalNav</td>
+              <td>true<br>
+                  false
+              </td>
+              <td>Do you want directional nav?</td>
+            </tr>
+            <tr>
+              <td>captions</td>
+              <td>true<br>
+                  false
+              </td>
+              <td>Do you want captions?</td>
+            </tr>
+            <tr>
+              <td>captionAnimation</td>
+              <td>fade<br>
+                  slideOpen<br>
+                  none
+              </td>
+              <td>Animation style for caption entrance</td>
+            </tr>
+            <tr>
+              <td>captionAnimationSpeed</td>
+              <td>800</td>
+              <td>How quickly should captions animate?</td>
+            </tr>
+            <tr>
+              <td>bullets</td>
+              <td>true<br>
+                  false
+              </td>
+              <td>Do you want bullet navigation?</td>
+            </tr>
+            <tr>
+              <td>bulletThumbs</td>
+              <td>true<br>
+                  false</td>
+              <td>Do you want thumbnails bullets?</td>
+            </tr>
+            <tr>
+              <td>bulletThumbLocation</td>
+              <td>''</td>
+              <td>Location of where thumbs will be from Orbit file</td>
+            </tr>
+            <tr>
+              <td>afterSlideChange</td>
+              <td>function(){},</td>
+              <td>Empty Function for you to use after slide change</td>
+            </tr>
+            <tr>
+              <td>fluid</td>
+              <td>true<br>
+                  false<br>
+                  Aspect Ratio
+              </td>
+              <td>Control responsiveness of Orbit slides</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <!-- scripts -->
+  <script type="text/javascript" src="./js/plugins/jquery.orbit-1.4.0.js"></script>
+  <script type="text/javascript" src="./js/plugins/jquery.responsiveText.js"></script>
+  <script type="text/javascript" src="./js/groundwork.js"></script>
 
-<!-- "_scripts.kit" -->
+  <!-- google analytics -->
+  <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-17121602-5']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+
+</body>
+</html>

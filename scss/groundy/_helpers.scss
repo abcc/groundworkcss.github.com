@@ -8,8 +8,16 @@
 // color helpers
 
 // font color
-.invert-color   { color:$white;
-  *             { color:inherit; }
+.invert-color { color:$white;
+  *           { color:inherit; }
+}
+a.invert-color, a.invert-color:link, a.invert-color:visited {
+  @extend .invert-color;
+  border-color:$white;
+  &:hover, &:focus {
+    color:$white;
+    border-color:$white;
+  }
 }
 
 .white-color    { color:$white; }

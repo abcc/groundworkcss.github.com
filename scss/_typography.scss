@@ -141,11 +141,16 @@ blockquote {
 }
 cite {
   display:block;
-  margin-top:0.3em;
-  font-size:0.9em;
+  position:relative;
+  left:-1em;
+  margin-top:0.25em;
+  font-size:0.95em;
   font-weight:normal;
   font-style:normal;
   color:lighten($font-color, 15%);
+  &:before {
+    content:'\2014';
+  }
 }
 small, .small { font-size:0.8em; }
 big, .big, .large { font-size:1.5em; }
