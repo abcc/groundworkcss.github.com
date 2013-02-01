@@ -52,7 +52,7 @@ h1.heading {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  @include font-stack('Average Sans', 'Six Caps');
+  @include font-stack('Average Sans');
   color:$navy;
 }
 

@@ -13,11 +13,11 @@ body {
 }
 ::selection {
   background:$selection-color;
-  color:white;
+  color:$selection-text;
 }
 ::-moz-selection {
   background:$selection-color;
-  color:white;
+  color:$selection-text;
 }
 * {
   outline:none;

@@ -1,7 +1,3 @@
-@font-face { font-family: 'Average Sans'; font-style: normal; font-weight: 400; src: url(http://themes.googleusercontent.com/static/fonts/averagesans/v1/dnU3R-5A_43y5bIyLztPsXZ2MAKAc2x4R1uOSeegc5U.eot); src: local("Average Sans"), local("AverageSans-Regular"), url(http://themes.googleusercontent.com/static/fonts/averagesans/v1/dnU3R-5A_43y5bIyLztPsXZ2MAKAc2x4R1uOSeegc5U.eot) format("embedded-opentype"), url(http://themes.googleusercontent.com/static/fonts/averagesans/v1/dnU3R-5A_43y5bIyLztPsXhCUOGz7vYGh680lGh-uXM.woff) format("woff"), url(http://themes.googleusercontent.com/static/fonts/averagesans/v1/dnU3R-5A_43y5bIyLztPsZS3E-kSBmtLoNJPDtbj2Pk.ttf) format("truetype"); }
-
-@font-face { font-family: 'Six Caps'; font-style: normal; font-weight: 400; src: url(http://themes.googleusercontent.com/static/fonts/sixcaps/v4/2C7zc4K0sAvvEpbjOFJYxPesZW2xOQ-xsNqO47m55DA.eot); src: local("Six Caps"), local("SixCaps"), url(http://themes.googleusercontent.com/static/fonts/sixcaps/v4/2C7zc4K0sAvvEpbjOFJYxPesZW2xOQ-xsNqO47m55DA.eot) format("embedded-opentype"), url(http://themes.googleusercontent.com/static/fonts/sixcaps/v4/tMrhQDUBAHnnGuM33-yobPesZW2xOQ-xsNqO47m55DA.woff) format("woff"), url(http://themes.googleusercontent.com/static/fonts/sixcaps/v4/o_4b_kcfA7KqUo2NQLuC6HYhjbSpvc47ee6xR_80Hnw.ttf) format("truetype"); }
-
 body { background: #e7e7e7; color: #2c2c2f; }
 
 hr { margin: 10px auto; border: none; border-bottom: 1px solid #c7c7c7; }
@@ -53,7 +49,7 @@ h1.heading .logo { display: inline-block; width: 1em; height: 1em; position: rel
 .hero { text-shadow: 0 0 5px rgba(0, 0, 0, 0.25); }
 .hero .large.button { line-height: 2.5; }
 
-h1, h2, h3, h4, h5, h6 { /* might add inline-font-files() at some point */ font-family: Average Sans, Six Caps, Arial, Helvetica, Geneva, sans-serif; color: #282830; }
+h1, h2, h3, h4, h5, h6 { /* might add inline-font-files() at some point */ font-family: Average Sans, Arial, Helvetica, Geneva, sans-serif; color: #282830; }
 
 p a, p a:link, p a:visited, ul a, ul a:link, ul a:visited, ol a, ol a:link, ol a:visited, dl a, dl a:link, dl a:visited { color: #282830; border-bottom: 1px dotted #282830; -ms-transition: "color 0.25s, border-color 0.25s"; -o-transition: "color 0.25s, border-color 0.25s"; -moz-transition: "color 0.25s, border-color 0.25s"; -webkit-transition: "color 0.25s, border-color 0.25s"; transition: "color 0.25s, border-color 0.25s"; }
 p a:hover, p a:focus, p a:link:hover, p a:link:focus, p a:visited:hover, p a:visited:focus, ul a:hover, ul a:focus, ul a:link:hover, ul a:link:focus, ul a:visited:hover, ul a:visited:focus, ol a:hover, ol a:focus, ol a:link:hover, ol a:link:focus, ol a:visited:hover, ol a:visited:focus, dl a:hover, dl a:focus, dl a:link:hover, dl a:link:focus, dl a:visited:hover, dl a:visited:focus { color: #198d98; border-bottom: 1px dotted #198d98; }
