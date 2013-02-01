@@ -7,18 +7,26 @@
 @import "variables";
 @import "mixins";
 
-// components
+// set the stage
 @import "reset";
-@import "grid";
 @import "global";
+
+// webfonts
+@import "webfonts";
+
+// components
+@import "grid";
+@import "typography";
 @import "buttons";
+@import "forms";
 @import "navigation";
 @import "tabs";
 @import "ui-elements";
-@import "forms";
-@import "typography";
-@import "webfonts";
-@import "layout";
-@import "responsive";
-@import "font-awesome";
 @import "orbit";
+@import "font-awesome";
+
+// helper classes
+@import "layout";
+
+// responsive adjustments
+@import "responsive";
