@@ -74,17 +74,37 @@ ul {
   list-style-type:circle;
 }
 ul.list {
-  list-style-image:url('../images/check_mark.png');
-  margin-left:2em;
+  list-style:none;
+  margin-left:0;
+  li {
+    &:before {
+      content:'\f00c';
+      display: inline-block;
+      width: 1.1em;
+      margin-right:0.25em;
+      font-family: FontAwesome;
+      font-weight: normal;
+      font-style: normal;
+      font-size:1.1em;
+      text-decoration: inherit;
+      -webkit-font-smoothing: antialiased;
+      line-height: normal;
+      vertical-align: baseline;
+      background-image: none;
+      background-position: 0% 0%;
+      background-repeat: repeat;
+      margin-top: 0;
+    }
+  }
 }
 ol.list {
   counter-reset:li;
   list-style:none;
-  margin-left:2em;
+  margin-left:1.5em;
 }
 ol.list > li {
     position:relative;
-    padding:4px 6px;
+    padding:2px 6px 0;
 }
 ol.list > li:before {
     content:counter(li);

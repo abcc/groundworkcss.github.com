@@ -68,8 +68,13 @@ p, ul, ol, dl {
   }
 }
 
+
 ul.list {
-  list-style-image:url('../images/groundy/check_mark.png');
+  li {
+    &:before {
+      color:$blue;
+    }
+  }
 }
 
 ol.list > li:before {
