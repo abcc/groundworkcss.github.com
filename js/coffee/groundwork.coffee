@@ -1,6 +1,6 @@
 $(document).ready ->
 
-  # navigation dropdowns
+  # navigation menus
   delay = ''
   $('nav > ul > li.menu').on
     mouseenter: (e) ->
@@ -23,6 +23,13 @@ $(document).ready ->
             $this.toggleClass('on')
           e.preventDefault()
           return false
+    tap: (e) ->
+      if $(e.target).parent('li.menu').size() > 0
+        $this = $(this)
+        $(this).children('ul').slideToggle 300, ->
+          $this.toggleClass('on')
+        e.preventDefault()
+        return false
   
   # select all text on invalid input field entries
   $('.error input, .error textarea, 

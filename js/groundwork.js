@@ -33,6 +33,17 @@
             return false;
           }
         }
+      },
+      tap: function(e) {
+        var $this;
+        if ($(e.target).parent('li.menu').size() > 0) {
+          $this = $(this);
+          $(this).children('ul').slideToggle(300, function() {
+            return $this.toggleClass('on');
+          });
+          e.preventDefault();
+          return false;
+        }
       }
     });
     $('.error input, .error textarea, \
