@@ -1,17 +1,28 @@
 $(document).ready ->
 
-  # delayed close of navigation dropdowns
+  # navigation dropdowns
   delay = ''
-  $('header nav > ul > li').on
-    mouseenter: ->
-      clearTimeout(delay)
-      $('header nav > ul > li').removeClass('on')
-      $(this).addClass('on')
-    mouseleave: ->
-      $this = $(this)
-      delay = setTimeout (->
-        $('header nav > ul > li').removeClass('on')
-      ), 350
+  $('nav > ul > li.menu').on
+    mouseenter: (e) ->
+      if $(window).width() > 768
+        clearTimeout(delay)
+        $('nav > ul > li').removeClass('on')
+        $('nav > ul > li > ul').hide()
+        $(this).addClass('on')
+    mouseleave: (e) ->
+      if $(window).width() > 768
+        delay = setTimeout (->
+          $('nav > ul > li').removeClass('on')
+          $('nav > ul > li > ul').hide()
+        ), 350
+    click: (e) ->
+      if $(window).width() < 768
+        if $(e.target).parent('li.menu').size() > 0
+          $this = $(this)
+          $(this).children('ul').slideToggle 300, ->
+            $this.toggleClass('on')
+          e.preventDefault()
+          return false
   
   # select all text on invalid input field entries
   $('.error input, .error textarea, 

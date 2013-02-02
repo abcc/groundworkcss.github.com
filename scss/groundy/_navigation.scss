@@ -173,11 +173,6 @@ nav {
       &:last-child a {
         border-radius:0 0.4em 0.4em 0;
       }
-      &:hover, &:focus, &.on {
-        ul {
-          display:block;
-        }
-      }
     }
     ul {
       @include filter-shadow(rgba(0,0,0,0.75), 10px, 0, 5px);

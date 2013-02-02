@@ -40,9 +40,35 @@ nav {
           }
         }
       }
-      &:hover, &:focus, &.on {
+      &.menu {
+        > a {
+          &:after {
+            content:'\f0d7'; // \f0c9
+            display: inline-block;
+            width: 1.1em;
+            margin-left:0.25em;
+            font-family: FontAwesome;
+            font-weight: normal;
+            font-style: normal;
+            font-size:1.1em;
+            text-decoration: inherit;
+            -webkit-font-smoothing: antialiased;
+            line-height: normal;
+            vertical-align: baseline;
+            background-image: none;
+            background-position: 0% 0%;
+            background-repeat: repeat;
+            margin-top: 0;
+          }
+        }
+      }
+      &.on {
+        a {
+          border-bottom-right-radius:0 !important;
+          border-bottom-left-radius:0 !important;
+        }
         ul {
-          display:block;
+          display:block !important;
         }
       }
       &:first-child {
@@ -161,6 +187,19 @@ nav {
                 @include rounded(0 0 $radius $radius !important);
               }
             }
+          }
+        }
+      }
+    }
+  }
+}
+.no-js {
+  nav {
+    ul {
+      li.menu {
+        &:hover, &:focus {
+          ul {
+            display:block !important;
           }
         }
       }
