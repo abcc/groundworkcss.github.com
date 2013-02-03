@@ -88,7 +88,7 @@ nav {
       left:100%;
       top:-1px;
       width:auto;
-      z-index:10;
+      z-index:99;
       li {
         a, a:link, a:visited {
           @include rounded(0 !important);
@@ -132,7 +132,7 @@ nav {
         left:auto;
         top:auto;
         min-width:100%;
-        z-index:10;
+        z-index:99;
         li {
           a, a:link, a:visited {
             @include rounded(0 !important);
@@ -176,7 +176,7 @@ nav {
           left:auto;
           top:auto;
           min-width:100%;
-          z-index:10;
+          z-index:99;
           li {
             display:block;
             a, a:link, a:visited {

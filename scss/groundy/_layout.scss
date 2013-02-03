@@ -21,10 +21,19 @@ hr {
 .border-top, 
 .border-bottom { border-color:$md-gray; }
 
-.demo {
+.layout {
+  padding:$gutter;
+  background:$dk-blue;
+  @include rounded($radius);
+}
+
+.demo, .layout {
   .row {
     margin-bottom:10px;
     background:lighten($blue-1, 20%);
+    &:last-child {
+      margin-bottom:0;
+    }
   }
   .column, .columns, 
   .whole, 
@@ -40,11 +49,17 @@ hr {
   .eleventh, .elevenths, 
   .twelfth, .twelfths {
     text-align:center;
-    padding:$gutter 0;
+    min-height:1em;
+    padding-top:$gutter;
+    padding-bottom:$gutter;
     background:$blue-1;
     border:1px dashed $white;
     @include drop-shadow(rgba(0,0,0,0.25), 5px, 0, 0);
     color:$white;
+    h1,h2,h3,h4,h5,h6 {
+      color:$white;
+      margin:0;
+    }
     font-size:0.8em;
     &.small-tablet {
       background:$blue-2;

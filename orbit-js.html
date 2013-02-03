@@ -1,12 +1,4 @@
-<!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+@import "_doctype.kit" -->
   <title>Groundwork CSS &hearts;</title>
   <!-- Modernizr -->
   <script src="js/libs/modernizr-2.6.2.min.js"></script>
@@ -25,14 +17,14 @@
   <header class="white band padded">
     <div class="container">
       <div class="row">
-        <div class="one third">
-          <h1 class="big responsive heading" data-scale="6.95" data-min="20" data-max="120" style="font-size:51px;"><a href="./"><span class="logo"></span> Groundwork<sup>Beta</sup></a></h1>
+        <div class="one half">
+          <h1 class="big responsive heading" data-scale="6.95" data-min="20" data-max="120" style="font-size:86px;"><a href="./"><span class="logo"></span> Groundwork<sup>Beta</sup></a></h1>
         </div>
-        <div class="two thirds double pad-top">
-          <nav class="small-tablet">
-              <ul class="row">
-                  <li class="one small-tablet half"><a href="./">Home</a></li
-                  ><li class="menu one small-tablet half"><a href="./components">Components</a>
+        <div class="one half double pad-top">
+          <nav class="inline pull-right">
+              <ul>
+                  <li><a href="./">Home</a></li
+                  ><li class="menu"><a href="./components">Components</a>
                     <ul>
                       <li><a href="./grid">Grid</a></li>
                       <li><a href="./media-queries">Media Queries</a></li>
@@ -49,7 +41,11 @@
                       <li><a href="./tooltips-js">Tooltips</a></li>
                       <li><a href="./colorbox-js">ColorBox</a></li> -->
                     </ul>
-                  </li>
+                  </li
+                  ><li><a href="./templates">Templates</a></li
+                  ><!-- <li><a href="http://github.com/groundworkcss/groundwork" target="_blank"><i class="icon-github-alt"></i></a></li
+                  ><li><a href="http://twitter.com/groundworkcss" target="_blank"><i class="icon-twitter"></i></a></li
+                  > --><li><a href="https://github.com/groundworkcss/groundwork/archive/master.zip"><i class="icon-download-alt"></i></a></li>
               </ul>
           </nav>
         </div>
@@ -83,7 +79,7 @@
 <pre>&lt;/<tag>script</tag>&gt;</pre>
 </content>
         </code>
-        <hr/>
+<!--         <hr/>
         <h2>Result:</h2>
         <div id="exampleSlider">
           <div class="callout">
@@ -96,7 +92,7 @@
             <p>This slide has HTML content instead of an image and has also had <code class="inline">.warning.callout</code> applied to it.</p>
             <p><a href="#" class="large button">Click Me</a></p>
           </div>
-        </div>
+        </div> -->
         <script>
           $(window).load(function() {
             $('#exampleSlider').orbit();
