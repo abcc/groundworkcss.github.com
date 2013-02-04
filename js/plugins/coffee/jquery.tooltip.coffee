@@ -87,12 +87,30 @@
       $this.attr('role','tooltip').attr('data-title',$this.attr('title'))
       $this.removeAttr "title"        # remove title attribute
         
-      # hover on trigger element
-      $this.bind
-        mouseenter: (e) ->
-          showtooltip(e)                    # show tooltip
-        mouseleave: ->
-          clearTimeout(delayShow)           # cancel delay show
-          closetooltip()                    # close tooltip
+      if $this.is('input') || $this.is('select') || $this.is('textarea')
+        # focus behavior
+        $this.bind
+          focus: (e) ->
+            showtooltip(e)                    # show tooltip
+            $this.bind                        # bind mouseenter
+              mouseenter: (e) ->
+                showtooltip(e)                # show tooltip
+          blur: (e) ->
+            clearTimeout(delayShow)           # cancel delay show
+            closetooltip()                    # close tooltip
+            $this.unbind('mouseenter')        # unbind mouseenter
+      else
+        # hover and focus behavior
+        $this.bind
+          mouseenter: (e) ->
+            showtooltip(e)                    # show tooltip
+          mouseleave: ->
+            clearTimeout(delayShow)           # cancel delay show
+            closetooltip()                    # close tooltip
+          focus: (e) ->
+            showtooltip(e)                    # show tooltip
+          blur: (e) ->
+            clearTimeout(delayShow)           # cancel delay show
+            closetooltip()                    # close tooltip
 
 ) jQuery

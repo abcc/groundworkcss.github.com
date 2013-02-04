@@ -46,6 +46,29 @@
         }
       }
     });
+    $('.tabs > ul > li > a').not('.disabled').click(function(e) {
+      var tabs;
+      tabs = $(this).parents('.tabs');
+      tabs.find('> ul li a').removeClass('active');
+      $(this).addClass('active');
+      tabs.children('div').removeClass('active');
+      return tabs.children($(this).attr('href')).addClass('active');
+    });
+    $('.responsive').each(function(index, object) {
+      var max, min, scale;
+      scale = 10;
+      min = 10;
+      max = 200;
+      scale = parseFloat($(this).attr('data-scale') || scale);
+      min = parseFloat($(this).attr('data-min') || min);
+      max = parseFloat($(this).attr('data-max') || max);
+      return $(object).responsiveText({
+        agressiveness: scale,
+        minSize: min,
+        maxSize: max
+      });
+    });
+    $('.tooltip[title]').tooltip();
     $('.error input, .error textarea, \
      .invalid input, .invalid textarea, \
      input.error, textarea.error, \
@@ -70,28 +93,6 @@
           return $(this).removeClass('unselected');
         }
       }
-    });
-    $('.tabs > ul > li > a').not('.disabled').click(function(e) {
-      var tabs;
-      tabs = $(this).parents('.tabs');
-      tabs.find('> ul li a').removeClass('active');
-      $(this).addClass('active');
-      tabs.children('div').removeClass('active');
-      return tabs.children($(this).attr('href')).addClass('active');
-    });
-    $('.responsive').each(function(index, object) {
-      var max, min, scale;
-      scale = 10;
-      min = 10;
-      max = 200;
-      scale = parseFloat($(this).attr('data-scale') || scale);
-      min = parseFloat($(this).attr('data-min') || min);
-      max = parseFloat($(this).attr('data-max') || max);
-      return $(object).responsiveText({
-        agressiveness: scale,
-        minSize: min,
-        maxSize: max
-      });
     });
     $('.demo > .row > .column, \
      .demo > .row > .columns,\
@@ -157,5 +158,384 @@
   $(window).load(function() {
     return $('.slider').orbit();
   });
+
+  /* --------------------------------------------
+       Begin jquery.popover.coffee
+  --------------------------------------------
+  */
+
+
+  /*
+   *
+   *  jQuery Popovers by Gary Hepting - https://github.com/ghepting/jquery-popovers
+   *  
+   *  Open source under the BSD License. 
+   *
+   *  Copyright © 2013 Gary Hepting. All rights reserved.
+   *
+  */
+
+
+  (function($) {
+    return $.fn.popover = function(options) {
+      var closePopover, defaults, delayAdjust, delayHide, getElementPosition, popover, resetPopover, setPosition, showPopover, trigger;
+      defaults = {
+        hover: false,
+        click: true,
+        resize: true,
+        scroll: true,
+        topOffset: 0,
+        delay: 500,
+        speed: 100
+      };
+      options = $.extend(defaults, options);
+      popover = $('#popover');
+      delayHide = '';
+      delayAdjust = '';
+      trigger = '';
+      getElementPosition = function(el) {
+        var bottom, left, offset, right, top, win;
+        offset = el.offset();
+        win = $(window);
+        return {
+          top: top = offset.top - win.scrollTop(),
+          left: left = offset.left - win.scrollLeft(),
+          bottom: bottom = win.height() - top - el.outerHeight(),
+          right: right = win.width() - left - el.outerWidth()
+        };
+      };
+      resetPopover = function(resize) {
+        popover.css({
+          top: 'auto',
+          right: 'auto',
+          bottom: 'auto',
+          left: 'auto'
+        });
+        if (resize) {
+          popover.css({
+            width: 'auto'
+          });
+        }
+        popover.removeClass('top');
+        popover.removeClass('right');
+        popover.removeClass('bottom');
+        return popover.removeClass('left');
+      };
+      setPosition = function(trigger, skipAnimation, resize) {
+        var attrs, coords, height, width;
+        if (trigger) {
+          if (resize) {
+            resetPopover(true);
+          } else {
+            resetPopover();
+          }
+          coords = getElementPosition(trigger);
+          if (popover.outerWidth() > ($(window).width() - 20)) {
+            popover.css('width', $(window).width() - 20);
+          }
+          popover.css('max-width', Math.min($(window).width() - parseInt($('body').css('padding-left')) - parseInt($('body').css('padding-right')), parseInt(popover.css('max-width'))));
+          width = popover.outerWidth();
+          height = popover.outerHeight();
+          attrs = {};
+          if (coords.left <= coords.right) {
+            popover.addClass('left');
+            attrs.left = coords.left;
+          } else {
+            popover.addClass('right');
+            attrs.right = coords.right;
+          }
+          if ((coords.top - options.topOffset) > (height + 20)) {
+            popover.addClass('top');
+            attrs.top = trigger.offset().top - height - 20;
+          } else {
+            popover.addClass('bottom');
+            attrs.top = trigger.offset().top + 15;
+          }
+          popover.css(attrs);
+          if (skipAnimation) {
+            return popover.css({
+              top: '+=10'
+            });
+          }
+        }
+      };
+      closePopover = function() {
+        $('.popover-trigger').removeClass('popover-trigger');
+        return popover.removeClass('sticky').remove();
+      };
+      showPopover = function(e) {
+        var tip;
+        trigger = $(e.target);
+        if (!trigger.hasClass('popover-trigger')) {
+          closePopover();
+          trigger.addClass('popover-trigger');
+        }
+        tip = $('#' + trigger.attr('data-content')).html();
+        popover = $("<div id=\"popover\"></div>");
+        if (!tip || tip === "") {
+          return false;
+        }
+        trigger.removeAttr("title");
+        popover.css("opacity", 0).html(tip).appendTo("body");
+        setPosition(trigger);
+        popover.animate({
+          top: "+=10",
+          opacity: 1
+        }, options.speed);
+        popover.bind("click", function(e) {
+          if (e.target.tagName !== 'a') {
+            popover.addClass('sticky');
+            e.stopPropagation();
+            e.preventDefault();
+            return false;
+          }
+        });
+        popover.find('.close').bind("click", function(e) {
+          $('.popover-trigger').removeClass('popover-trigger');
+          popover.removeClass('sticky').remove();
+          e.stopPropagation();
+          e.preventDefault();
+          return false;
+        });
+        return popover.bind({
+          mouseenter: function() {
+            return clearTimeout(delayHide);
+          },
+          mouseleave: function() {
+            if (!popover.hasClass('sticky')) {
+              return delayHide = setTimeout((function() {
+                $('.popover-trigger').removeClass('popover-trigger');
+                return popover.removeClass('sticky').remove();
+              }), 500);
+            }
+          }
+        });
+      };
+      return this.each(function() {
+        var $this;
+        $this = $(this);
+        if (options.hover) {
+          $this.bind({
+            mouseenter: function(e) {
+              trigger = $(e.target);
+              clearTimeout(delayHide);
+              if (!$this.hasClass('popover-trigger') && !popover.hasClass('sticky')) {
+                return showPopover(e);
+              }
+            },
+            mouseleave: function() {
+              if (!popover.hasClass('sticky')) {
+                return delayHide = setTimeout(function() {
+                  return closePopover();
+                }, options.delay);
+              }
+            }
+          });
+        }
+        if (options.click) {
+          $this.bind("click", function(e) {
+            trigger = $(e.target);
+            if (!trigger.hasClass('popover-trigger')) {
+              closePopover();
+              showPopover(e);
+            }
+            popover.addClass('sticky');
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+          });
+        }
+        if (options.resize) {
+          $(window).resize(function() {
+            clearTimeout(delayAdjust);
+            return delayAdjust = setTimeout(function() {
+              return setPosition(trigger, true, true);
+            }, 100);
+          });
+        }
+        if (options.scroll) {
+          $(window).scroll(function() {
+            return setPosition(trigger, true);
+          });
+        }
+        return $('html, body').bind("click", function(e) {
+          $('.popover-trigger').removeClass('popover-trigger');
+          return popover.removeClass('sticky').remove();
+        });
+      });
+    };
+  })(jQuery);
+
+  /* --------------------------------------------
+       Begin jquery.responsiveText.coffee
+  --------------------------------------------
+  */
+
+
+  /*
+   *
+   *  jQuery ResponsiveText by Gary Hepting - https://github.com/ghepting/responsiveText
+   *  
+   *  Open source under the BSD License. 
+   *
+   *  Copyright © 2013 Gary Hepting. All rights reserved.
+   *
+  */
+
+
+  (function($) {
+    var elems;
+    elems = [];
+    $.fn.responsiveText = function(options) {
+      var settings;
+      settings = {
+        agressiveness: options.agressiveness || 10,
+        minSize: options.minSize || Number.NEGATIVE_INFINITY,
+        maxSize: options.maxSize || Number.POSITIVE_INFINITY
+      };
+      return this.each(function() {
+        var elem;
+        elem = $(this);
+        elem.attr('data-scale', settings.agressiveness);
+        elem.attr('data-min', settings.minSize);
+        elem.attr('data-max', settings.maxSize);
+        elem.css("font-size", Math.floor(Math.max(Math.min(elem.width() / settings.agressiveness, parseFloat(settings.maxSize)), parseFloat(settings.minSize))));
+        return elems.push(elem);
+      });
+    };
+    return $(window).on("resize", function() {
+      return $(elems).each(function() {
+        var elem;
+        elem = $(this);
+        return elem.css("font-size", Math.floor(Math.max(Math.min(elem.width() / (elem.attr('data-scale')), parseFloat(elem.attr('data-max'))), parseFloat(elem.attr('data-min')))));
+      });
+    });
+  })(jQuery);
+
+  /* --------------------------------------------
+       Begin jquery.tooltip.coffee
+  --------------------------------------------
+  */
+
+
+  /*
+   *
+   *  jQuery Tooltips by Gary Hepting - https://github.com/ghepting/jquery-tooltips
+   *  
+   *  Open source under the BSD License. 
+   *
+   *  Copyright © 2013 Gary Hepting. All rights reserved.
+   *
+  */
+
+
+  (function($) {
+    return $.fn.tooltip = function(options) {
+      var closetooltip, defaults, delayShow, getElementPosition, setPosition, showtooltip, tooltip, trigger;
+      defaults = {
+        topOffset: 0,
+        delay: 100,
+        speed: 100
+      };
+      options = $.extend(defaults, options);
+      tooltip = $('#tooltip');
+      delayShow = '';
+      trigger = '';
+      getElementPosition = function(el) {
+        var bottom, left, offset, right, top, win;
+        offset = el.offset();
+        win = $(window);
+        return {
+          top: top = offset.top - win.scrollTop(),
+          left: left = offset.left - win.scrollLeft(),
+          bottom: bottom = win.height() - top - el.outerHeight(),
+          right: right = win.width() - left - el.outerWidth()
+        };
+      };
+      closetooltip = function() {
+        return tooltip.remove();
+      };
+      setPosition = function(trigger) {
+        var attrs, coords, height, width;
+        coords = getElementPosition(trigger);
+        if (tooltip.outerWidth() > ($(window).width() - 20)) {
+          tooltip.css('width', $(window).width() - 20);
+        }
+        attrs = {};
+        tooltip.css('max-width', Math.min($(window).width() - parseInt($('body').css('padding-left')) - parseInt($('body').css('padding-right')), parseInt(tooltip.css('max-width'))));
+        width = tooltip.outerWidth();
+        height = tooltip.outerHeight();
+        if (coords.left <= coords.right) {
+          tooltip.addClass('left');
+          attrs.left = coords.left;
+        } else {
+          tooltip.addClass('right');
+          attrs.right = coords.right;
+        }
+        if ((coords.top - options.topOffset) > (height + 20)) {
+          tooltip.addClass('top');
+          attrs.top = (trigger.offset().top - height) - 20;
+        } else {
+          tooltip.addClass('bottom');
+          attrs.top = trigger.offset().top + 15;
+        }
+        return tooltip.css(attrs);
+      };
+      showtooltip = function(e) {
+        closetooltip();
+        clearTimeout(delayShow);
+        return delayShow = setTimeout(function() {
+          trigger = $(e.target);
+          tooltip = $("<div id=\"tooltip\"></div>");
+          tooltip.css("opacity", 0).html(trigger.attr('data-title')).appendTo("body");
+          setPosition(trigger);
+          return tooltip.animate({
+            top: "+=10",
+            opacity: 1
+          }, options.speed);
+        }, options.delay);
+      };
+      return this.each(function() {
+        var $this;
+        $this = $(this);
+        $this.attr('role', 'tooltip').attr('data-title', $this.attr('title'));
+        $this.removeAttr("title");
+        if ($this.is('input') || $this.is('select') || $this.is('textarea')) {
+          return $this.bind({
+            focus: function(e) {
+              showtooltip(e);
+              return $this.bind({
+                mouseenter: function(e) {
+                  return showtooltip(e);
+                }
+              });
+            },
+            blur: function(e) {
+              clearTimeout(delayShow);
+              closetooltip();
+              return $this.unbind('mouseenter');
+            }
+          });
+        } else {
+          return $this.bind({
+            mouseenter: function(e) {
+              return showtooltip(e);
+            },
+            mouseleave: function() {
+              clearTimeout(delayShow);
+              return closetooltip();
+            },
+            focus: function(e) {
+              return showtooltip(e);
+            },
+            blur: function(e) {
+              clearTimeout(delayShow);
+              return closetooltip();
+            }
+          });
+        }
+      });
+    };
+  })(jQuery);
 
 }).call(this);

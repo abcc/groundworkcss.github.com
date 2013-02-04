@@ -29,11 +29,7 @@ hr {
 
 .demo, .layout {
   .row {
-    margin-bottom:10px;
     background:lighten($blue-1, 20%);
-    &:last-child {
-      margin-bottom:0;
-    }
   }
   .column, .columns, 
   .whole, 

@@ -44,6 +44,7 @@
                       <li><a href="./ui-elements">UI Elements</a></li>
                       <li><a href="./icons">Icons</a></li>
                       <li><a href="./responsiveText-js">ResponsiveText</a></li>
+                      <li><a href="./tooltips-js">Tooltips</a></li>
                       <li><a href="./orbit-js">Orbit</a></li>
                       <!-- <li><a href="./popovers-js">Popovers</a></li>
                       <li><a href="./tooltips-js">Tooltips</a></li>
@@ -60,10 +61,45 @@
       </div>
     </div>
   </header>
-
+  <div class="container">
+    <div class="row">
+      <div class="one third padded">
+        <h1><i class="icon-info-sign"></i> Tooltips</h1>
+        <p>Responsive tooltips with smart positioning, resizing with window resize and smart repositioning on window scroll.</p>
+      </div>
+      <div class="two thirds padded">
+        <h2><i class="icon-info-sign"></i> Tooltips</h2>
+        <p>Tooltips can be attached to any element by adding class <code class="inline">.tooltip</code> and adding a <code class="inline">title</code> attribute. When you hover over or focus on the element, the tooltip is displayed.</p>
+        <p>Tooltips are useful for displaying additional instruction on form elements, describing the behavior of a link or button and much more.</p>
+        <hr/>
+        <h6>Example Usage:</h6>
+        <code>
+<pre>&lt;<tag>input</tag> class=&quot;<span>tooltip</span>&quot; title=&quot;<span>Enter your first &amp; last name</span>&quot; placeholder=&quot;<span>Name</span>&quot; /&gt;</pre>
+        </code>
+        <hr/>
+        <h6>Result:</h6>
+        <input class="inline tooltip" title="Enter your first & last name" placeholder="Name" />
+        <hr/>
+        <h6>Example Usage:</h6>
+        <code>
+<pre>&lt;<tag>a</tag> href=&quot;<span>#</span>&quot; class=&quot;<span>tooltip</span>&quot; title=&quot;<span>This tooltip comes from the `title` attribute of this link</span>&quot;&gt;<content>Show me a tooltip!</content>&lt;/<tag>a</tag>&gt;</pre>
+        </code>
+        <hr/>
+        <h6>Result:</h6>
+        <a href="#" class="tooltip" title="This tooltip comes from the `title` attribute of this link">Show me a tooltip!</a>
+        <hr/>
+        <h6>Example Usage:</h6>
+        <code>
+<pre>&lt;<tag>button</tag> class=&quot;<span>tooltip</span>&quot; title=&quot;<span>This tooltip comes from the `title` attribute of this button</span>&quot;&gt;<content>Show me a tooltip!</content>&lt;/<tag>button</tag>&gt;</pre>
+        </code>
+        <hr/>
+        <h6>Result:</h6>
+        <button class="tooltip" title="This tooltip comes from the `title` attribute of this button">Show me a tooltip!</button>
+      </div>
+    </div>
+  </div>
   <!-- scripts -->
   <script type="text/javascript" src="./js/plugins/jquery.orbit-1.4.0.js"></script>
-  <script type="text/javascript" src="./js/plugins/jquery.responsiveText.js"></script>
   <script type="text/javascript" src="./js/groundwork.js"></script>
 
   <!-- google analytics -->

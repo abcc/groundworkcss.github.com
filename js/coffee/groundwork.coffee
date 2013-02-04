@@ -30,7 +30,31 @@ $(document).ready ->
           $this.toggleClass('on')
         e.preventDefault()
         return false
-  
+ 
+  # tabs
+  $('.tabs > ul > li > a').not('.disabled').click (e) ->
+    tabs = $(this).parents('.tabs')
+    tabs.find('> ul li a').removeClass('active')
+    $(this).addClass('active')
+    tabs.children('div').removeClass('active')
+    tabs.children($(this).attr('href')).addClass('active')
+
+  # responsive headings
+  $('.responsive').each (index, object) ->
+    scale = 10
+    min = 10
+    max = 200
+    scale = parseFloat $(this).attr('data-scale') || scale
+    min = parseFloat $(this).attr('data-min') || min
+    max = parseFloat $(this).attr('data-max') || max
+    $(object).responsiveText
+      agressiveness: scale,
+      minSize: min,
+      maxSize: max
+
+  # tooltips
+  $('.tooltip[title]').tooltip()
+ 
   # select all text on invalid input field entries
   $('.error input, .error textarea, 
      .invalid input, .invalid textarea, 
@@ -52,27 +76,6 @@ $(document).ready ->
         $(this).addClass('unselected')
       else
         $(this).removeClass('unselected')
-
-  # tabs
-  $('.tabs > ul > li > a').not('.disabled').click (e) ->
-    tabs = $(this).parents('.tabs')
-    tabs.find('> ul li a').removeClass('active')
-    $(this).addClass('active')
-    tabs.children('div').removeClass('active')
-    tabs.children($(this).attr('href')).addClass('active')
-
-  # responsive headings
-  $('.responsive').each (index, object) ->
-    scale = 10
-    min = 10
-    max = 200
-    scale = parseFloat $(this).attr('data-scale') || scale
-    min = parseFloat $(this).attr('data-min') || min
-    max = parseFloat $(this).attr('data-max') || max
-    $(object).responsiveText
-      agressiveness: scale,
-      minSize: min,
-      maxSize: max
 
   # add titles to demo grid cells
   $('.demo > .row > .column, 
