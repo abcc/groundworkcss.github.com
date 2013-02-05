@@ -167,11 +167,11 @@ hr {
   background-size:275%;
   background-repeat:no-repeat;
   @include filter-shadow(rgba(0,0,0,0.35), 5px, 0, 0); // color, blur, x, y
-  &.chrome            { background-image:url('../images/browsers/chrome.svg'); }
-  &.firefox           { background-image:url('../images/browsers/firefox.svg'); }
-  &.internet_explorer { background-image:url('../images/browsers/ie.svg'); }
-  &.opera             { background-image:url('../images/browsers/opera.svg'); }
-  &.safari            { background-image:url('../images/browsers/safari.svg'); }
+  &.chrome            { @include data-image('browsers/chrome.svg'); }
+  &.firefox           { @include data-image('browsers/firefox.svg'); }
+  &.internet_explorer { @include data-image('browsers/ie.svg'); }
+  &.opera             { @include data-image('browsers/opera.svg'); }
+  &.safari            { @include data-image('browsers/safari.svg'); }
 }
 
 .the-icons {

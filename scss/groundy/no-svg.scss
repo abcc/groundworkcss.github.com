@@ -5,18 +5,21 @@
 
 
 
+@import "../variables";  // include Groundwork variables
+@import "../mixins";     // include Groundwork mixins
+
 h1.heading {
   .logo {
-    background:transparent url('../images/groundwork-logo_128x128.png') center center no-repeat;
+    @include data-image('groundwork-logo_128x128.png');
     background-size:100% 100%;
   }
 }
 
 .browser {
   background-size:100% 100%;
-  &.chrome            { background-image:url('../images/browsers/chrome.png'); }
-  &.firefox           { background-image:url('../images/browsers/firefox.png'); }
-  &.internet_explorer { background-image:url('../images/browsers/ie.png'); }
-  &.opera             { background-image:url('../images/browsers/opera.png'); }
-  &.safari            { background-image:url('../images/browsers/safari.png'); }
+  &.chrome            { @include data-image('browsers/chrome.png'); }
+  &.firefox           { @include data-image('browsers/firefox.png'); }
+  &.internet_explorer { @include data-image('browsers/ie.png'); }
+  &.opera             { @include data-image('browsers/opera.png'); }
+  &.safari            { @include data-image('browsers/safari.png'); }
 }

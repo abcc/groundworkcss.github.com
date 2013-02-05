@@ -32,7 +32,7 @@ h1.heading {
     height:1em;
     position:relative;
     top:0.1em;
-    background:transparent url('../images/groundwork-logo.svg') bottom right no-repeat;
+    @include data-image('groundwork-logo.svg');
     background-size:100% 100%;
     text-indent:-9999em;
     overflow:hidden;
