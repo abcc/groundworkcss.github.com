@@ -20,6 +20,26 @@
   <!--[if IE 7]>
   <link type="text/css" rel="stylesheet" href="./css/font-awesome-ie7.min.css">
   <![endif]-->
+  <script type="text/javascript">
+    // (function(){
+    //   var datauri = new Image();
+    //   datauri.onerror = function() {
+    //       Modernizr.addTest('datauri', function () { return false; });
+    //   };  
+    //   datauri.onload = function() {
+    //       Modernizr.addTest('datauri', function () { return (datauri.width == 1 && datauri.height == 1); });
+    //       Modernizr.load({
+    //         test: Modernizr.datauri,
+    //         nope: './css/no-datauri.css'
+    //       });
+    //   };
+    //   datauri.src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";
+    // })();
+    Modernizr.load({
+      test: Modernizr.svg,
+      nope: './css/no-svg.css'
+    });
+  </script>
 </head>
 <body>
   <header class="white band padded">
@@ -148,7 +168,7 @@
     </article>
     
     <footer class="footer align-right">
-        <p>&copy 2013 Gary Hepting. Free to use, but <a href="mailto:groundwork@garyhepting.com">give me a shout</a> if you find Groundwork extremely useful!</p>
+        <p>&copy 2013 Gary Hepting. Free to use, but <a href="mailto:groundwork@sidereel.com">give me a shout</a> if you find Groundwork extremely useful!</p>
     </footer>
 
   </div>
