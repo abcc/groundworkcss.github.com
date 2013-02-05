@@ -94,6 +94,11 @@
         }
       }
     });
+    if (!Modernizr.svg) {
+      $("img[src$='.svg']").each(function() {
+        return $(this).attr('src', $(this).attr('src').replace('.svg', '.png'));
+      });
+    }
     $('.demo > .row > .column, \
      .demo > .row > .columns,\
      .demo > .row > .whole, \

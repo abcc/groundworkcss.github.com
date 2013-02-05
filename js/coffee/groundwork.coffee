@@ -76,6 +76,11 @@ $(document).ready ->
         $(this).addClass('unselected')
       else
         $(this).removeClass('unselected')
+  
+  # fallback to PNG if SVG not supported
+  if !Modernizr.svg
+    $("img[src$='.svg']").each ->
+      $(this).attr('src',$(this).attr('src').replace('.svg','.png'))
 
   # add titles to demo grid cells
   $('.demo > .row > .column, 
