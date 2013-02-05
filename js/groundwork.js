@@ -52,7 +52,9 @@
       tabs.find('> ul li a').removeClass('active');
       $(this).addClass('active');
       tabs.children('div').removeClass('active');
-      return tabs.children($(this).attr('href')).addClass('active');
+      tabs.children($(this).attr('href')).addClass('active');
+      e.preventDefault();
+      return false;
     });
     $('.responsive').each(function(index, object) {
       var max, min, scale;

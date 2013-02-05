@@ -89,21 +89,21 @@
       </div>
       <div class="two thirds padded">
         <h2>Tabs</h2>
-        <p></p>
+        <p>Tabs offer a way for a user to easily swap between seperated content.</p>
         <div class="tabs">
           <ul>
-            <li><a href="#tab-1" class="active">Tab 1</a></li>
-            <li><a href="#tab-2">Tab 2</a></li>
-            <li><a href="#tab-3">Tab 3</a></li>
-            <li><a href="#tab-4" class="disabled">Disabled Tab</a></li>
-            <li class="pull-right"><a href="#tab-6">Right 2</a></li>
-            <li class="pull-right"><a href="#tab-5">Right 1</a></li>
+            <li><a href="#content-1" class="active">Tab 1</a></li>
+            <li><a href="#content-2">Tab 2</a></li>
+            <li><a href="#content-3">Tab 3</a></li>
+            <li><a href="#content-4" class="disabled">Disabled Tab</a></li>
+            <li class="pull-right"><a href="#content-6">Right 2</a></li>
+            <li class="pull-right"><a href="#content-5">Right 1</a></li>
           </ul>
-          <div id="tab-1" class="active">
+          <div id="content-1" class="active">
             <h1>Tab 1</h1>
             <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
           </div>
-          <div id="tab-2">
+          <div id="content-2">
             <h1>Tab 2</h1>
             <ul>
               <li>Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat.</li>
@@ -112,7 +112,7 @@
               <li>Pellentesque fermentum dolor. Aliquam quam lectus, facilisis auctor, ultrices ut, elementum vulputate, nunc.</li>
             </ul>
           </div>
-          <div id="tab-3">
+          <div id="content-3">
             <h1>Tab 3</h1>
             <dl>
               <dt>Definition list</dt>
@@ -121,11 +121,11 @@
               <dd>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</dd>
             </dl>
           </div>
-          <div id="tab-4">
+          <div id="content-4">
             <h1>Tab 4</h1>
             <p>You should not be able to get to this content, because the tabs has been disabled.</p>
           </div>
-          <div id="tab-5">
+          <div id="content-5">
             <h1>Tab 5</h1>
             <h3>The tab for this content is aligned to the right.</h3>
             <ul>
@@ -134,7 +134,7 @@
               <li>Vestibulum auctor dapibus neque.</li>
             </ul>
           </div>
-          <div id="tab-6">
+          <div id="content-6">
             <h1>Tab 6</h1>
             <h3>The tab for this content is aligned to the right as well.</h3>
             <ul>
@@ -143,6 +143,62 @@
               <li>Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate sem tristique cursus. Nam nulla quam, gravida non, commodo a, sodales sit amet, nisi.</li>
               <li>Pellentesque fermentum dolor. Aliquam quam lectus, facilisis auctor, ultrices ut, elementum vulputate, nunc.</li>
             </ul>
+          </div>
+        </div>
+        <hr/>
+        <h6>Example Usage:</h6>
+        <code>
+<pre>&lt;<tag>div</tag> class=&quot;<span>tabs</span>&quot;&gt;</pre>
+<pre>  &lt;<tag>ul</tag>&gt;</pre>
+<pre>    &lt;<tag>li</tag>&gt;&lt;a href=&quot;<span>#tab-1</span>&quot; class=&quot;<span>active</span>&quot;&gt;<content>Tab 1</content>&lt;/<tag>a</tag>&gt;&lt;/<tag>li</tag>&gt;</pre>
+<pre>    &lt;<tag>li</tag>&gt;&lt;a href=&quot;<span>#tab-2</span>&quot;&gt;<content>Tab 2</content>&lt;/<tag>a</tag>&gt;&lt;/<tag>li</tag>&gt;</pre>
+<pre>    &lt;<tag>li</tag>&gt;&lt;a href=&quot;<span>#tab-3</span>&quot;&gt;<content>Tab 3</content>&lt;/<tag>a</tag>&gt;&lt;/<tag>li</tag>&gt;</pre>
+<pre>  &lt;/<tag>ul</tag>&gt;</pre>
+<pre>  &lt;<tag>div</tag> id=&quot;<span>tab-1</span>&quot; class=&quot;<span>active</span>&quot;&gt;</pre>
+<pre>    &lt;<tag>h1</tag>&gt;<content>Tab 1</content>&lt;/<tag>h1</tag>&gt;</pre>
+<pre>    &lt;<tag>p</tag>&gt;<content>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.</content>&lt;/<tag>p</tag>&gt;</pre>
+<pre>  &lt;/<tag>div</tag>&gt;</pre>
+<pre>  &lt;<tag>div</tag> id=&quot;<span>tab-2</span>&quot;&gt;</pre>
+<pre>    &lt;h1&gt;<content>Tab 2</content>&lt;/<tag>h1</tag>&gt;</pre>
+<pre>    &lt;<tag>ul</tag>&gt;</pre>
+<pre>      &lt;<tag>li</tag>&gt;<content>Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat.</content>&lt;/<tag>li</tag>&gt;</pre>
+<pre>      &lt;<tag>li</tag>&gt;<content>Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.</content>&lt;/<tag>li</tag>&gt;</pre>
+<pre>    &lt;/<tag>ul</tag>&gt;</pre>
+<pre>  &lt;/<tag>div</tag>&gt;</pre>
+<pre>  &lt;<tag>div</tag> id=&quot;<span>tab-3</span>&quot;&gt;</pre>
+<pre>    &lt;h1&gt;<content>Tab 3</content>&lt;/<tag>h1</tag>&gt;</pre>
+<pre>    &lt;<tag>dl</tag>&gt;</pre>
+<pre>      &lt;<tag>dt</tag>&gt;<content>Definition list</content>&lt;/<tag>dt</tag>&gt;</pre>
+<pre>      &lt;<tag>dd</tag>&gt;<content>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</content>&lt;/<tag>dd</tag>&gt;</pre>
+<pre>    &lt;/<tag>dl</tag>&gt;</pre>
+<pre>  &lt;/<tag>div</tag>&gt;</pre>
+<pre>&lt;/<tag>div</tag>&gt;</pre>
+        </code>
+        <hr/>
+        <h6>Result:</h6>
+        <div class="tabs">
+          <ul>
+            <li><a href="#tab-1" class="active">Tab 1</a></li>
+            <li><a href="#tab-2">Tab 2</a></li>
+            <li><a href="#tab-3">Tab 3</a></li>
+          </ul>
+          <div id="tab-1" class="active">
+            <h1>Tab 1</h1>
+            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.</p>
+          </div>
+          <div id="tab-2">
+            <h1>Tab 2</h1>
+            <ul>
+              <li>Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat.</li>
+              <li>Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.</li>
+            </ul>
+          </div>
+          <div id="tab-3">
+            <h1>Tab 3</h1>
+            <dl>
+              <dt>Definition list</dt>
+              <dd>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</dd>
+            </dl>
           </div>
         </div>
       </div>

@@ -38,6 +38,8 @@ $(document).ready ->
     $(this).addClass('active')
     tabs.children('div').removeClass('active')
     tabs.children($(this).attr('href')).addClass('active')
+    e.preventDefault()
+    return false
 
   # responsive headings
   $('.responsive').each (index, object) ->
