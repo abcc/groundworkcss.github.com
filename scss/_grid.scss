@@ -16,7 +16,7 @@
 .row                { width:$one-whole;
   &:after           { content:'';display:block;clear:both; } // clearfix
 }
-.column, .columns   { float:left;position:relative;
+.column, .columns   { float:left;position:relative;min-height:1px;
   // columns sizing
   .one                { width:$one-twelfth; }
   .two                { width:$one-sixth; }
