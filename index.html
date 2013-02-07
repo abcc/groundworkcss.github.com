@@ -48,6 +48,7 @@
       height:100%;
       text-align:center;
       background:#333 url('./images/black_linen_v2.png') center repeat;
+      overflow:hidden;
     }
     iframe {
       width:100%;
@@ -93,9 +94,9 @@
       });
     });
     $(window).resize(function() {
-      if(parseInt($('iframe').css('max-width').replace('px','')) > 1280) {
+      if($('#resizer li:first-child a').hasClass('active')) {
         $('iframe').css('max-width', $(window).width());
-        $('iframe').css('max-height', $(window).width());
+        $('iframe').css('max-height', $(window).height());
       }
     });
   </script>
