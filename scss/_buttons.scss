@@ -108,6 +108,7 @@ button, .button, a.button, a.button:link, a.button:visited, input[type=submit], 
           padding:0.5em 1em;
           border:none;
           text-shadow:none;
+          text-decoration:none;
           &:hover, &:focus {
             background:#efefef;
           }

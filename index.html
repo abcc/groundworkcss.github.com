@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-  <title>Groundwork CSS &hearts; Say Hello to Responsive Design Made Easy</title>
+  <title>Groundwork CSS &hearts;</title>
   <!-- Modernizr -->
   <script src="js/libs/modernizr-2.6.2.min.js"></script>
   <!-- jQuery -->
@@ -42,174 +42,74 @@
   </script>
 </head>
 <body>
-  <header class="white band padded">
+  <style type="text/css">
+    html, body {
+      width:100%;
+      height:100%;
+      text-align:center;
+      background:#333 url('./images/black_linen_v2.png') center repeat;
+    }
+    iframe {
+      width:100%;
+      max-width:100%;
+      height:100%;
+      max-height:100%;
+      margin:0 auto;
+      background:white;
+      box-shadow:0 0 50px #000;
+    }
+    #resizer {
+      -webkit-filter: drop-shadow(0 1px 5px rgba(0,0,0,.25));
+      -moz-filter: drop-shadow(0 1px 5px rgba(0,0,0,.25));
+      -ms-filter: drop-shadow(0 1px 5px rgba(0,0,0,.25));
+      -o-filter: drop-shadow(0 1px 5px rgba(0,0,0,.25));
+      filter: drop-shadow(0 1px 5px rgba(0,0,0,.25));
+      width:200px;
+      margin:-0.2em auto 0;
+    }
+  </style>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('iframe').each(function() {
+        $(this).css('max-width',$(window).width());
+        $(this).css('max-height',$(window).height());
+      });
+      $('a[data-viewport-width]').on('click', function(e) {
+        if($(this).attr('data-viewport-width') == '100%') {
+          newWidth = $(window).width();
+        }else{
+          newWidth = $(this).attr('data-viewport-width');
+        }
+        if($(this).attr('data-viewport-height') == '100%') {
+          newHeight = $(window).height();
+        }else{
+          newHeight = $(this).attr('data-viewport-height');
+        }
+        $('a[data-viewport-width]').removeClass('active');
+        $(this).addClass('active');
+        $('iframe').stop().animate({'max-width': newWidth, 'max-height': newHeight}, 200);
+        e.preventDefault();
+        return false;
+      });
+    });
+    $(window).resize(function() {
+      if(parseInt($('iframe').css('max-width').replace('px','')) > 1280) {
+        $('iframe').css('max-width', $(window).width());
+        $('iframe').css('max-height', $(window).width());
+      }
+    });
+  </script>
+  <div style="position:fixed;top:0;z-index:99;width:100%;">
     <div class="container">
-      <div class="row">
-        <div class="one half">
-          <h1 class="big responsive heading" data-compression="6.95" data-min="20" data-max="120" style="font-size:86px;"><a href="./"><span class="logo"></span> Groundwork<sup>Beta</sup></a></h1>
-        </div>
-        <div class="one half double pad-top">
-          <nav class="inline pull-right">
-              <ul>
-                  <li><a href="./">Home</a></li
-                  ><li class="menu"><a href="./components">Components</a>
-                    <ul>
-                      <li><a href="./grid">Grid</a></li>
-                      <li><a href="./media-queries">Media Queries</a></li>
-                      <li><a href="./typography">Typography</a></li>
-                      <li><a href="./buttons">Buttons</a></li>
-                      <li><a href="./forms">Forms</a></li>
-                      <li><a href="./navigation">Navigation</a></li>
-                      <li><a href="./tabs">Tabs</a></li>
-                      <li><a href="./ui-elements">UI Elements</a></li>
-                      <li><a href="./tables">Tables</a></li>
-                      <li><a href="./icons">Icons</a></li>
-                      <li><a href="./responsiveText-js">ResponsiveText</a></li>
-                      <li><a href="./tooltips-js">Tooltips</a></li>
-                      <li><a href="./orbit-js">Orbit</a></li>
-                      <!-- <li><a href="./popovers-js">Popovers</a></li>
-                      <li><a href="./tooltips-js">Tooltips</a></li>
-                      <li><a href="./colorbox-js">ColorBox</a></li> -->
-                    </ul>
-                  </li
-                  ><li><a href="./templates">Templates</a></li
-                  ><!-- <li><a href="http://github.com/groundworkcss/groundwork" target="_blank"><i class="icon-github-alt"></i></a></li
-                  ><li><a href="http://twitter.com/groundworkcss" target="_blank"><i class="icon-twitter"></i></a></li
-                  > --><li><a href="https://github.com/groundworkcss/groundwork/archive/master.zip"><i class="icon-download-alt"></i></a></li>
-              </ul>
-          </nav>
-        </div>
-      </div>
-    </div>
-  </header>
-  <div class="hero band lt-blue invert-color tripple padded">
-    <div class="container">
-      <div class="row">
-        <div class="one third padded align-center">
-          <h1 class="responsive" data-compression="3.825" data-min="20" data-max="170" style="font-size:99px;">Say Hello</h1>
-          <h3 class="responsive" data-compression="13.6" data-min="15" data-max="50"  style="font-size:27px;">To responsive design made easy.</h3>
-          <a class="large blue block button" href="https://github.com/groundworkcss/groundwork/archive/master.zip" title="Download from Github">Download <i class="icon-download-alt"></i></a>
-          <div class="row">
-            <div class="three small-tablet sevenths gap-top pad-right no-padding-mobile">
-              <a class="block button" href="https://github.com/groundworkcss/groundwork" target="_blank">Fork <i class="icon-github-alt"></i></a>
-            </div>
-            <div class="four small-tablet sevenths gap-top">
-              <a class="block button" href="http://twitter.com/groundworkCSS/" target="_blank">Follow <i class="icon-twitter"></i></a>
-            </div>
-          </div>
-          <!-- <br/>
-          <p class="align-left">Have a look at the complete set of <a href="./components" class="invert-color">CSS and Javascript components</a> that are packed into Groundwork.</p> -->
-        </div>
-        <div class="two thirds padded align-center">
-          <a href="./components"><img src="./images/responsive-design-sample.png" alt="Groundwork CSS - A Responsive Design Framework" class="glow double gap-top" style="margin-bottom:-42px;" /></a>
-        </div>
-      </div>
+      <ul class="button-list" id="resizer">
+        <li><a class="active" title="Fullscreen" href="#" data-viewport-width="100%" data-viewport-height="100%"><i class="icon-fullscreen"></i></a></li>
+        <li><a title="13&quot; MacBook" href="#" data-viewport-width="1280px" data-viewport-height="800px"><i class="icon-laptop"></i></a></li>
+        <li><a title="Small Tablet" href="#" data-viewport-width="767px" data-viewport-height="1024px"><i class="icon-tablet"></i></a></li>
+        <li><a title="Mobile Phone" href="#" data-viewport-width="480px" data-viewport-height="800px"><i class="icon-mobile-phone"></i></a></li>
+      </ul>
     </div>
   </div>
-
-  <div class="container">
-    <article>
-      <div class="space gap-top"></div>
-      <section class="row">
-        <div class="one third padded">
-          <a href="./sass-compass">
-            <div class="large circle"><div class="blue-3 cell"><i class="icon-plus-sign-alt"></i></div></div>
-            <h1 class="align-center">Built with SASS &amp; Compass</h1>
-          </a>
-          <p class="pad-left pad-right">Groundwork has been built from the ground up with the incredibly powerful CSS preprocessor, Sass. Sass is an extension of CSS3, adding nested rules, variables, mixins, selector inheritance, and more. It’s translated to well-formatted, standard CSS using the command line tool or a web-framework plugin.</p>
-        </div>
-        <div class="one third padded">
-          <a href="./components">
-            <div class="large circle"><div class="red cell"><i class="icon-laptop"></i></div></div>
-            <h1 class="align-center">Flexible &amp; Responsive</h1>
-          </a>
-          <p class="pad-left pad-right">Groundwork offers the most advanced responsive layout techniques in the world. Featuring an incredibly flexible, nestable, fluid grid system: the Groundwork grid system supports any columns in any fractional amount from halves to twelths. The result is a framework that works for virtually any immaginable modern layout.</p>
-        </div>
-        <div class="one third padded">
-          <a href="https://github.com/groundworkcss/groundwork" target="_blank">
-            <div class="large circle"><div class="green cell"><i class="icon-github-alt"></i></div></div>
-            <h1 class="align-center">Free &amp; Open-Source</h1>
-          </a>
-          <p class="pad-left pad-right">Groundwork is open-source, hosted on Github and 100% free. Groundwork was created by Gary Hepting, Senior Front-End Engineer at SideReel, to make responsive development and rapid responsive prototyping a breeze.</p>
-        </div>
-      </section>
-      <hr class="gapped" />
-      <div class="row">
-        <div class="one whole pad-left">
-          <h2>Why Use Groundwork?</h2>
-        </div>
-      </div>
-      <section class="row">
-        <div class="one half">
-          <div class="row">
-            <div class="three small-tablet fourths right-one padded">
-              <h3>The Last Grid You'll Ever Need</h3>
-              <p>Groundwork's flexible grid system enables you to do rapid development and scales to fit any screen size, from handheld devices to large format televisions.</p>
-            </div>
-            <div class="one small-tablet fourth left-three padded align-center">
-              <a href="./grid"><div class="large square"><div class="green rounded cell"><i class="icon-th"></i></div></div></a>
-            </div>
-          </div>
-        </div>
-        <div class="one half">
-          <div class="row">
-            <div class="three small-tablet fourths right-one padded">
-              <h3>Device Agnostic</h3>
-              <p>The grid allows you to quickly and easily adapt page layouts for mobile devices as well as the desktop and enables you to build one site that looks great on virtually any device.</p>
-            </div>
-            <div class="one small-tablet fourth left-three padded align-center">
-              <a href="./grid"><div class="large square"><div class="navy rounded cell"><i class="icon-mobile-phone"></i></div></div></a>
-            </div>
-          </div>
-        </div>
-      </section>
-    </article>
-  </div>
-
-  <section class="navy band gap-top invert-color">
-    <div class="container">
-      <div class="row">
-        <div class="one whole tripple padded">
-          <h3>Works in All Major Browsers</h3>
-          <div class="row align-center">
-            <div class="one mobile fifth"><span class="chrome browser">Chrome</span></div>
-            <div class="one mobile fifth"><span class="firefox browser">Firefox</span></div>
-            <div class="one mobile fifth"><span class="internet_explorer browser">Internet Explorer</span></div>
-            <div class="one mobile fifth"><span class="opera browser">Opera</span></div>
-            <div class="one mobile fifth"><span class="safari browser">Safari</span></div>
-            <!-- <div class="one mobile seventh"><span class="apple browser">Apple</span></div>
-            <div class="one mobile seventh"><span class="android browser">Android</span></div> -->
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- <h3>Sites using Groundwork:</h3>
-  <div class="row">
-    <div class="one small-tablet third align-center"><a href="http://www.sidereel.com/" target="_blank"><img src="./images/sites/sidereel-horizontal-white.svg" alt="sidereel.com" class="glow" /></a></div>
-    <div class="one small-tablet third align-center"><a href="http://garyhepting.com/" target="_blank"><img src="./images/sites/garyhepting-white.svg" alt="garyhepting.com" class="glow" /></a></div>
-  </div> -->
-
-  <div class="container">
-    <section class="row">
-      <div class="one third padded gap-top">
-        <h4>Created by <a href="http://twitter.com/ghepting" target="_blank">Gary Hepting</a> at SideReel</h4>
-        <p>Groundwork has been brought to you by <a href="http://twitter.com/ghepting" target="_blank">@ghepting</a> at <a href="http://www.sidereel.com/" target="_blank">SideReel</a> in San Francisco, California.</p>
-        <p><a class="dk-blue button" href="http://github.com/ghepting" target="_blank">ghepting <i class="icon-github-alt"></i></a> <a class="dk-blue button" href="http://twitter.com/ghepting" target="_blank">@ghepting <i class="icon-twitter"></i></a></p>
-      </div>
-      <div class="one third padded gap-top">
-        <!-- <h3>Vampire + Engineer = Vampeer</h3> -->
-        <h4>Looking for a Super-Human Engineering Team?</h4>
-        <p>Sidereel is always looking for talented Rails engineers to join the <a href="http://vampeer.sidereel.com/" target="_blank">INTERSpecies Pairing Program</a>. Do more with a <a href="http://vampeer.sidereel.com/" target="_blank">Vampeer</a> than humanly possible.</p>
-        <p><a class="dk-blue button" href="http://vampeer.sidereel.com/" target="_blank">Find out more <i class="icon-question-sign"></i></a></p>
-      </div>
-      <div class="one third padded gap-top">
-        <h4>Need Some Help or Have a Question?</h4>
-        <p><a href="https://github.com/groundworkcss/groundwork/issues" target="_blank">Browse or submit issues on Github</a>, send a tweet to <a href="http://twitter.com/groundworkcss" target="_blank">@GroundworkCSS</a> or email us at <a href="mailto:groundwork@sidereel.com" target="_blank">groundwork@sidereel.com</a> any time. We'd love to hear from you!</p>
-      </div>
-    </section>
-  </div>
+  <iframe src="./home.html"></iframe>
   <!-- scripts -->
   <script type="text/javascript" src="./js/plugins/jquery.orbit-1.4.0.js"></script>
   <script type="text/javascript" src="./js/groundwork.js"></script>
