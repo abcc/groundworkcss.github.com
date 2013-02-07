@@ -87,7 +87,7 @@
     &.skip-eleven { margin-left:0; }
     &.skip-twelve { margin-left:0; }
   }
-  nav, nav.inline {
+  nav:not(.pagination), nav.inline {
     width:100%;
     ul, ul.row {
       li {
@@ -152,7 +152,7 @@
       }
     }
   }
-  nav, nav.inline {
+  nav:not(.pagination), nav.inline {
     ul, ul.row {
       li {
         &:first-child {

@@ -94,12 +94,12 @@ button, .button, a.button, a.button:link, a.button:visited, input[type=submit], 
       list-style:none;
       display:none;
       background:white;
-      background:rgba(255,255,255,0.85);
       border:1px solid $border-color;
       position:absolute;
       left:0;
       width:100%;
       z-index:10;
+      font-size:0.9em;
       @include rounded(0 0 $radius $radius);
       li {
         display:block;
@@ -109,8 +109,7 @@ button, .button, a.button, a.button:link, a.button:visited, input[type=submit], 
           border:none;
           text-shadow:none;
           &:hover, &:focus {
-            background:#eee;
-            background:rgba(235,235,235,0.85);
+            background:#efefef;
           }
         }
         &:last-child {

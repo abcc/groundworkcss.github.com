@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-  <title>Groundwork CSS &hearts;</title>
+  <title>Groundwork CSS &hearts; Responsive Text Sizing</title>
   <!-- Modernizr -->
   <script src="js/libs/modernizr-2.6.2.min.js"></script>
   <!-- jQuery -->
@@ -46,7 +46,7 @@
     <div class="container">
       <div class="row">
         <div class="one half">
-          <h1 class="big responsive heading" data-scale="6.95" data-min="20" data-max="120" style="font-size:86px;"><a href="./"><span class="logo"></span> Groundwork<sup>Beta</sup></a></h1>
+          <h1 class="big responsive heading" data-compression="6.95" data-min="20" data-max="120" style="font-size:86px;"><a href="./"><span class="logo"></span> Groundwork<sup>Beta</sup></a></h1>
         </div>
         <div class="one half double pad-top">
           <nav class="inline pull-right">
@@ -62,6 +62,7 @@
                       <li><a href="./navigation">Navigation</a></li>
                       <li><a href="./tabs">Tabs</a></li>
                       <li><a href="./ui-elements">UI Elements</a></li>
+                      <li><a href="./tables">Tables</a></li>
                       <li><a href="./icons">Icons</a></li>
                       <li><a href="./responsiveText-js">ResponsiveText</a></li>
                       <li><a href="./tooltips-js">Tooltips</a></li>
@@ -88,7 +89,7 @@
         <p>ResponsiveText allows you to have dynamically sized text that adapts to the width of the viewport. It's incredibly useful for headings or SVG graphics that you want to scale to fit their container on any device.</p>
       </div>
       <div class="two thirds padded">
-        <h2 class="responsive" data-scale="7.375"><i class="icon-text-width"></i> ResponsiveText</h2>
+        <h2 class="responsive" data-compression="7.375"><i class="icon-text-width"></i> ResponsiveText</h2>
         <p>ResponsiveText is a jQuery plugin that let's you set font sizes responsively based on an element's container width. Use responsiveText.js to have scalable headlines, build responsive tables and more!</p>
         <h6>Example Usage:</h6>
         <code>
@@ -100,19 +101,19 @@
         <hr/>
         <h6>Example Usage:</h6>
         <code>
-<pre>&lt;<tag>h1</tag> class=&quot;<span>responsive</span>&quot; data-scale=&quot;<span>12.2</span>&quot; data-min=&quot;<span>20</span>&quot; data-max=&quot;<span>170</span>&quot;&gt;<content>A Longer Responsive Heading</content>&lt;/<tag>h1</tag>&gt;</pre>
+<pre>&lt;<tag>h1</tag> class=&quot;<span>responsive</span>&quot; data-compression=&quot;<span>12.2</span>&quot; data-min=&quot;<span>20</span>&quot; data-max=&quot;<span>170</span>&quot;&gt;<content>A Longer Responsive Heading</content>&lt;/<tag>h1</tag>&gt;</pre>
         </code>
         <hr/>
         <h6>Result:</h6>
-        <h1 class="responsive" data-scale="12.2" data-min="20" data-max="170">A Longer Responsive Heading</h1>
+        <h1 class="responsive" data-compression="12.2" data-min="20" data-max="170">A Longer Responsive Heading</h1>
         <hr/>
         <h6>Example Usage:</h6>
         <code>
-<pre>&lt;<tag>h1</tag> class=&quot;<span>responsive</span>&quot; data-scale=&quot;<span>9.4</span>&quot; data-min=&quot;<span>20</span>&quot; data-max=&quot;<span>170</span>&quot;&gt;<content>A Responsive Heading &lt;<tag>br</tag>/&gt;You Want To Wrap</content>&lt;/<tag>h1</tag>&gt;</pre>
+<pre>&lt;<tag>h1</tag> class=&quot;<span>responsive</span>&quot; data-compression=&quot;<span>9.4</span>&quot; data-min=&quot;<span>20</span>&quot; data-max=&quot;<span>170</span>&quot;&gt;<content>A Responsive Heading &lt;<tag>br</tag>/&gt;You Want To Wrap</content>&lt;/<tag>h1</tag>&gt;</pre>
         </code>
         <hr/>
         <h6>Result:</h6>
-        <h3 class="responsive" data-scale="9.4" data-min="20" data-max="170">A Responsive Heading <br/>You Want To Wrap</h3>
+        <h3 class="responsive" data-compression="9.4" data-min="20" data-max="170">A Responsive Heading <br/>You Want To Wrap</h3>
       </div>
     </div>
   </div>

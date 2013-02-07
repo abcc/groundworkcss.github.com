@@ -12,22 +12,24 @@ table {
   padding:0;
   margin:0;
   font-size:1em;
+  // styles for cells
   th, td {
     padding:$gutter;
     background:darken(white, 1%);
+    white-space:normal;
     word-wrap:break-word;
-  }
-  th {
     text-align:left;
   }
   td {
     font-size:0.9em;
   }
+  // every other row
   tr:nth-child(even) {
     th, td {
       background:darken(white, 5%);
     }
   }
+  // styles for thead
   thead {
     tr {
       th {
@@ -48,6 +50,7 @@ table {
 
     }
   }
+  // styles for tbody
   tbody {
     tr {
       th {
@@ -58,6 +61,7 @@ table {
       }
     }
   }
+  // styles for tfoot
   tfoot {
     tr {
       th {

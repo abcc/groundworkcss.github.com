@@ -31,6 +31,67 @@ $(document).ready ->
         e.preventDefault()
         return false
  
+  # dynamically adjust pagination items
+  limitPaginationItems()
+  # change active page
+  $('.pagination ul > li:not(.next, .prev) a').on 'click', ( (e) ->
+    $('.pagination ul > li:not(.next, .prev)').removeClass('active')
+    $(this).parent('li').addClass('active')
+    # toggle previous button state
+    if $(this).parent('li').hasClass('first')
+      $('.pagination ul > li.prev').addClass('disabled')
+    else
+      $('.pagination ul > li.prev').removeClass('disabled')
+    # toggle next button state
+    if $(this).parent('li').hasClass('last')
+      $('.pagination ul > li.next').addClass('disabled')
+    else
+      $('.pagination ul > li.next').removeClass('disabled')
+    # adjust pagination
+    limitPaginationItems()
+    e.preventDefault()
+    false
+  )
+  # handle previous pagination button
+  $('.pagination ul > li.prev:not(.disabled)').on 'click', ( (e) ->
+    # enable next button
+    $('.pagination ul > li.next').removeClass('disabled')
+    el = $('.pagination ul > li.active')
+    if !el.hasClass('first')
+      # set previous page active
+      el.removeClass('active')
+      el.prev().addClass('active')
+      # adjust pagination
+      limitPaginationItems()
+    # disable previous button if at first page
+    if $('.pagination ul > li.active').hasClass('first')
+      $(this).addClass('disabled')
+    e.preventDefault()
+    false
+  )
+  # handle next pagination button
+  $('.pagination ul > li.next:not(.disabled)').on 'click', ( (e) ->
+    # enable previous button
+    $('.pagination ul > li.prev').removeClass('disabled')
+    el = $('.pagination ul > li.active')
+    if !el.hasClass('last')
+      # set next page active
+      el.removeClass('active')
+      el.next().addClass('active')
+      # adjust pagination
+      limitPaginationItems()
+    # disable next button if at last page
+    if $('.pagination ul > li.active').hasClass('last')
+      $(this).addClass('disabled')
+    e.preventDefault()
+    false
+  )
+  # disable page jump for disabled pagination links
+  $('.pagination ul > li.disabled a').on 'click', ( (e) ->
+    e.preventDefault()
+    false
+  )
+
   # tabs
   $('.tabs > ul > li > a').not('.disabled').click (e) ->
     tabs = $(this).parents('.tabs')
@@ -42,17 +103,33 @@ $(document).ready ->
     return false
 
   # responsive headings
-  $('.responsive').each (index, object) ->
-    scale = 10
+  $('.responsive').not('table').each (index, object) ->
+    compression = 10
     min = 10
     max = 200
-    scale = parseFloat $(this).attr('data-scale') || scale
+    compression = parseFloat $(this).attr('data-compression') || compression
     min = parseFloat $(this).attr('data-min') || min
     max = parseFloat $(this).attr('data-max') || max
     $(object).responsiveText
-      agressiveness: scale,
+      compressor: compression,
       minSize: min,
       maxSize: max
+
+  # responsive tables
+  $('table.responsive').each (index, object) ->
+    compression = 30
+    min = 8
+    max = 13
+    padding = 0
+    compression = parseFloat $(this).attr('data-compression') || compression
+    min = parseFloat $(this).attr('data-min') || min
+    max = parseFloat $(this).attr('data-max') || max
+    padding = parseFloat $(this).attr('data-padding') || padding
+    $(object).responsiveTable
+      compressor: compression,
+      minSize: min,
+      maxSize: max,
+      padding: padding
 
   # tooltips
   $('.tooltip[title]').tooltip()
@@ -145,3 +222,36 @@ $(document).ready ->
 
 $(window).load ->
   $('.slider').orbit()
+
+$(window).resize ->
+  limitPaginationItems()  # adjust pagination
+
+# responsive pagination
+limitPaginationItems = ->
+  #process pagination lists
+  $('.pagination ul').each ->
+    pagination = $(this)
+    # pagination dimensions
+    visibleSpace = pagination.outerWidth() - pagination.children('li.prev').outerWidth() - pagination.children('li.next').outerWidth()
+    # hide pages that don't fit
+    pagination.children('li').not('.prev, .next, .active').hide()
+    visibleItemsWidth = 0
+    pagination.children('li:visible').each ->
+      visibleItemsWidth += $(this).outerWidth()
+    # loop
+    while (visibleItemsWidth + 29) < visibleSpace
+      # show the next page number
+      pagination.children('li:visible').not('.next').last().next().show()
+      visibleItemsWidth = 0
+      pagination.children('li:visible').each ->
+        visibleItemsWidth += $(this).outerWidth()
+      if (visibleItemsWidth + 29) <= visibleSpace
+        # show the previous page number
+        pagination.children('li:visible').not('.prev').first().prev().show()
+        visibleItemsWidth = 0
+        pagination.children('li:visible').each ->
+          visibleItemsWidth += $(this).outerWidth()
+      # recalculate visibleItemsWidth
+      visibleItemsWidth = 0
+      pagination.children('li:visible').each ->
+        visibleItemsWidth += $(this).outerWidth()

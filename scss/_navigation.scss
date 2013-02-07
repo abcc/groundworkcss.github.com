@@ -146,6 +146,11 @@ nav {
       }
     }
   }
+  &:after {
+    content:'';
+    display:block;
+    clear:both;
+  }
   // horizontal inline navigation
   &.inline {
     width:auto;
@@ -187,6 +192,82 @@ nav {
                 @include rounded(0 0 $radius $radius !important);
               }
             }
+          }
+        }
+      }
+    }
+  }
+  // pagination
+  &.pagination {
+    ul {
+      margin:10px auto;
+      display:block;
+      list-style-type:none;
+      text-align:center;
+      li {
+        display:inline-block;
+        @include rounded(4px);
+        padding:0 3px 0 2px;
+        min-width:29px;
+        text-align:center;
+        a {
+          display:block;
+          font-size:1em;
+          line-height:1.5;
+          font-weight:bold;
+          color:$button-text;
+          text-decoration:none;
+          padding:0 3px;
+          @include rounded(4px);
+          &:hover, &:focus {
+            background:$button-active;
+            color:$button-text;
+          }
+        }
+        &.active {
+          a {
+            background:lighten(gray, 15%);
+            border-color:gray;
+            color:lighten(gray, 35%);
+            text-decoration:none;
+            &:hover, &:focus {
+              background:lighten(gray, 15%);
+              border-color:gray;
+              color:lighten(gray, 35%);
+            }
+          }
+        }
+        &.prev, &.next {
+          a {
+            padding:0 4px;
+            background:$button-color;
+            color:#fff;
+            &:hover, &:focus {
+              background:$button-active;
+            }
+          }
+        }
+        &.disabled {
+          a {
+            background:lighten(gray, 15%);
+            border-color:gray;
+            color:lighten(gray, 35%);
+            text-decoration:none;
+            &:hover, &:focus {
+              background:lighten(gray, 15%);
+              border-color:gray;
+              color:lighten(gray, 35%);
+            }
+          }
+        }
+        &:first-child {
+          a, a:link, a:visited {
+            @include rounded($radius);
+          }
+        }
+        &:last-child {
+          a, a:link, a:visited {
+            @include rounded($radius);
           }
         }
       }
