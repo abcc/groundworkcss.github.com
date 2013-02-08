@@ -50,7 +50,7 @@
       background:#333 url('./images/black_linen_v2.png') center repeat;
       overflow:hidden;
     }
-    iframe {
+    #resizerFrame {
       width:100%;
       max-width:100%;
       height:100%;
@@ -72,10 +72,16 @@
       filter: drop-shadow(0 1px 5px rgba(0,0,0,.25));
       margin:-0.2em auto 0;
     }
+    #closeResizer {
+      padding:0.3em 0.5em;
+      text-decoration:none;
+      color:#fff;
+      text-shadow:0 0 2px rgba(0,0,0,0.65), 0 0 10px rgba(0,0,0,0.5);
+    }
   </style>
   <script type="text/javascript">
     $(document).ready(function() {
-      $('iframe').each(function() {
+      $('#resizerFrame').each(function() {
         $(this).css('max-width',$(window).width());
         $(this).css('max-height',$(window).height());
       });
@@ -92,7 +98,7 @@
         }
         $('a[data-viewport-width]').removeClass('active');
         $(this).addClass('active');
-        $('iframe').stop().animate({'max-width': newWidth, 'max-height': newHeight}, 200);
+        $('#resizerFrame').stop().animate({'max-width': newWidth, 'max-height': newHeight}, 200);
         e.preventDefault();
         return false;
       });
@@ -100,7 +106,7 @@
         newWidth = $(window).width();
         newHeight = $(window).height();
         $('a[data-viewport-width]').removeClass('active');
-        $('iframe').stop().animate({'max-width': newWidth, 'max-height': newHeight}, 200);
+        $('#resizerFrame').stop().animate({'max-width': newWidth, 'max-height': newHeight}, 200);
         $('#resizer').fadeOut(500, function() {
           document.location = document.getElementById("resizerFrame").contentWindow.location.href;
         });
@@ -110,8 +116,8 @@
     });
     $(window).resize(function() {
       if($('#resizer li:first-child a').hasClass('active')) {
-        $('iframe').css('max-width', $(window).width());
-        $('iframe').css('max-height', $(window).height());
+        $('#resizerFrame').css('max-width', $(window).width());
+        $('#resizerFrame').css('max-height', $(window).height());
       }
     });
   </script>
@@ -124,7 +130,7 @@
           <li><a title="Small Tablet" href="#" data-viewport-width="767px" data-viewport-height="1024px"><i class="icon-tablet"></i></a></li>
           <li><a title="Mobile Phone" href="#" data-viewport-width="480px" data-viewport-height="800px"><i class="icon-mobile-phone"></i></a></li>
         </ul>
-        <a id="closeResizer" class="pull-left" style="padding:0.3em 0.5em;color:gray;" title="Close Resizer" href="./home.html"><i class="icon-remove"></i></a>
+        <a id="closeResizer" class="pull-left" title="Close Resizer" href="./home.html"><i class="icon-remove"></i></a>
       </div>
     </div>
   </div>

@@ -287,3 +287,31 @@ nav {
     }
   }
 }
+ul.breadcrumbs {
+  list-style:none;
+  margin:0;
+  padding:0;
+  font-size:0.8em;
+  li {
+    display:inline-block;
+    padding:0.2em 0;
+    a, a:link, a:visited {
+      border:none;
+      color:gray;
+      &:before {
+        content:'>';
+        display:inline-block;
+        margin:0 0.5em;
+        color:gray !important;
+      }
+      &:hover, &:focus {
+        color:$link-color;
+      }
+    }
+    &:first-child a {
+      &:before {
+        display:none;
+      }
+    }
+  }
+}
