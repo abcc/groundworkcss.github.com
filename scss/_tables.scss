@@ -12,6 +12,9 @@ table {
   padding:0;
   margin:0;
   font-size:1em;
+  &.responsive {
+    table-layout:fixed;
+  }
   // styles for cells
   th, td {
     padding:$gutter;
