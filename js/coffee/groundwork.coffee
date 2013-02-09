@@ -144,9 +144,21 @@ $(document).ready ->
   # tooltips
   $('.tooltip[title]').tooltip()
 
-  # avgrund modals
+  # modals
+  $('a.modal').each ->
+    $(this).attr('data-url',$(this).attr('href'))
+    $(this).attr('href','#iframeModal')
+    # create placeholder modal
+    if $('div#iframeModal').length < 1
+      $('body').append('<div class="iframe modal" id="iframeModal"><iframe width="100%" height="100%" src=""></iframe></div>')
+  # bind external modal links to placeholder modal
+  $('a.modal').on "click", (e) ->
+    $('div#iframeModal iframe').attr('src',$(this).attr('data-url')) # change iframe src
+    e.preventDefault
+    false
+  # enable modals
   $('div.modal').modal()
- 
+
   # select all text on invalid input field entries
   $('.error input, .error textarea, 
      .invalid input, .invalid textarea, 

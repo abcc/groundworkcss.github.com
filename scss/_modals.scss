@@ -6,7 +6,7 @@
 
 
 .modal-ready {
-  body, .modal {
+  body, div.modal {
     @include transition(0.25s all ease-out);
   }
   #overlay {
@@ -29,7 +29,7 @@
     visibility:visible;
     opacity:1;
   }
-  .modal.active {
+  div.modal.active {
     visibility:visible;
     opacity:1;
   }
@@ -47,7 +47,7 @@
   @include gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.9));
 }
 
-.modal {
+div.modal {
   visibility:hidden;
   opacity:0;
   position:fixed;
@@ -61,6 +61,10 @@
   background:white;
   @include drop-shadow(rgb(50,50,50), 50px, 0, 0);
   @include rounded($radius);
+  &.iframe {
+    width:80%;
+    height:80%;
+  }
   .close, .fullscreen {
     position:absolute;
     font-size:1.25em;

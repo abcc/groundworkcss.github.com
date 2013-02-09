@@ -57,11 +57,18 @@
     close = ->
       $(window).unbind "keydown"
       $('html').removeClass("modal-active").addClass('modal-ready')
-      $('.modal').css
+      if $('.modal.active').hasClass('iframe')
+        $('#iframeModal iframe').attr('src','')
+        $('.modal.active').css
+          width: '80%',
+          height: '80%'
+      else
+        $('.modal.active').css
+          width: 'auto',
+          height: 'auto'
+      $('.modal.active').css
         top: '10%',
         left: '10%',
-        width: 'auto',
-        height: 'auto',
         'max-width': '80%',
         'max-height': '80%',
         'margin-top': 0,
@@ -72,9 +79,15 @@
     fullscreen = ->
       if $('.modal.active').hasClass('fullscreen')
         $('.modal i.fullscreen').removeClass('icon-resize-small').addClass('icon-resize-full')
+        if $('.modal.active').hasClass('iframe')
+          $('.modal.active').css
+            width: '80%',
+            height: '80%'
+        else
+          $('.modal.active').css
+            width: 'auto',
+            height: 'auto'
         $('.modal.active').removeClass('fullscreen').css
-          width: 'auto',
-          height: 'auto',
           'max-width': '80%',
           'max-height': '80%'
         $('.modal.active').delay(100).css
