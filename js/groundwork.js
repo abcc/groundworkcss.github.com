@@ -263,9 +263,12 @@
 
   $(window).resize(function() {
     limitPaginationItems();
-    return $('iframe.responsive, video.responsive').each(function(index, object) {
-      return $(this).css({
-        height: $(this).width() * ratio
+    return $('iframe.responsive, video.responsive').each(function(i, obj) {
+      var ratio;
+      ratio = $(obj).height() / $(obj).width();
+      console.log(ratio);
+      return $(obj).css({
+        height: $(obj).width() * ratio
       });
     });
   });
@@ -766,17 +769,18 @@
     var elems, modals;
     elems = [];
     $.fn.modal = function() {
-      return this.each(function() {
+      this.each(function() {
         $(this).appendTo('body').prepend('<i class="close icon-remove"></i>').prepend('<i class="fullscreen icon-resize-full"></i>');
-        $('[href=#' + $(this).attr('id') + ']').on("click", function() {
+        return $('[href=#' + $(this).attr('id') + ']').on("click", function() {
           return modals.open($(this).attr('href'));
         });
-        $('.modal .close').on("click", function() {
-          return modals.close();
-        });
-        return $('.modal .fullscreen').on("click", function() {
-          return modals.fullscreen();
-        });
+      });
+      $('div.modal .close').on("click", function() {
+        return modals.close();
+      });
+      return $('div.modal .fullscreen').on("click", function() {
+        console.log($(this));
+        return modals.fullscreen($(this).parent('div.modal'));
       });
     };
     modals = (function() {
@@ -785,11 +789,10 @@
       if ($("#overlay").length < 1) {
         $('body').append('<div id="overlay"></div>');
       }
-      $('#overlay, .modal .close').bind("click", function(e) {
+      $('#overlay, div.modal .close').bind("click", function(e) {
         return close();
       });
       open = function(elem) {
-        var modal;
         $(window).bind("keydown", function(e) {
           var keyCode;
           keyCode = (e.which ? e.which : e.keyCode);
@@ -797,37 +800,44 @@
             return close();
           }
         });
-        modal = $(elem);
-        modal.addClass("active");
-        modal.css({
-          top: '50%',
-          left: '50%',
-          'margin-top': (modal.outerHeight() / -2) + 'px',
-          'margin-left': (modal.outerWidth() / -2) + 'px'
-        });
-        setTimeout(function() {
-          return $('html').addClass("modal-active");
-        }, 0);
-        return setTimeout(function() {
-          return $('html').removeClass('modal-ready');
-        }, 400);
-      };
-      close = function() {
-        $(window).unbind("keydown");
-        $('html').removeClass("modal-active").addClass('modal-ready');
-        if ($('.modal.active').hasClass('iframe')) {
-          $('#iframeModal iframe').attr('src', '');
-          $('.modal.active').css({
-            width: '80%',
-            height: '80%'
-          });
-        } else {
-          $('.modal.active').css({
+        $(elem).addClass("active");
+        if (!$(elem).hasClass('iframe')) {
+          $(elem).css({
             width: 'auto',
             height: 'auto'
           });
         }
-        $('.modal.active').css({
+        $(elem).css({
+          top: '50%',
+          left: '50%',
+          'margin-top': ($(elem).outerHeight() / -2) + 'px',
+          'margin-left': ($(elem).outerWidth() / -2) + 'px'
+        });
+        setTimeout(function() {
+          return $('html').addClass("modal-active");
+        }, 0);
+        setTimeout(function() {
+          return $('html').removeClass('modal-ready');
+        }, 400);
+      };
+      close = function() {
+        var modal;
+        modal = $('div.modal.active');
+        $(window).unbind("keydown");
+        $('html').removeClass("modal-active").addClass('modal-ready');
+        if (modal.hasClass('iframe')) {
+          $('div#iframeModal iframe').attr('src', '');
+          modal.css({
+            width: '80%',
+            height: '80%'
+          });
+        } else {
+          modal.css({
+            width: 'auto',
+            height: 'auto'
+          });
+        }
+        modal.css({
           top: '10%',
           left: '10%',
           'max-width': '80%',
@@ -835,36 +845,36 @@
           'margin-top': 0,
           'margin-left': 0
         });
-        $('.modal').removeClass("active").removeClass("fullscreen");
-        return $('.modal i.fullscreen').removeClass('icon-resize-small').addClass('icon-resize-full');
+        modal.removeClass("active").removeClass("fullscreen");
+        $('i.fullscreen', modal).removeClass('icon-resize-small').addClass('icon-resize-full');
       };
-      fullscreen = function() {
-        if ($('.modal.active').hasClass('fullscreen')) {
-          $('.modal i.fullscreen').removeClass('icon-resize-small').addClass('icon-resize-full');
-          if ($('.modal.active').hasClass('iframe')) {
-            $('.modal.active').css({
+      fullscreen = function(elem) {
+        if ($('div.modal.active').hasClass('fullscreen')) {
+          $('div.modal i.fullscreen').removeClass('icon-resize-small').addClass('icon-resize-full');
+          if ($('div.modal.active').hasClass('iframe')) {
+            $('div.modal.active').css({
               width: '80%',
               height: '80%'
             });
           } else {
-            $('.modal.active').css({
+            $('div.modal.active').css({
               width: 'auto',
               height: 'auto'
             });
           }
-          $('.modal.active').removeClass('fullscreen').css({
+          $('div.modal.active').removeClass('fullscreen').css({
             'max-width': '80%',
             'max-height': '80%'
           });
-          return $('.modal.active').delay(100).css({
+          $('div.modal.active').delay(100).css({
             top: '50%',
             left: '50%',
-            'margin-top': ($('.modal.active').outerHeight() / -2) + 'px',
-            'margin-left': ($('.modal.active').outerWidth() / -2) + 'px'
+            'margin-top': ($('div.modal.active').outerHeight() / -2) + 'px',
+            'margin-left': ($('div.modal.active').outerWidth() / -2) + 'px'
           });
         } else {
-          $('.modal i.fullscreen').addClass('icon-resize-small').removeClass('icon-resize-full');
-          return $('.modal.active').addClass('fullscreen').css({
+          $('div.modal i.fullscreen').addClass('icon-resize-small').removeClass('icon-resize-full');
+          $('div.modal.active').addClass('fullscreen').css({
             top: 0,
             left: 0,
             'margin-top': 0,
@@ -883,12 +893,14 @@
       };
     })();
     return $(window).resize(function() {
-      return $('.modal:visible').removeClass('active').css({
-        top: '50%',
-        left: '50%',
-        'margin-top': ($('.modal:visible').outerHeight() / -2) + 'px',
-        'margin-left': ($('.modal:visible').outerWidth() / -2) + 'px'
-      }).addClass('active');
+      return $('div.modal.active').each(function() {
+        return $(this).removeClass('active').css({
+          top: '50%',
+          left: '50%',
+          'margin-top': ($(this).outerHeight() / -2) + 'px',
+          'margin-left': ($(this).outerWidth() / -2) + 'px'
+        }).addClass('active');
+      });
     });
   })(jQuery);
 

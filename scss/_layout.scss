@@ -68,5 +68,11 @@
 .center           { display:block; margin:0 auto; }
 .clear, .clearfix { display:block; clear:both;
   &:after         { content:''; display:block; clear:both; }
-}.space            { height:$gutter; }
-.round            { @include rounded(50% 50%); }
+}.space           { height:$gutter; }
+.round            { @include rounded(9999px); }
+.rotate-90        { @include rotate(90deg); }
+.rotate-180       { @include rotate(180deg); }
+.rotate-270       { @include rotate(270deg); }
+.rotate-90-ctr    { @include rotate(-90deg); }
+.rotate-180-ctr   { @include rotate(-180deg); }
+.rotate-270-ctr   { @include rotate(-270deg); }

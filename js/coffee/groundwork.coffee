@@ -251,9 +251,11 @@ $(window).load ->
 $(window).resize ->
   limitPaginationItems()  # adjust pagination
   # resize responsive iframes/videos
-  $('iframe.responsive, video.responsive').each (index, object) ->
-    $(this).css
-      height: $(this).width() * ratio
+  $('iframe.responsive, video.responsive').each (i, obj) ->
+    ratio = $(obj).height() / $(obj).width()
+    console.log(ratio)
+    $(obj).css
+      height: $(obj).width() * ratio
 
 # responsive pagination
 limitPaginationItems = ->

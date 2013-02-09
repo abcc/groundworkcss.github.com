@@ -5,14 +5,14 @@
 
 
 
-.modal-ready {
-  body, div.modal {
-    @include transition(0.25s all ease-out);
-  }
-  #overlay {
-    @include transition(0.2s all ease-in);
-  }
-}
+// .modal-ready {
+//   body, div.modal {
+//     @include transition(0.25s all ease-out);
+//   }
+//   #overlay {
+//     @include transition(0.2s all ease-in);
+//   }
+// }
 
 .modal-active {
   body {
@@ -76,7 +76,7 @@ div.modal {
     }
   }
   .fullscreen {
-    color:#ccc;
+    color:#999;
     right:auto;
     left:$gutter;
   }

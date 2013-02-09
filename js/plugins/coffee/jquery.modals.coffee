@@ -12,14 +12,19 @@
   $.fn.modal = ->
 
     @each ->
+      # shuffle modals to end of DOM (outside of any .container elements)
       $(this).appendTo('body').prepend('<i class="close icon-remove"></i>').prepend('<i class="fullscreen icon-resize-full"></i>')
-      # bind each modal modal link to modal div
+      # bind each modal link to a modal
       $('[href=#'+$(this).attr('id')+']').on "click", ->
         modals.open($(this).attr('href'))
-      $('.modal .close').on "click", ->
-        modals.close()
-      $('.modal .fullscreen').on "click", ->
-        modals.fullscreen()
+
+    # close button
+    $('div.modal .close').on "click", ->
+      modals.close()
+    # fullscreen button
+    $('div.modal .fullscreen').on "click", ->
+      console.log($(this))
+      modals.fullscreen($(this).parent('div.modal'))
 
   modals = (->
 
@@ -31,7 +36,7 @@
       $('body').append('<div id="overlay"></div>')
     
     # bind overlay to close
-    $('#overlay, .modal .close').bind "click", (e) ->
+    $('#overlay, div.modal .close').bind "click", (e) ->
       close()
 
     open = (elem) ->
@@ -40,64 +45,70 @@
         keyCode = (if (e.which) then e.which else e.keyCode)
         if keyCode is 27
           close()
-      modal = $(elem)
-      modal.addClass("active")
-      modal.css
+      $(elem).addClass("active")
+      unless $(elem).hasClass('iframe')
+        $(elem).css
+          width: 'auto',
+          height: 'auto'
+      $(elem).css
         top: '50%',
         left: '50%',
-        'margin-top': (modal.outerHeight() / -2) + 'px',
-        'margin-left': (modal.outerWidth() / -2) + 'px'
+        'margin-top': ($(elem).outerHeight() / -2) + 'px',
+        'margin-left': ($(elem).outerWidth() / -2) + 'px'
       setTimeout ->
         $('html').addClass("modal-active")
       , 0
       setTimeout ->
         $('html').removeClass('modal-ready')
       , 400
+      return
 
     close = ->
+      modal = $('div.modal.active')
       $(window).unbind "keydown"
       $('html').removeClass("modal-active").addClass('modal-ready')
-      if $('.modal.active').hasClass('iframe')
-        $('#iframeModal iframe').attr('src','')
-        $('.modal.active').css
+      if modal.hasClass('iframe')
+        $('div#iframeModal iframe').attr('src','')
+        modal.css
           width: '80%',
           height: '80%'
       else
-        $('.modal.active').css
+        modal.css
           width: 'auto',
           height: 'auto'
-      $('.modal.active').css
+      modal.css
         top: '10%',
         left: '10%',
         'max-width': '80%',
         'max-height': '80%',
         'margin-top': 0,
         'margin-left': 0
-      $('.modal').removeClass("active").removeClass("fullscreen")
-      $('.modal i.fullscreen').removeClass('icon-resize-small').addClass('icon-resize-full')
+      modal.removeClass("active").removeClass("fullscreen")
+      $('i.fullscreen', modal).removeClass('icon-resize-small').addClass('icon-resize-full')
+      return
 
-    fullscreen = ->
-      if $('.modal.active').hasClass('fullscreen')
-        $('.modal i.fullscreen').removeClass('icon-resize-small').addClass('icon-resize-full')
-        if $('.modal.active').hasClass('iframe')
-          $('.modal.active').css
+    fullscreen = (elem) ->
+      if $('div.modal.active').hasClass('fullscreen')
+        $('div.modal i.fullscreen').removeClass('icon-resize-small').addClass('icon-resize-full')
+        if $('div.modal.active').hasClass('iframe')
+          $('div.modal.active').css
             width: '80%',
             height: '80%'
         else
-          $('.modal.active').css
+          $('div.modal.active').css
             width: 'auto',
             height: 'auto'
-        $('.modal.active').removeClass('fullscreen').css
+        $('div.modal.active').removeClass('fullscreen').css
           'max-width': '80%',
           'max-height': '80%'
-        $('.modal.active').delay(100).css
+        $('div.modal.active').delay(100).css
           top: '50%',
           left: '50%',
-          'margin-top': ($('.modal.active').outerHeight() / -2) + 'px',
-          'margin-left': ($('.modal.active').outerWidth() / -2) + 'px'
+          'margin-top': ($('div.modal.active').outerHeight() / -2) + 'px',
+          'margin-left': ($('div.modal.active').outerWidth() / -2) + 'px'
       else
-        $('.modal i.fullscreen').addClass('icon-resize-small').removeClass('icon-resize-full')
-        $('.modal.active').addClass('fullscreen').css
+        $('div.modal i.fullscreen').addClass('icon-resize-small').removeClass('icon-resize-full')
+        $('div.modal.active').addClass('fullscreen').css
           top: 0,
           left: 0,
           'margin-top': 0,
@@ -106,6 +117,7 @@
           height: '100%',
           'max-width': '100%',
           'max-height': '100%'
+      return
 
     open: open
     close: close
@@ -113,12 +125,13 @@
   )()
 
   $(window).resize ->
-    $('.modal:visible').removeClass('active').css(
-      top: '50%',
-      left: '50%',
-      'margin-top': ($('.modal:visible').outerHeight() / -2) + 'px',
-      'margin-left': ($('.modal:visible').outerWidth() / -2) + 'px'
-    ).addClass('active')
+    $('div.modal.active').each ->
+      $(this).removeClass('active').css(
+        top: '50%',
+        left: '50%',
+        'margin-top': ($(this).outerHeight() / -2) + 'px',
+        'margin-left': ($(this).outerWidth() / -2) + 'px'
+      ).addClass('active')
 
 
 ) jQuery
