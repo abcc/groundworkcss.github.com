@@ -109,7 +109,7 @@
       e.preventDefault();
       return false;
     });
-    $('.responsive').not('table').each(function(index, object) {
+    $('.responsive').not('table, iframe, video').each(function(index, object) {
       var compression, max, min;
       compression = 10;
       min = 10;
@@ -121,6 +121,18 @@
         compressor: compression,
         minSize: min,
         maxSize: max
+      });
+    });
+    $('iframe.responsive, video.responsive').each(function(index, object) {
+      var ratio;
+      ratio = $(this).height() / $(this).width();
+      $(this).css({
+        'max-width': '100%',
+        'max-height': '100%',
+        width: '100%'
+      });
+      return $(this).css({
+        height: $(this).width() * ratio
       });
     });
     $('table.responsive').each(function(index, object) {
@@ -141,6 +153,7 @@
       });
     });
     $('.tooltip[title]').tooltip();
+    $('div.modal').modal();
     $('.error input, .error textarea, \
      .invalid input, .invalid textarea, \
      input.error, textarea.error, \
@@ -237,7 +250,12 @@
   });
 
   $(window).resize(function() {
-    return limitPaginationItems();
+    limitPaginationItems();
+    return $('iframe.responsive, video.responsive').each(function(index, object) {
+      return $(this).css({
+        height: $(this).width() * ratio
+      });
+    });
   });
 
   limitPaginationItems = function() {
@@ -713,6 +731,133 @@
         fontSize = Math.floor(Math.max(Math.min(elem.width() / (elem.attr('data-compression')), parseFloat(elem.attr('data-max'))), parseFloat(elem.attr('data-min'))));
         return $("tr th, tr td", elem).css("font-size", fontSize + "px");
       });
+    });
+  })(jQuery);
+
+  /* --------------------------------------------
+       Begin jquery.modals.coffee
+  --------------------------------------------
+  */
+
+
+  /*
+   *
+   *  jQuery Modals by Gary Hepting
+   *   https://github.com/ghepting/modal  
+   *
+   *  Based on Avgrund by Hakim El Hattab <3
+   *
+  */
+
+
+  (function($) {
+    var elems, modals;
+    elems = [];
+    $.fn.modal = function() {
+      return this.each(function() {
+        $(this).appendTo('body').prepend('<i class="close icon-remove"></i>').prepend('<i class="fullscreen icon-resize-full"></i>');
+        $('[href=#' + $(this).attr('id') + ']').on("click", function() {
+          return modals.open($(this).attr('href'));
+        });
+        $('.modal .close').on("click", function() {
+          return modals.close();
+        });
+        return $('.modal .fullscreen').on("click", function() {
+          return modals.fullscreen();
+        });
+      });
+    };
+    modals = (function() {
+      var close, fullscreen, open;
+      $('html').addClass('modal-ready');
+      if ($("#overlay").length < 1) {
+        $('body').append('<div id="overlay"></div>');
+      }
+      $('#overlay, .modal .close').bind("click", function(e) {
+        return close();
+      });
+      open = function(elem) {
+        var modal;
+        $(window).bind("keydown", function(e) {
+          var keyCode;
+          keyCode = (e.which ? e.which : e.keyCode);
+          if (keyCode === 27) {
+            return close();
+          }
+        });
+        modal = $(elem);
+        modal.addClass("active");
+        modal.css({
+          top: '50%',
+          left: '50%',
+          'margin-top': (modal.outerHeight() / -2) + 'px',
+          'margin-left': (modal.outerWidth() / -2) + 'px'
+        });
+        setTimeout(function() {
+          return $('html').addClass("modal-active");
+        }, 0);
+        return setTimeout(function() {
+          return $('html').removeClass('modal-ready');
+        }, 400);
+      };
+      close = function() {
+        $(window).unbind("keydown");
+        $('html').removeClass("modal-active").addClass('modal-ready');
+        $('.modal').css({
+          top: '10%',
+          left: '10%',
+          width: 'auto',
+          height: 'auto',
+          'max-width': '80%',
+          'max-height': '80%',
+          'margin-top': 0,
+          'margin-left': 0
+        });
+        $('.modal').removeClass("active").removeClass("fullscreen");
+        return $('.modal i.fullscreen').removeClass('icon-resize-small').addClass('icon-resize-full');
+      };
+      fullscreen = function() {
+        if ($('.modal.active').hasClass('fullscreen')) {
+          $('.modal i.fullscreen').removeClass('icon-resize-small').addClass('icon-resize-full');
+          $('.modal.active').removeClass('fullscreen').css({
+            width: 'auto',
+            height: 'auto',
+            'max-width': '80%',
+            'max-height': '80%'
+          });
+          return $('.modal.active').delay(100).css({
+            top: '50%',
+            left: '50%',
+            'margin-top': ($('.modal.active').outerHeight() / -2) + 'px',
+            'margin-left': ($('.modal.active').outerWidth() / -2) + 'px'
+          });
+        } else {
+          $('.modal i.fullscreen').addClass('icon-resize-small').removeClass('icon-resize-full');
+          return $('.modal.active').addClass('fullscreen').css({
+            top: 0,
+            left: 0,
+            'margin-top': 0,
+            'margin-left': 0,
+            width: '100%',
+            height: '100%',
+            'max-width': '100%',
+            'max-height': '100%'
+          });
+        }
+      };
+      return {
+        open: open,
+        close: close,
+        fullscreen: fullscreen
+      };
+    })();
+    return $(window).resize(function() {
+      return $('.modal:visible').removeClass('active').css({
+        top: '50%',
+        left: '50%',
+        'margin-top': ($('.modal:visible').outerHeight() / -2) + 'px',
+        'margin-left': ($('.modal:visible').outerWidth() / -2) + 'px'
+      }).addClass('active');
     });
   })(jQuery);
 

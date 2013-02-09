@@ -103,7 +103,7 @@ $(document).ready ->
     return false
 
   # responsive headings
-  $('.responsive').not('table').each (index, object) ->
+  $('.responsive').not('table, iframe, video').each (index, object) ->
     compression = 10
     min = 10
     max = 200
@@ -114,6 +114,16 @@ $(document).ready ->
       compressor: compression,
       minSize: min,
       maxSize: max
+
+  # responsive iframes/videos
+  $('iframe.responsive, video.responsive').each (index, object) ->
+    ratio = $(this).height()/$(this).width()
+    $(this).css
+      'max-width': '100%',
+      'max-height': '100%',
+      width: '100%'
+    $(this).css
+      height: $(this).width() * ratio
 
   # responsive tables
   $('table.responsive').each (index, object) ->
@@ -133,6 +143,9 @@ $(document).ready ->
 
   # tooltips
   $('.tooltip[title]').tooltip()
+
+  # avgrund modals
+  $('div.modal').modal()
  
   # select all text on invalid input field entries
   $('.error input, .error textarea, 
@@ -225,6 +238,10 @@ $(window).load ->
 
 $(window).resize ->
   limitPaginationItems()  # adjust pagination
+  # resize responsive iframes/videos
+  $('iframe.responsive, video.responsive').each (index, object) ->
+    $(this).css
+      height: $(this).width() * ratio
 
 # responsive pagination
 limitPaginationItems = ->

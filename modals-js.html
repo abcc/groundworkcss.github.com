@@ -8,7 +8,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-  <title>Groundwork CSS &hearts; SASS &amp; Compass</title>
+  <title>Groundwork CSS &hearts; Modals</title>
   <!-- Modernizr -->
   <script src="./js/libs/modernizr-2.6.2.min.js"></script>
   <!-- jQuery -->
@@ -87,7 +87,8 @@
       <div class="one whole padded">
         <ul class="breadcrumbs">
           <li><a href="./home.html">Home</a></li>
-          <li><a href="./sass-compass.html">SASS &amp; Compass</a></li>
+          <li><a href="./components.html">Components</a></li>
+          <li><a href="./modals-js.html">Modals</a></li>
         </ul>
       </div>
     </div>
@@ -95,33 +96,25 @@
   <div class="container">
     <div class="row">
       <div class="one third padded">
-        <h1><i class="icon-plus-sign-alt"></i> SASS + Compass</h1>
-        <p>Sass is a powerful extension to CSS and provides variables, functions, the use of mixins and extends which speeds up development and makes code cleaner and much more organized.</p>
-        <p><i class="icon-warning-sign"></i> NOTE: For those that aren't using a CSS preprocessor yet, have no fear! We've packaged all of the normal CSS with Groundwork as well. However, we strongly encourage you to <a href="http://sass-lang.com/" target="_blank">learn and use SASS</a>. The SCSS syntax is very familiar, is easy to learn and can drastically increase your efficiency.</p>
-        <p class="small">P.S. &mdash; If you're not a fan of the terminal, <a href="http://incident57.com/codekit/" target="_blank">give CodeKit a try</a>.</p>
+        <h1><i class="icon-list-alt"></i> Modals</h1>
+        <p></p>
+        
       </div>
       <div class="two thirds padded">
-        <h2>SASS + Compass</h2>
-        <blockquote><strong>Sass makes CSS fun again</strong>. Sass is an extension of CSS3, adding <a href="#nesting">nested rules</a>, <a href="#variables">variables</a>, <a href="#mixins">mixins</a>, <a href="#extend">selector inheritance</a>, and <a href="/docs/yardoc/file.SASS_REFERENCE.html">more</a>. It’s translated to well-formatted, standard CSS using the command line tool or a web-framework plugin.
-          <cite><a href="http://sass-lang.com/" target="_blank">http://sass-lang.com/</a></cite>
-        </blockquote>
-        <h2>Example Usage:</h2>
-        <code>
-<pre><content>$blue: <val>#3bbfce</val>;</content></pre>
-<pre><content>$margin: <val>16px</val>;</content></pre>
-<pre></pre>
-<pre><tag>nav</tag><class>.special</class> {</pre>
-<pre>  <pair>border-color: <content>$blue;</content></pair></pre>
-<pre>  <pair>color: darken<content>($blue, <val>9</val><span>%</span>);</content></pair></pre>
-<pre></pre>
-<pre>  <tag>a</tag><class>.border</class> {</pre>
-<pre>    <pair>padding: <content>$margin / <val>2</val>;</content></pre>
-<pre>    margin: <content>$margin / <val>2</val>;</content></pre>
-<pre>    border-color: <content>$blue;</pair></content></pre>
-<pre>  }</pre>
-<pre>}</pre>
-        </code>
-        <p class="small">NOTE: This example is demonstrating the use of <a href="http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#variables_" target="_blank">variables</a> as well as <a href="http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#nested_rules" target="_blank">nested rules</a> using the <a href="#" target="_blank">SCSS</a> syntax.</p>
+        <p><a class="button" href="#example-modal">Inline Content</a></p>
+        <div id="example-modal" class="modal">
+          <h1>HTML Ipsum Presents</h1>
+          <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code class="inline">commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+          <ol>
+            <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+            <li>Aliquam tincidunt mauris eu risus.</li>
+          </ol>
+          <blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p></blockquote>
+        </div>
+        <p><a class="button" href="#example-modal-2">Modal with responsive video</a></p>
+        <div id="example-modal-2" class="modal">
+          <iframe class="responsive" width="560" height="315" src="http://www.youtube.com/embed/eDO23-eLoGA" frameborder="0" allowfullscreen></iframe>
+        </div>
       </div>
     </div>
   </div>
