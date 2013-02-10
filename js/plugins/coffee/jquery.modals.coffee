@@ -13,7 +13,7 @@
 
     @each ->
       # shuffle modals to end of DOM (outside of any .container elements)
-      $(this).appendTo('body').prepend('<i class="close icon-remove"></i>').prepend('<i class="fullscreen icon-resize-full"></i>')
+      $(this).wrapInner('<div class="modal-content"></div>').prepend('<i class="close icon-remove"></i>').prepend('<i class="fullscreen icon-resize-full"></i>').appendTo('body')
       # bind each modal link to a modal
       $('[href=#'+$(this).attr('id')+']').on "click", ->
         modals.open($(this).attr('href'))
@@ -51,6 +51,7 @@
           width: 'auto',
           height: 'auto'
       $(elem).css
+        height: $(elem).outerHeight(),
         top: '50%',
         left: '50%',
         'margin-top': ($(elem).outerHeight() / -2) + 'px',
@@ -127,11 +128,13 @@
   $(window).resize ->
     $('div.modal.active').each ->
       $(this).removeClass('active').css(
+        height: 'auto',
         top: '50%',
         left: '50%',
         'margin-top': ($(this).outerHeight() / -2) + 'px',
         'margin-left': ($(this).outerWidth() / -2) + 'px'
-      ).addClass('active')
+      ).addClass('active').css
+        height: $(this).outerHeight()
 
 
 ) jQuery

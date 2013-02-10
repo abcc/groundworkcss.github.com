@@ -101,18 +101,50 @@
         
       </div>
       <div class="two thirds padded">
+        <h6>Example Usage:</h6>
+        <code>
+<pre>&lt;<tag>p</tag>&gt;&lt;<tag>a</tag> class=&quot;<span>button</span>&quot; href=&quot;<span>#example-modal</span>&quot;&gt;<content>Inline Content</content>&lt;/<tag>a</tag>&gt;&lt;/<tag>p</tag>&gt;
+&lt;<tag>div</tag> id=&quot;<span>example-modal</span>&quot; class=&quot;<span>modal</span>&quot;&gt;
+  &lt;<tag>img</tag> src=&quot;<span>http://placekitten.com/g/200/300</span>&quot; class=&quot;<span>pull-right gap-left gap-bottom</span>&quot; /&gt;
+  &lt;<tag>h1</tag>&gt;<content>HTML Ipsum Presents</content>&lt;/h1&gt;
+  &lt;<tag>p</tag>&gt;&lt;<tag>strong</tag>&gt;<content>Pellentesque habitant morbi tristique</content>&lt;/<tag>strong</tag>&gt; <content>senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.</content> &lt;<tag>em</tag>&gt;<content>Aenean ultricies mi vitae est.</content>&lt;/<tag>em</tag>&gt; <content>Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui.</content> &lt;<tag>a</tag> href=&quot;#&quot;&gt;<content>Donec non enim</content>&lt;/<tag>a</tag>&gt; <content>in turpis pulvinar facilisis. Ut felis.</content>&lt;/<tag>p</tag>&gt;
+  &lt;<tag>ol</tag>&gt;
+    &lt;<tag>li</tag>&gt;<content>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</content>&lt;/<tag>li</tag>&gt;
+    &lt;<tag>li</tag>&gt;<content>Aliquam tincidunt mauris eu risus.</content>&lt;/<tag>li</tag>&gt;
+  &lt;/<tag>ol</tag>&gt;
+  &lt;<tag>p</tag>&gt;<content>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</content>&lt;/<tag>p</tag>&gt;
+&lt;/<tag>div</tag>&gt;</pre>
+        </code>
+        <hr/>
+        <h6>Result:</h6>
         <p><a class="button" href="#example-modal">Inline Content</a></p>
         <div id="example-modal" class="modal">
+          <img src="http://placekitten.com/g/200/300" class="pull-right gap-left gap-bottom" />
           <h1>HTML Ipsum Presents</h1>
-          <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code class="inline">commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+          <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
           <ol>
             <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
             <li>Aliquam tincidunt mauris eu risus.</li>
           </ol>
-          <blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p></blockquote>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p>
         </div>
-        <p><a class="modal button" href="http://garyhepting.com/ipsumatic">External Content <i class="icon-external-link"></i></a></p>
-        <p><a class="modal button" href="http://www.youtube.com/embed/eDO23-eLoGA">YouTube video</a></p>
+        <h6>Example Usage:</h6>
+        <code>
+<pre>&lt;<tag>p</tag>&gt;&lt;<tag>a</tag> class=&quot;<span>modal button</span>&quot; href=&quot;<span>http://placekitten.com/</span>&quot;&gt;<content>External Content</content> &lt;<tag>i</tag> class=&quot;<span>icon-external-link</span>&quot;&gt;&lt;/<tag>i</tag>&gt;&lt;/<tag>a</tag>&gt;&lt;/<tag>p</tag>&gt;</pre>
+        </code>
+        <hr/>
+        <h6>Result:</h6>
+        <p><a class="modal button" href="http://placekitten.com/">External Content <i class="icon-external-link"></i></a></p>
+        <hr/>
+
+        <h6>Example Usage:</h6>
+        <code>
+<pre>&lt;<tag>p</tag>&gt;&lt;<tag>a</tag> class=&quot;<span>modal button</span>&quot; href=&quot;<span>http://www.youtube.com/embed/eDO23-eLoGA</span>&quot;&gt;<content>YouTube Video</content>&lt;/<tag>a</tag>&gt;&lt;/<tag>p</tag>&gt;</pre>
+        </code>
+        <hr/>
+        <h6>Result:</h6>
+        <p><a class="modal button" href="http://www.youtube.com/embed/eDO23-eLoGA">YouTube Video</a></p>
+        <!-- <p><a class="ajax modal button" href="./content/kittens.html">AJAX Content <i class="icon-cloud"></i></a></p> -->
       </div>
     </div>
   </div>

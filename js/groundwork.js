@@ -770,7 +770,7 @@
     elems = [];
     $.fn.modal = function() {
       this.each(function() {
-        $(this).appendTo('body').prepend('<i class="close icon-remove"></i>').prepend('<i class="fullscreen icon-resize-full"></i>');
+        $(this).wrapInner('<div class="modal-content"></div>').prepend('<i class="close icon-remove"></i>').prepend('<i class="fullscreen icon-resize-full"></i>').appendTo('body');
         return $('[href=#' + $(this).attr('id') + ']').on("click", function() {
           return modals.open($(this).attr('href'));
         });
@@ -808,6 +808,7 @@
           });
         }
         $(elem).css({
+          height: $(elem).outerHeight(),
           top: '50%',
           left: '50%',
           'margin-top': ($(elem).outerHeight() / -2) + 'px',
@@ -895,11 +896,14 @@
     return $(window).resize(function() {
       return $('div.modal.active').each(function() {
         return $(this).removeClass('active').css({
+          height: 'auto',
           top: '50%',
           left: '50%',
           'margin-top': ($(this).outerHeight() / -2) + 'px',
           'margin-left': ($(this).outerWidth() / -2) + 'px'
-        }).addClass('active');
+        }).addClass('active').css({
+          height: $(this).outerHeight()
+        });
       });
     });
   })(jQuery);
