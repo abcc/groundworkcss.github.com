@@ -12,18 +12,19 @@
   $.fn.modal = ->
 
     @each ->
-      # shuffle modals to end of DOM (outside of any .container elements)
-      $(this).wrapInner('<div class="modal-content"></div>').prepend('<i class="close icon-remove"></i>').prepend('<i class="fullscreen icon-resize-full"></i>').appendTo('body')
+      $(this).not('#iframeModal').wrapInner('<div class="modal-content"></div>')
+      $(this).prepend('<i class="close icon-remove"></i>').prepend('<i class="fullscreen icon-resize-full"></i>').appendTo('body')
       # bind each modal link to a modal
-      $('[href=#'+$(this).attr('id')+']').on "click", ->
+      $('[href=#'+$(this).attr('id')+']').on "click", (e) ->
         modals.open($(this).attr('href'))
+        e.preventDefault()
+        return false
 
     # close button
     $('div.modal .close').on "click", ->
       modals.close()
     # fullscreen button
     $('div.modal .fullscreen').on "click", ->
-      console.log($(this))
       modals.fullscreen($(this).parent('div.modal'))
 
   modals = (->
@@ -50,8 +51,9 @@
         $(elem).css
           width: 'auto',
           height: 'auto'
+        $(elem).css
+          height: $(elem).outerHeight(),
       $(elem).css
-        height: $(elem).outerHeight(),
         top: '50%',
         left: '50%',
         'margin-top': ($(elem).outerHeight() / -2) + 'px',
@@ -99,6 +101,8 @@
           $('div.modal.active').css
             width: 'auto',
             height: 'auto'
+          $('div.modal.active').css
+            height: $('div.modal.active').outerHeight()
         $('div.modal.active').removeClass('fullscreen').css
           'max-width': '80%',
           'max-height': '80%'
@@ -128,13 +132,16 @@
   $(window).resize ->
     $('div.modal.active').each ->
       $(this).removeClass('active').css(
-        height: 'auto',
         top: '50%',
         left: '50%',
         'margin-top': ($(this).outerHeight() / -2) + 'px',
         'margin-left': ($(this).outerWidth() / -2) + 'px'
-      ).addClass('active').css
-        height: $(this).outerHeight()
+      ).addClass('active')
+      unless $(this).hasClass('iframe')
+        $(this).css
+          height: 'auto'
+        $(this).css
+          height: $(this).outerHeight()
 
 
 ) jQuery

@@ -770,16 +770,18 @@
     elems = [];
     $.fn.modal = function() {
       this.each(function() {
-        $(this).wrapInner('<div class="modal-content"></div>').prepend('<i class="close icon-remove"></i>').prepend('<i class="fullscreen icon-resize-full"></i>').appendTo('body');
-        return $('[href=#' + $(this).attr('id') + ']').on("click", function() {
-          return modals.open($(this).attr('href'));
+        $(this).not('#iframeModal').wrapInner('<div class="modal-content"></div>');
+        $(this).prepend('<i class="close icon-remove"></i>').prepend('<i class="fullscreen icon-resize-full"></i>').appendTo('body');
+        return $('[href=#' + $(this).attr('id') + ']').on("click", function(e) {
+          modals.open($(this).attr('href'));
+          e.preventDefault();
+          return false;
         });
       });
       $('div.modal .close').on("click", function() {
         return modals.close();
       });
       return $('div.modal .fullscreen').on("click", function() {
-        console.log($(this));
         return modals.fullscreen($(this).parent('div.modal'));
       });
     };
@@ -806,9 +808,11 @@
             width: 'auto',
             height: 'auto'
           });
+          $(elem).css({
+            height: $(elem).outerHeight()
+          });
         }
         $(elem).css({
-          height: $(elem).outerHeight(),
           top: '50%',
           left: '50%',
           'margin-top': ($(elem).outerHeight() / -2) + 'px',
@@ -862,6 +866,9 @@
               width: 'auto',
               height: 'auto'
             });
+            $('div.modal.active').css({
+              height: $('div.modal.active').outerHeight()
+            });
           }
           $('div.modal.active').removeClass('fullscreen').css({
             'max-width': '80%',
@@ -895,15 +902,20 @@
     })();
     return $(window).resize(function() {
       return $('div.modal.active').each(function() {
-        return $(this).removeClass('active').css({
-          height: 'auto',
+        $(this).removeClass('active').css({
           top: '50%',
           left: '50%',
           'margin-top': ($(this).outerHeight() / -2) + 'px',
           'margin-left': ($(this).outerWidth() / -2) + 'px'
-        }).addClass('active').css({
-          height: $(this).outerHeight()
-        });
+        }).addClass('active');
+        if (!$(this).hasClass('iframe')) {
+          $(this).css({
+            height: 'auto'
+          });
+          return $(this).css({
+            height: $(this).outerHeight()
+          });
+        }
       });
     });
   })(jQuery);
