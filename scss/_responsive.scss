@@ -183,14 +183,18 @@
       }
     }
   }
-  .tabs:not(.small-tablet):not(.mobile) {
+  .tabs:not(.small-tablet):not(.mobile):not(.vertical) {
     > ul {
       li {
         float:none;
         width:100%;
+        margin:0;
         a {
           @include rounded(0);
           border-bottom:none;
+          &:before, &:after {
+            display:none !important;
+          }
         }
         &:first-child a {
           @include rounded($radius $radius 0 0); 

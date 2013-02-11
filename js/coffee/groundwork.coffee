@@ -143,20 +143,8 @@ $(document).ready ->
 
   # tooltips
   $('.tooltip[title]').tooltip()
-
+  
   # modals
-  $('a.modal').each ->
-    $(this).attr('data-url',$(this).attr('href'))
-    $(this).attr('href','#iframeModal')
-    # create placeholder modal
-    if $('div#iframeModal').length < 1
-      $('body').append('<div class="iframe modal" id="iframeModal"></div>')
-  # bind external modal links to placeholder modal
-  $('a.modal').on "click", (e) ->
-    $('div#iframeModal').empty().append('<iframe width="100%" height="100%" src="'+$(this).attr('data-url')+'"></iframe>')
-    e.preventDefault
-    false
-  # enable modals
   $('div.modal').modal()
 
   # select all text on invalid input field entries

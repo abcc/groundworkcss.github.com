@@ -14,6 +14,19 @@
 
   (function($) {
     var elems, modals;
+    if ($('div#iframeModal').length < 1) {
+      $('body').append('<div class="iframe modal" id="iframeModal"><iframe></iframe></div>');
+      $('div#iframeModal').prepend('<i class="close icon-remove"></i>').prepend('<i class="fullscreen icon-resize-full"></i>');
+    }
+    $('a.modal').each(function() {
+      $(this).attr('data-url', $(this).attr('href'));
+      return $(this).attr('href', '#iframeModal');
+    });
+    $('a.modal').on("click", function(e) {
+      $('div#iframeModal iframe').replaceWith('<iframe width="100%" height="100%" src="' + $(this).attr('data-url') + '"></iframe>');
+      e.preventDefault();
+      return false;
+    });
     elems = [];
     $.fn.modal = function() {
       this.each(function() {
@@ -78,7 +91,7 @@
         $(window).unbind("keydown");
         $('html').removeClass("modal-active").addClass('modal-ready');
         if (modal.hasClass('iframe')) {
-          $('div#iframeModal').empty();
+          $('div#iframeModal iframe').replaceWith('<iframe></iframe>');
           modal.css({
             width: '80%',
             height: '80%'
