@@ -71,7 +71,7 @@
       $(window).unbind "keydown"
       $('html').removeClass("modal-active").addClass('modal-ready')
       if modal.hasClass('iframe')
-        $('div#iframeModal iframe').attr('src','')
+        $('div#iframeModal').empty()
         modal.css
           width: '80%',
           height: '80%'

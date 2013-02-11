@@ -157,11 +157,11 @@
       $(this).attr('data-url', $(this).attr('href'));
       $(this).attr('href', '#iframeModal');
       if ($('div#iframeModal').length < 1) {
-        return $('body').append('<div class="iframe modal" id="iframeModal"><iframe width="100%" height="100%" src=""></iframe></div>');
+        return $('body').append('<div class="iframe modal" id="iframeModal"></div>');
       }
     });
     $('a.modal').on("click", function(e) {
-      $('div#iframeModal iframe').attr('src', $(this).attr('data-url'));
+      $('div#iframeModal').empty().append('<iframe width="100%" height="100%" src="' + $(this).attr('data-url') + '"></iframe>');
       e.preventDefault;
       return false;
     });
@@ -831,7 +831,7 @@
         $(window).unbind("keydown");
         $('html').removeClass("modal-active").addClass('modal-ready');
         if (modal.hasClass('iframe')) {
-          $('div#iframeModal iframe').attr('src', '');
+          $('div#iframeModal').empty();
           modal.css({
             width: '80%',
             height: '80%'

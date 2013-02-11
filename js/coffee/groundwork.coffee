@@ -150,10 +150,10 @@ $(document).ready ->
     $(this).attr('href','#iframeModal')
     # create placeholder modal
     if $('div#iframeModal').length < 1
-      $('body').append('<div class="iframe modal" id="iframeModal"><iframe width="100%" height="100%" src=""></iframe></div>')
+      $('body').append('<div class="iframe modal" id="iframeModal"></div>')
   # bind external modal links to placeholder modal
   $('a.modal').on "click", (e) ->
-    $('div#iframeModal iframe').attr('src',$(this).attr('data-url')) # change iframe src
+    $('div#iframeModal').empty().append('<iframe width="100%" height="100%" src="'+$(this).attr('data-url')+'"></iframe>')
     e.preventDefault
     false
   # enable modals
