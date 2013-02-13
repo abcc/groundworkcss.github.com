@@ -94,6 +94,7 @@ span.select {
   background:white;
   border:1px solid $border-color;
   position:relative;
+  cursor:pointer;
   @include rounded($radius);
   &:after {
     content:'...';

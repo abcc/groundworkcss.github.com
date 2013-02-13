@@ -29,9 +29,6 @@
       bottom: bottom = win.height() - top - el.outerHeight()
       right: right = win.width() - left - el.outerWidth()
 
-    closetooltip = ->
-      tooltip.remove()              # remove tooltip
-
     setPosition = (trigger) ->
       # get trigger element coordinates
       coords = getElementPosition(trigger)
@@ -61,20 +58,29 @@
         attrs.top = (trigger.offset().top - height) - 20
       else # bottom positioned tooltip
         tooltip.addClass('bottom')
-        attrs.top = trigger.offset().top + 15
+        attrs.top = trigger.offset().top + trigger.outerHeight() - 4
       tooltip.css attrs
 
-    showtooltip = (e) ->
-      closetooltip()                  # close tooltip
+    closetooltip = ->
+      tooltip.stop().remove()                # remove tooltip
+      $('[role=tooltip]').removeClass('on')
+
+    showtooltip = (trigger) ->
+      closetooltip()           # close tooltip
       clearTimeout(delayShow)         # cancel previous timeout
       delayShow = setTimeout ->
-        trigger = $(e.target)         # set trigger element
-        # create tooltip DOM element
-        tooltip = $("<div id=\"tooltip\"></div>")
-        # add tooltip element to DOM
-        tooltip.css("opacity", 0).html(trigger.attr('data-title')).appendTo "body"
+        if $('#tooltip').length != 1
+          # destroy any lingering tooltips
+          $('#tooltip').remove()
+          # create tooltip DOM element
+          tooltip = $("<div id=\"tooltip\"></div>")
+          # add tooltip element to DOM
+          tooltip.appendTo("body")
+        # set tooltip text
+        tooltip.css("opacity", 0).text(trigger.attr('data-title'))
         # initialize tooltip
         setPosition(trigger)
+        trigger.addClass('on')
         tooltip.animate
           top: "+=10"
           opacity: 1
@@ -83,34 +89,33 @@
 
     @each ->
       $this = $(this)
-
       $this.attr('role','tooltip').attr('data-title',$this.attr('title'))
-      $this.removeAttr "title"        # remove title attribute
-        
-      if $this.is('input') || $this.is('select') || $this.is('textarea')
-        # focus behavior
-        $this.bind
-          focus: (e) ->
-            showtooltip(e)                    # show tooltip
-            $this.bind                        # bind mouseenter
-              mouseenter: (e) ->
-                showtooltip(e)                # show tooltip
-          blur: (e) ->
-            clearTimeout(delayShow)           # cancel delay show
-            closetooltip()                    # close tooltip
-            $this.unbind('mouseenter')        # unbind mouseenter
-      else
-        # hover and focus behavior
-        $this.bind
-          mouseenter: (e) ->
-            showtooltip(e)                    # show tooltip
-          mouseleave: ->
-            clearTimeout(delayShow)           # cancel delay show
-            closetooltip()                    # close tooltip
-          focus: (e) ->
-            showtooltip(e)                    # show tooltip
-          blur: (e) ->
-            clearTimeout(delayShow)           # cancel delay show
-            closetooltip()                    # close tooltip
+      $this.removeAttr "title"        # remove title attribute (disable browser tooltips)
+      
+    
+    # focus behavior
+    $('body').on(
+      'focus', '[role=tooltip]', ->
+        showtooltip($(this))
+    ).on(
+      'blur', '[role=tooltip]', ->
+        clearTimeout(delayShow)
+        closetooltip()
+    ).on(
+      'mouseenter', '[role=tooltip]:not(input,select,textarea)', ->
+        showtooltip($(this))
+    ).on(
+      'mouseleave', '[role=tooltip]:not(input,select,textarea)', ->
+        clearTimeout(delayShow)
+        closetooltip()
+    )
+
+    $(window).on
+      scroll: ->
+        trigger = $('[role=tooltip].on')
+        if trigger.length
+          setPosition(trigger)
+          $('#tooltip').css
+            top: "+=10"
 
 ) jQuery

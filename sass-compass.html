@@ -8,7 +8,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-  <title>Groundwork CSS &hearts; SASS &amp; Compass</title>
+  <title>Groundwork CSS &hearts; Sass &amp; Compass</title>
   <!-- Modernizr -->
   <script src="./js/libs/modernizr-2.6.2.min.js"></script>
   <!-- jQuery -->
@@ -18,6 +18,19 @@
   <link type="text/css" rel="stylesheet" href="./css/groundwork.css">
   <!-- Groundy theme files -->
   <link type="text/css" rel="stylesheet" href="./css/groundy/groundy.css">
+  <!--[if IE]>
+  <link type="text/css" rel="stylesheet" href="./css/groundwork-ie.css">
+  <![endif]-->
+  <!--[if lt IE 9]>
+  <script type="text/javascript" src="./js/libs/html5shiv.js"></script>
+  <script>
+    /* polyfill custom tags for code samples */
+    customTags = ['tag','content','function','string','class','val','comment','arg','prop'];
+    for (var i = 0; i < customTags.length; i++) {
+      document.createElement(customTags[i]);
+    }
+  </script>
+  <![endif]-->
   <!--[if IE 7]>
   <link type="text/css" rel="stylesheet" href="./css/font-awesome-ie7.min.css">
   <![endif]-->
@@ -36,9 +49,18 @@
     //   };
     //   datauri.src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";
     // })();
+    // polyfill SVG elements
     Modernizr.load({
       test: Modernizr.svg,
       nope: './css/groundy/no-svg.css'
+    });
+    // polyfill for HTML5 placeholders
+    Modernizr.load({
+      test: Modernizr.input.placeholder,
+      nope: [
+        './css/placeholder_polyfill.css',
+        './js/libs/placeholder_polyfill.jquery.js'
+      ]
     });
   </script>
 </head>
@@ -95,13 +117,13 @@
   <div class="container">
     <div class="row">
       <div class="one third padded">
-        <h1><i class="icon-plus-sign-alt"></i> SASS + Compass</h1>
+        <h1><i class="icon-plus-sign-alt"></i> Sass + Compass</h1>
         <p>Sass is a powerful extension to CSS and provides variables, functions, the use of mixins and extends which speeds up development and makes code cleaner and much more organized.</p>
-        <p><i class="icon-warning-sign"></i> NOTE: For those that aren't using a CSS preprocessor yet, have no fear! We've packaged all of the normal CSS with Groundwork as well. However, we strongly encourage you to <a href="http://sass-lang.com/" target="_blank">learn and use SASS</a>. The SCSS syntax is very familiar, is easy to learn and can drastically increase your efficiency.</p>
+        <p><i class="icon-warning-sign"></i> NOTE: For those that aren't using a CSS preprocessor yet, have no fear! We've packaged all of the normal CSS with Groundwork as well. However, we strongly encourage you to <a href="http://sass-lang.com/" target="_blank">learn and use Sass</a>. The SCSS syntax is very familiar, is easy to learn and can drastically increase your efficiency.</p>
         <p class="small">P.S. &mdash; If you're not a fan of the terminal, <a href="http://incident57.com/codekit/" target="_blank">give CodeKit a try</a>.</p>
       </div>
       <div class="two thirds padded">
-        <h2>SASS + Compass</h2>
+        <h2>Sass + Compass</h2>
         <blockquote><strong>Sass makes CSS fun again</strong>. Sass is an extension of CSS3, adding <a href="#nesting">nested rules</a>, <a href="#variables">variables</a>, <a href="#mixins">mixins</a>, <a href="#extend">selector inheritance</a>, and <a href="/docs/yardoc/file.SASS_REFERENCE.html">more</a>. It’s translated to well-formatted, standard CSS using the command line tool or a web-framework plugin.
           <cite><a href="http://sass-lang.com/" target="_blank">http://sass-lang.com/</a></cite>
         </blockquote>

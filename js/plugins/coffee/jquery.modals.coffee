@@ -11,14 +11,14 @@
 
   # setup iframe modal
   if $('div#iframeModal').length < 1
-    $('body').append('<div class="iframe modal" id="iframeModal"><iframe></iframe></div>')
+    $('body').append('<div class="iframe modal" id="iframeModal"><iframe marginheight="0" marginwidth="0" frameborder="0"></iframe></div>')
     $('div#iframeModal').prepend('<i class="close icon-remove"></i>').prepend('<i class="fullscreen icon-resize-full"></i>')
   $('a.modal').each ->
     $(this).attr('data-url',$(this).attr('href'))
     $(this).attr('href','#iframeModal')
   # bind external modal links to iframe modal
   $('a.modal').on "click", (e) ->
-    $('div#iframeModal iframe').replaceWith('<iframe width="100%" height="100%" src="'+$(this).attr('data-url')+'"></iframe>')
+    $('div#iframeModal iframe').replaceWith('<iframe marginheight="0" marginwidth="0" frameborder="0" width="100%" height="100%" src="'+$(this).attr('data-url')+'"></iframe>')
     e.preventDefault()
     false
 
@@ -85,7 +85,7 @@
       $(window).unbind "keydown"
       $('html').removeClass("modal-active").addClass('modal-ready')
       if modal.hasClass('iframe')
-        $('div#iframeModal iframe').replaceWith('<iframe></iframe>')
+        $('div#iframeModal iframe').replaceWith('<iframe marginheight="0" marginwidth="0" frameborder="0"></iframe>')
         modal.css
           width: '80%',
           height: '80%'

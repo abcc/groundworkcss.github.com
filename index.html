@@ -17,6 +17,19 @@
   <link type="text/css" rel="stylesheet" href="./css/groundwork.css">
   <!-- Groundy theme files -->
   <link type="text/css" rel="stylesheet" href="./css/groundy/groundy.css">
+  <!--[if IE]>
+  <link type="text/css" rel="stylesheet" href="./css/groundwork-ie.css">
+  <![endif]-->
+  <!--[if lt IE 9]>
+  <script type="text/javascript" src="./js/libs/html5shiv.js"></script>
+  <script>
+    /* polyfill custom tags for code samples */
+    customTags = ['tag','content','function','string','class','val','comment','arg','prop'];
+    for (var i = 0; i < customTags.length; i++) {
+      document.createElement(customTags[i]);
+    }
+  </script>
+  <![endif]-->
   <!--[if IE 7]>
   <link type="text/css" rel="stylesheet" href="./css/font-awesome-ie7.min.css">
   <![endif]-->
@@ -35,9 +48,18 @@
     //   };
     //   datauri.src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";
     // })();
+    // polyfill SVG elements
     Modernizr.load({
       test: Modernizr.svg,
       nope: './css/groundy/no-svg.css'
+    });
+    // polyfill for HTML5 placeholders
+    Modernizr.load({
+      test: Modernizr.input.placeholder,
+      nope: [
+        './css/placeholder_polyfill.css',
+        './js/libs/placeholder_polyfill.jquery.js'
+      ]
     });
   </script>
 </head>
@@ -64,11 +86,11 @@
       position:fixed;
       top:0;
       z-index:99;
-      width:266px;
+      width:315px;
       left:50%;
       height:2em;
       margin:0 auto;
-      margin-left:-133px;
+      margin-left:-162px;
     }
     #resizer ul {
       -webkit-filter: drop-shadow(0 1px 5px rgba(0,0,0,.25));
@@ -153,10 +175,11 @@
   <div style="position:fixed;top:0;z-index:99;width:100%;">
     <div id="resizer">
       <ul class="button-list pull-left">
-        <li><a class="active" title="Desktop" href="#" data-viewport-width="100%" data-viewport-height="100%"><i class="icon-desktop"></i></a></li>
+        <li><a class="active" title="Fullscreen" href="#" data-viewport-width="100%" data-viewport-height="100%"><i class="icon-fullscreen"></i></a></li>
+        <li><a title="Desktop" href="#" data-viewport-width="1920" data-viewport-height="1080"><i class="icon-desktop"></i></a></li>
         <li><a title="13&quot; MacBook" href="#" data-viewport-width="1280px" data-viewport-height="800px"><i class="icon-laptop"></i></a></li>
-        <li><a title="Small Tablet" href="#" data-rotate="true" data-viewport-width="600px" data-viewport-height="1024px"><i class="icon-tablet"></i></a></li>
-        <li><a title="Mobile Phone" href="#" data-rotate="true" data-viewport-width="360px" data-viewport-height="640px"><i class="icon-mobile-phone"></i></a></li>
+        <li><a title="Small Tablet" href="#" data-rotate="true" data-viewport-width="720px" data-viewport-height="1280px"><i class="icon-tablet"></i></a></li>
+        <li><a title="Mobile Phone" href="#" data-rotate="true" data-viewport-width="480px" data-viewport-height="720px"><i class="icon-mobile-phone"></i></a></li>
         <li><a title="Rotate" href="#" class="rotate"><i class="icon-refresh"></i></a></li>
       </ul>
       <a id="closeResizer" class="pull-left" title="Close Resizer" href="./home.html"><i class="icon-remove"></i></a>

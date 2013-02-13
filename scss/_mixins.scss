@@ -68,7 +68,7 @@
 // vertical gradient
 @mixin gradient($startColor:$white, $endColor:$gray-2) {
   background:$startColor; // fallback
-  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$startColor}', endColorstr='#{$endColor}',GradientType=0 ); // IE 6-8
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($startColor)}', endColorstr='#{ie-hex-str($endColor)}',GradientType=0 ); // IE 6-8
   background:-ms-linear-gradient(top, $startColor 0%, $endColor 100%); // IE 10+
   background:-o-linear-gradient(top, $startColor 0%, $endColor 100%); // Opera
   background:-moz-linear-gradient(top, $startColor 0%, $endColor 100%); // Firefox
@@ -94,7 +94,7 @@
 }
 // filter drop shadow
 @mixin filter-shadow($color:rgba(0,0,0,0.2), $blur:0, $x:0, $y:0) { // color, blur, x, y
-  -ms-filter: drop-shadow($x $y $blur $color); // IE10+
+  -ms-filter: drop-shadow($x $y $blur $color); // IE9+
   -o-filter: drop-shadow($x $y $blur $color); // Opera
   -moz-filter: drop-shadow($x $y $blur $color); // Firefox
   -webkit-filter: drop-shadow($x $y $blur $color); // Webkit (Safari, Chrome, other)
@@ -104,8 +104,8 @@
 // inner box shadow
 @mixin inner-shadow($color, $blur:0, $x:0, $y:0) { // color, blur, x, y
   -ms-box-shadow:inset $x $y $blur $color; // IE10+
-  // -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=#{$blur}, Direction=135, Color='#{$color}')"; // IE8
-  // filter: progid:DXImageTransform.Microsoft.Shadow(Strength=#{$blur}, Direction=135, Color='#{$color}'); // IE7-
+  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=#{$blur}, Direction=135, Color='#{ie-hex-str($color)}')"; // IE8
+  filter: progid:DXImageTransform.Microsoft.Shadow(Strength=#{$blur}, Direction=135, Color='#{ie-hex-str($color)}'); // IE7-
   -o-box-shadow:inset $x $y $blur $color; // Opera
   -moz-box-shadow:inset $x $y $blur $color; // Firefox
   -webkit-box-shadow:inset $x $y $blur $color; // Webkit (Safari, Chrome, other)

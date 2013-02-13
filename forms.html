@@ -18,6 +18,19 @@
   <link type="text/css" rel="stylesheet" href="./css/groundwork.css">
   <!-- Groundy theme files -->
   <link type="text/css" rel="stylesheet" href="./css/groundy/groundy.css">
+  <!--[if IE]>
+  <link type="text/css" rel="stylesheet" href="./css/groundwork-ie.css">
+  <![endif]-->
+  <!--[if lt IE 9]>
+  <script type="text/javascript" src="./js/libs/html5shiv.js"></script>
+  <script>
+    /* polyfill custom tags for code samples */
+    customTags = ['tag','content','function','string','class','val','comment','arg','prop'];
+    for (var i = 0; i < customTags.length; i++) {
+      document.createElement(customTags[i]);
+    }
+  </script>
+  <![endif]-->
   <!--[if IE 7]>
   <link type="text/css" rel="stylesheet" href="./css/font-awesome-ie7.min.css">
   <![endif]-->
@@ -36,9 +49,18 @@
     //   };
     //   datauri.src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";
     // })();
+    // polyfill SVG elements
     Modernizr.load({
       test: Modernizr.svg,
       nope: './css/groundy/no-svg.css'
+    });
+    // polyfill for HTML5 placeholders
+    Modernizr.load({
+      test: Modernizr.input.placeholder,
+      nope: [
+        './css/placeholder_polyfill.css',
+        './js/libs/placeholder_polyfill.jquery.js'
+      ]
     });
   </script>
 </head>
@@ -268,8 +290,8 @@
               <div class="one whole padded">
                 <label for="things">Pick a thing:</label>
                 <ul class="radio-list">
-                  <li><input type="radio" id="things" name="things" checked /> Thing one</li>
-                  <li><input type="radio" name="things" /> Thing two</li>
+                  <li><input type="radio" id="things1" name="things" checked /> <label class="inline" for="things1">Thing one</label></li>
+                  <li><input type="radio" id="things2" name="things" /> <label class="inline" for="things2">Thing two</label></li>
                 </ul>
               </div>
             </div>
@@ -280,7 +302,7 @@
             </div>
             <div class="row">
               <div class="one whole padded">
-                <input type="checkbox" name="things" checked /> I want all the things!
+                <input type="checkbox" id="things3" name="allthings" checked /> <label class="inline" for="things3">I want all the things!</label>
               </div>
             </div>
           </fieldset>

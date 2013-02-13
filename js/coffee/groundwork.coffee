@@ -168,7 +168,10 @@ $(document).ready ->
         $(this).addClass('unselected')
       else
         $(this).removeClass('unselected')
-  
+  $('span.select').on
+    click: ->
+      $(this).children('select').focus().trigger('change')
+
   # fallback to PNG if SVG not supported
   if !Modernizr.svg
     $("img[src$='.svg']").each ->

@@ -46,7 +46,7 @@
   z-index:98;
   width:100%;
   height:100%;
-  @include inner-shadow(#000, 200px, 0, 0);
+  @include inner-shadow(#000000, 200px, 0, 0);
   @include gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.9));
 }
 
@@ -77,7 +77,6 @@ div.modal {
     height:100%;
     background:#fff;
     padding:25px;
-    @include rounded($radius);
   }
   .close, .fullscreen {
     position:absolute;
@@ -87,14 +86,16 @@ div.modal {
     right:10px;
     padding:5px;
     cursor:pointer;
-    color:#888;
-    background:#fff;
-    @include rounded($radius);
+    color:#ddd;
+    background:#222;
+    background:rgba(0,0,0,0.8);
+    @include rounded(0 0 0 $radius);
     &:hover, &:focus {
-      color:black;
+      color:#fff;
     }
   }
   .fullscreen {
+    @include rounded(0 0 $radius 0);
     right:auto;
     left:10px;
   }

@@ -179,6 +179,11 @@
         }
       }
     });
+    $('span.select').on({
+      click: function() {
+        return $(this).children('select').focus().trigger('change');
+      }
+    });
     if (!Modernizr.svg) {
       $("img[src$='.svg']").each(function() {
         return $(this).attr('src', $(this).attr('src').replace('.svg', '.png'));
@@ -334,9 +339,6 @@
           right: right = win.width() - left - el.outerWidth()
         };
       };
-      closetooltip = function() {
-        return tooltip.remove();
-      };
       setPosition = function(trigger) {
         var attrs, coords, height, width;
         coords = getElementPosition(trigger);
@@ -359,62 +361,58 @@
           attrs.top = (trigger.offset().top - height) - 20;
         } else {
           tooltip.addClass('bottom');
-          attrs.top = trigger.offset().top + 15;
+          attrs.top = trigger.offset().top + trigger.outerHeight() - 4;
         }
         return tooltip.css(attrs);
       };
-      showtooltip = function(e) {
+      closetooltip = function() {
+        tooltip.stop().remove();
+        return $('[role=tooltip]').removeClass('on');
+      };
+      showtooltip = function(trigger) {
         closetooltip();
         clearTimeout(delayShow);
         return delayShow = setTimeout(function() {
-          trigger = $(e.target);
-          tooltip = $("<div id=\"tooltip\"></div>");
-          tooltip.css("opacity", 0).html(trigger.attr('data-title')).appendTo("body");
+          if ($('#tooltip').length !== 1) {
+            $('#tooltip').remove();
+            tooltip = $("<div id=\"tooltip\"></div>");
+            tooltip.appendTo("body");
+          }
+          tooltip.css("opacity", 0).text(trigger.attr('data-title'));
           setPosition(trigger);
+          trigger.addClass('on');
           return tooltip.animate({
             top: "+=10",
             opacity: 1
           }, options.speed);
         }, options.delay);
       };
-      return this.each(function() {
+      this.each(function() {
         var $this;
         $this = $(this);
         $this.attr('role', 'tooltip').attr('data-title', $this.attr('title'));
-        $this.removeAttr("title");
-        if ($this.is('input') || $this.is('select') || $this.is('textarea')) {
-          return $this.bind({
-            focus: function(e) {
-              showtooltip(e);
-              return $this.bind({
-                mouseenter: function(e) {
-                  return showtooltip(e);
-                }
-              });
-            },
-            blur: function(e) {
-              clearTimeout(delayShow);
-              closetooltip();
-              return $this.unbind('mouseenter');
-            }
-          });
-        } else {
-          return $this.bind({
-            mouseenter: function(e) {
-              return showtooltip(e);
-            },
-            mouseleave: function() {
-              clearTimeout(delayShow);
-              return closetooltip();
-            },
-            focus: function(e) {
-              return showtooltip(e);
-            },
-            blur: function(e) {
-              clearTimeout(delayShow);
-              return closetooltip();
-            }
-          });
+        return $this.removeAttr("title");
+      });
+      $('body').on('focus', '[role=tooltip]', function() {
+        return showtooltip($(this));
+      }).on('blur', '[role=tooltip]', function() {
+        clearTimeout(delayShow);
+        return closetooltip();
+      }).on('mouseenter', '[role=tooltip]:not(input,select,textarea)', function() {
+        return showtooltip($(this));
+      }).on('mouseleave', '[role=tooltip]:not(input,select,textarea)', function() {
+        clearTimeout(delayShow);
+        return closetooltip();
+      });
+      return $(window).on({
+        scroll: function() {
+          trigger = $('[role=tooltip].on');
+          if (trigger.length) {
+            setPosition(trigger);
+            return $('#tooltip').css({
+              top: "+=10"
+            });
+          }
         }
       });
     };
@@ -756,7 +754,7 @@
   (function($) {
     var elems, modals;
     if ($('div#iframeModal').length < 1) {
-      $('body').append('<div class="iframe modal" id="iframeModal"><iframe></iframe></div>');
+      $('body').append('<div class="iframe modal" id="iframeModal"><iframe marginheight="0" marginwidth="0" frameborder="0"></iframe></div>');
       $('div#iframeModal').prepend('<i class="close icon-remove"></i>').prepend('<i class="fullscreen icon-resize-full"></i>');
     }
     $('a.modal').each(function() {
@@ -764,7 +762,7 @@
       return $(this).attr('href', '#iframeModal');
     });
     $('a.modal').on("click", function(e) {
-      $('div#iframeModal iframe').replaceWith('<iframe width="100%" height="100%" src="' + $(this).attr('data-url') + '"></iframe>');
+      $('div#iframeModal iframe').replaceWith('<iframe marginheight="0" marginwidth="0" frameborder="0" width="100%" height="100%" src="' + $(this).attr('data-url') + '"></iframe>');
       e.preventDefault();
       return false;
     });
@@ -832,7 +830,7 @@
         $(window).unbind("keydown");
         $('html').removeClass("modal-active").addClass('modal-ready');
         if (modal.hasClass('iframe')) {
-          $('div#iframeModal iframe').replaceWith('<iframe></iframe>');
+          $('div#iframeModal iframe').replaceWith('<iframe marginheight="0" marginwidth="0" frameborder="0"></iframe>');
           modal.css({
             width: '80%',
             height: '80%'

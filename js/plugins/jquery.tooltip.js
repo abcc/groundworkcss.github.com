@@ -36,9 +36,6 @@
           right: right = win.width() - left - el.outerWidth()
         };
       };
-      closetooltip = function() {
-        return tooltip.remove();
-      };
       setPosition = function(trigger) {
         var attrs, coords, height, width;
         coords = getElementPosition(trigger);
@@ -61,62 +58,58 @@
           attrs.top = (trigger.offset().top - height) - 20;
         } else {
           tooltip.addClass('bottom');
-          attrs.top = trigger.offset().top + 15;
+          attrs.top = trigger.offset().top + trigger.outerHeight() - 4;
         }
         return tooltip.css(attrs);
       };
-      showtooltip = function(e) {
+      closetooltip = function() {
+        tooltip.stop().remove();
+        return $('[role=tooltip]').removeClass('on');
+      };
+      showtooltip = function(trigger) {
         closetooltip();
         clearTimeout(delayShow);
         return delayShow = setTimeout(function() {
-          trigger = $(e.target);
-          tooltip = $("<div id=\"tooltip\"></div>");
-          tooltip.css("opacity", 0).html(trigger.attr('data-title')).appendTo("body");
+          if ($('#tooltip').length !== 1) {
+            $('#tooltip').remove();
+            tooltip = $("<div id=\"tooltip\"></div>");
+            tooltip.appendTo("body");
+          }
+          tooltip.css("opacity", 0).text(trigger.attr('data-title'));
           setPosition(trigger);
+          trigger.addClass('on');
           return tooltip.animate({
             top: "+=10",
             opacity: 1
           }, options.speed);
         }, options.delay);
       };
-      return this.each(function() {
+      this.each(function() {
         var $this;
         $this = $(this);
         $this.attr('role', 'tooltip').attr('data-title', $this.attr('title'));
-        $this.removeAttr("title");
-        if ($this.is('input') || $this.is('select') || $this.is('textarea')) {
-          return $this.bind({
-            focus: function(e) {
-              showtooltip(e);
-              return $this.bind({
-                mouseenter: function(e) {
-                  return showtooltip(e);
-                }
-              });
-            },
-            blur: function(e) {
-              clearTimeout(delayShow);
-              closetooltip();
-              return $this.unbind('mouseenter');
-            }
-          });
-        } else {
-          return $this.bind({
-            mouseenter: function(e) {
-              return showtooltip(e);
-            },
-            mouseleave: function() {
-              clearTimeout(delayShow);
-              return closetooltip();
-            },
-            focus: function(e) {
-              return showtooltip(e);
-            },
-            blur: function(e) {
-              clearTimeout(delayShow);
-              return closetooltip();
-            }
-          });
+        return $this.removeAttr("title");
+      });
+      $('body').on('focus', '[role=tooltip]', function() {
+        return showtooltip($(this));
+      }).on('blur', '[role=tooltip]', function() {
+        clearTimeout(delayShow);
+        return closetooltip();
+      }).on('mouseenter', '[role=tooltip]:not(input,select,textarea)', function() {
+        return showtooltip($(this));
+      }).on('mouseleave', '[role=tooltip]:not(input,select,textarea)', function() {
+        clearTimeout(delayShow);
+        return closetooltip();
+      });
+      return $(window).on({
+        scroll: function() {
+          trigger = $('[role=tooltip].on');
+          if (trigger.length) {
+            setPosition(trigger);
+            return $('#tooltip').css({
+              top: "+=10"
+            });
+          }
         }
       });
     };
