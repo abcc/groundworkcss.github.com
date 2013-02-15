@@ -49,7 +49,11 @@
     //   };
     //   datauri.src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";
     // })();
-    // polyfill SVG elements
+    // fallback if SVG unsupported
+    Modernizr.load({
+      test: Modernizr.svg,
+      nope: './css/no-svg.css'
+    });
     Modernizr.load({
       test: Modernizr.svg,
       nope: './css/groundy/no-svg.css'
@@ -87,6 +91,7 @@
                       <li><a href="./ui-elements">UI Elements</a></li>
                       <li><a href="./tables">Tables</a></li>
                       <li><a href="./icons">Icons</a></li>
+                      <li><a href="./social-icons">Social Icons</a></li>
                       <li><a href="./responsiveText-js">ResponsiveText</a></li>
                       <li><a href="./modals-js">Modals</a></li>
                       <li><a href="./tooltips-js">Tooltips</a></li>

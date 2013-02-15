@@ -1,0 +1,281 @@
+
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <title>Groundwork CSS &hearts; Responsive Tooltips</title>
+  <!-- Modernizr -->
+  <script src="./js/libs/modernizr-2.6.2.min.js"></script>
+  <!-- jQuery -->
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  <script type="text/javascript">window.jQuery || document.write('<script src="./js/libs/jquery-1.8.2.min.js"><\/script>')</script>
+  <!-- Groundwork CSS -->
+  <link type="text/css" rel="stylesheet" href="./css/groundwork.css">
+  <!-- Groundy theme files -->
+  <link type="text/css" rel="stylesheet" href="./css/groundy/groundy.css">
+  <!--[if IE]>
+  <link type="text/css" rel="stylesheet" href="./css/groundwork-ie.css">
+  <![endif]-->
+  <!--[if lt IE 9]>
+  <script type="text/javascript" src="./js/libs/html5shiv.js"></script>
+  <script>
+    /* polyfill custom tags for code samples */
+    customTags = ['tag','content','function','string','class','val','comment','arg','prop'];
+    for (var i = 0; i < customTags.length; i++) {
+      document.createElement(customTags[i]);
+    }
+  </script>
+  <![endif]-->
+  <!--[if IE 7]>
+  <link type="text/css" rel="stylesheet" href="./css/font-awesome-ie7.min.css">
+  <![endif]-->
+  <script type="text/javascript">
+    // (function(){
+    //   var datauri = new Image();
+    //   datauri.onerror = function() {
+    //       Modernizr.addTest('datauri', function () { return false; });
+    //   };  
+    //   datauri.onload = function() {
+    //       Modernizr.addTest('datauri', function () { return (datauri.width == 1 && datauri.height == 1); });
+    //       Modernizr.load({
+    //         test: Modernizr.datauri,
+    //         nope: './css/no-datauri.css'
+    //       });
+    //   };
+    //   datauri.src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";
+    // })();
+    // fallback if SVG unsupported
+    Modernizr.load({
+      test: Modernizr.svg,
+      nope: './css/no-svg.css'
+    });
+    Modernizr.load({
+      test: Modernizr.svg,
+      nope: './css/groundy/no-svg.css'
+    });
+    // polyfill for HTML5 placeholders
+    Modernizr.load({
+      test: Modernizr.input.placeholder,
+      nope: [
+        './css/placeholder_polyfill.css',
+        './js/libs/placeholder_polyfill.jquery.js'
+      ]
+    });
+  </script>
+</head>
+<body>
+  <header class="white band padded">
+    <div class="container">
+      <div class="row">
+        <div class="one half">
+          <h1 class="big responsive heading" data-compression="6.95" data-min="20" data-max="120" style="font-size:86px;"><a href="./home"><span class="logo"></span> Groundwork<sup>Beta</sup></a></h1>
+        </div>
+        <div class="one half double pad-top">
+          <nav class="inline pull-right">
+              <ul>
+                  <li><a href="./home">Home</a></li
+                  ><li class="menu"><a href="./components">Components</a>
+                    <ul>
+                      <li><a href="./grid">Grid</a></li>
+                      <li><a href="./media-queries">Media Queries</a></li>
+                      <li><a href="./typography">Typography</a></li>
+                      <li><a href="./buttons">Buttons</a></li>
+                      <li><a href="./forms">Forms</a></li>
+                      <li><a href="./navigation">Navigation</a></li>
+                      <li><a href="./tabs">Tabs</a></li>
+                      <li><a href="./ui-elements">UI Elements</a></li>
+                      <li><a href="./tables">Tables</a></li>
+                      <li><a href="./icons">Icons</a></li>
+                      <li><a href="./social-icons">Social Icons</a></li>
+                      <li><a href="./responsiveText-js">ResponsiveText</a></li>
+                      <li><a href="./modals-js">Modals</a></li>
+                      <li><a href="./tooltips-js">Tooltips</a></li>
+                      <li><a href="./orbit-js">Orbit</a></li>
+                      <!-- <li><a href="./popovers-js">Popovers</a></li> -->
+                    </ul>
+                  </li
+                  ><li><a href="./templates">Templates</a></li
+                  ><!-- <li><a href="http://github.com/groundworkcss/groundwork" target="_blank"><i class="icon-github-alt"></i></a></li
+                  ><li><a href="http://twitter.com/groundworkcss" target="_blank"><i class="icon-twitter"></i></a></li
+                  > --><li><a href="https://github.com/groundworkcss/groundwork/archive/master.zip"><i class="icon-download-alt"></i></a></li>
+              </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="container">
+    <div class="row">
+      <div class="one whole padded">
+        <ul class="breadcrumbs">
+          <li><a href="./home.html">Home</a></li>
+          <li><a href="./components.html">Components</a></li>
+          <li><a href="./tooltips-js.html">Tooltips</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="one third padded">
+        <h1><i class="icon-twitter"></i> Social Icons</h1>
+        <p>Awesome vector social icons created by Adam Fairhead at Fairhead Creative.</p>
+        <p>Each icon is designed to be used as the background of an anchor, and each icon has its own class as well as a couple of global classes. They are all set to be inline, so you can put them up against each other, in line with your text, or in any kind of layout or construct.</p>
+        <p>To use an icon, create an anchor and give it a class of <code class="inline">.social-icon</code>, as well as a class for the social network or service.</p>
+        <p>By default, the icons inherit their dimensions from the font-size of their parent container. However, you can also control the appearance of your icon by including the <code class="inline">.small</code>, <code class="inline">.medium</code>, <code class="inline">.large</code> or even <code class="inline">.round</code> helper classes.</p>
+        <h4>Example Usage:</h4>
+        <code>
+<pre>&lt;<tag>a</tag> href=&quot;<span>http://twitter.com/groundworkcss</span>&quot; class=&quot;<span>large social-icon twitter</span>&quot;&gt;<content>@GroundworkCSS</content>&lt;/<tag>a</tag>&gt;</pre>
+<pre>&lt;<tag>a</tag> href=&quot;<span>http://twitter.com/groundworkcss</span>&quot; class=&quot;<span>medium social-icon twitter</span>&quot;&gt;<content>@GroundworkCSS</content>&lt;/<tag>a</tag>&gt;</pre>
+<pre>&lt;<tag>a</tag> href=&quot;<span>http://twitter.com/groundworkcss</span>&quot; class=&quot;<span>large social-icon twitter</span>&quot;&gt;<content>@GroundworkCSS</content>&lt;/<tag>a</tag>&gt;</pre>
+<pre>&lt;<tag>a</tag> href=&quot;<span>http://twitter.com/groundworkcss</span>&quot; class=&quot;<span>large round social-icon twitter</span>&quot;&gt;<content>@GroundworkCSS</content>&lt;/<tag>a</tag>&gt;</pre>
+        </code>
+        <hr/>
+        <h4>Result:</h4>
+        <a href="http://twitter.com/groundworkcss" target="_blank" class="small social-icon twitter">@GroundworkCSS</a>
+        <a href="http://twitter.com/groundworkcss" target="_blank" class="medium social-icon twitter">@GroundworkCSS</a>
+        <a href="http://twitter.com/groundworkcss" target="_blank" class="large social-icon twitter">@GroundworkCSS</a>
+        <a href="http://twitter.com/groundworkcss" target="_blank" class="large round social-icon twitter">@GroundworkCSS</a>
+      </div>
+      <div class="two thirds padded">
+        <h2><i class="icon-twitter"></i> Social Icons</h2>
+        <p>Each icon is very clearly and reliably named. Hover on any of the icons on this page to see what their class is when you add it to an anchor.</p>
+
+        <h6 class="small">Large Icons</h6>
+        <a class="social-icon behance large tooltip" href="#" title=".social-icon.behance.large">Behance</a>
+        <a class="social-icon creativecloud large tooltip" href="#" title=".social-icon.creativecloud.large">Creative Cloud</a>
+        <a class="social-icon dribbble large tooltip" href="#" title=".social-icon.dribbble.large">Dribbble</a>
+        <a class="social-icon dropbox large tooltip" href="#" title=".social-icon.dropbox.large">Dropbox</a>
+        <a class="social-icon evernote large tooltip" href="#" title=".social-icon.evernote.large">Evernote</a>
+        <a class="social-icon facebook large tooltip" href="#" title=".social-icon.facebook.large">Facebook</a>
+        <a class="social-icon flickr large tooltip" href="#" title=".social-icon.flickr.large">Flickr</a>
+        <a class="social-icon github large tooltip" href="#" title=".social-icon.github.large">Github</a>
+        <a class="social-icon googleplus large tooltip" href="#" title=".social-icon.googleplus.large">GooglePlus</a>
+        <a class="social-icon icloud large tooltip" href="#" title=".social-icon.icloud.large">iCloud</a>
+        <a class="social-icon linkedin large tooltip" href="#" title=".social-icon.linkedin.large">LinkedIn</a>
+        <a class="social-icon mail large tooltip" href="#" title=".social-icon.mail.large">Mail</a>
+        <a class="social-icon msn large tooltip" href="#" title=".social-icon.msn.large">MSN</a>
+        <a class="social-icon pinterest large tooltip" href="#" title=".social-icon.pinterest.large">Pinterest</a>
+        <a class="social-icon rdio large tooltip" href="#" title=".social-icon.rdio.large">Rdio</a>
+        <a class="social-icon rss large tooltip" href="#" title=".social-icon.rss.large">RSS</a>
+        <a class="social-icon skitch large tooltip" href="#" title=".social-icon.skitch.large">Skitch</a>
+        <a class="social-icon skype large tooltip" href="#" title=".social-icon.skype.large">Skype</a>
+        <a class="social-icon spotify large tooltip" href="#" title=".social-icon.spotify.large">Spotify</a>
+        <a class="social-icon stumbleupon large tooltip" href="#" title=".social-icon.stumbleupon.large">StumbleUpon!</a>
+        <a class="social-icon twitter large tooltip" href="#" title=".social-icon.twitter.large">Twitter</a>
+        <a class="social-icon vimeo large tooltip" href="#" title=".social-icon.vimeo.large">Vimeo</a>
+        <a class="social-icon youtube large tooltip" href="#" title=".social-icon.youtube.large">YouTube</a>
+        <a class="social-icon youversion large tooltip" href="#" title=".social-icon.youversion.large">YouVersion</a>
+        <a class="social-icon zerply large tooltip" href="#" title=".social-icon.zerply.large">Zerply</a>
+        <a class="social-icon pocket large tooltip" href="#" title=".social-icon.pocket.large">Pocket App</a>
+          
+        <hr/>
+        
+        <h6 class="small">Medium Icons</h6>
+        <a class="social-icon behance medium tooltip" href="#" title=".social-icon.behance.medium">Behance</a>
+        <a class="social-icon creativecloud medium tooltip" href="#" title=".social-icon.creativecloud.medium">Creative Cloud</a>
+        <a class="social-icon dribbble medium tooltip" href="#" title=".social-icon.dribbble.medium">Dribbble</a>
+        <a class="social-icon dropbox medium tooltip" href="#" title=".social-icon.dropbox.medium">Dropbox</a>
+        <a class="social-icon evernote medium tooltip" href="#" title=".social-icon.evernote.medium">Evernote</a>
+        <a class="social-icon facebook medium tooltip" href="#" title=".social-icon.facebook.medium">Facebook</a>
+        <a class="social-icon flickr medium tooltip" href="#" title=".social-icon.flickr.medium">Flickr</a>
+        <a class="social-icon github medium tooltip" href="#" title=".social-icon.github.medium">Github</a>
+        <a class="social-icon googleplus medium tooltip" href="#" title=".social-icon.googleplus.medium">GooglePlus</a>
+        <a class="social-icon icloud medium tooltip" href="#" title=".social-icon.icloud.medium">iCloud</a>
+        <a class="social-icon linkedin medium tooltip" href="#" title=".social-icon.linkedin.medium">LinkedIn</a>
+        <a class="social-icon mail medium tooltip" href="#" title=".social-icon.mail.medium">Mail</a>
+        <a class="social-icon msn medium tooltip" href="#" title=".social-icon.msn.medium">MSN</a>
+        <a class="social-icon pinterest medium tooltip" href="#" title=".social-icon.pinterest.medium">Pinterest</a>
+        <a class="social-icon rdio medium tooltip" href="#" title=".social-icon.rdio.medium">Rdio</a>
+        <a class="social-icon rss medium tooltip" href="#" title=".social-icon.rss.medium">RSS</a>
+        <a class="social-icon skitch medium tooltip" href="#" title=".social-icon.skitch.medium">Skitch</a>
+        <a class="social-icon skype medium tooltip" href="#" title=".social-icon.skype.medium">Skype</a>
+        <a class="social-icon spotify medium tooltip" href="#" title=".social-icon.spotify.medium">Spotify</a>
+        <a class="social-icon stumbleupon medium tooltip" href="#" title=".social-icon.stumbleupon.medium">StumbleUpon!</a>
+        <a class="social-icon twitter medium tooltip" href="#" title=".social-icon.twitter.medium">Twitter</a>
+        <a class="social-icon vimeo medium tooltip" href="#" title=".social-icon.vimeo.medium">Vimeo</a>
+        <a class="social-icon youtube medium tooltip" href="#" title=".social-icon.youtube.medium">YouTube</a>
+        <a class="social-icon youversion medium tooltip" href="#" title=".social-icon.youversion.medium">YouVersion</a>
+        <a class="social-icon zerply medium tooltip" href="#" title=".social-icon.zerply.medium">Zerply</a>
+        <a class="social-icon pocket medium tooltip" href="#" title=".social-icon.pocket.medium">Pocket App</a>
+        
+        <hr/>
+
+        <h6 class="small">Small Icons</h6>
+        <a class="social-icon behance small tooltip" href="#" title=".social-icon.behance.small">Behance</a>
+        <a class="social-icon creativecloud small tooltip" href="#" title=".social-icon.creativecloud.small">Creative Cloud</a>
+        <a class="social-icon dribbble small tooltip" href="#" title=".social-icon.dribbble.small">Dribbble</a>
+        <a class="social-icon dropbox small tooltip" href="#" title=".social-icon.dropbox.small">Dropbox</a>
+        <a class="social-icon evernote small tooltip" href="#" title=".social-icon.evernote.small">Evernote</a>
+        <a class="social-icon facebook small tooltip" href="#" title=".social-icon.facebook.small">Facebook</a>
+        <a class="social-icon flickr small tooltip" href="#" title=".social-icon.flickr.small">Flickr</a>
+        <a class="social-icon github small tooltip" href="#" title=".social-icon.github.small">Github</a>
+        <a class="social-icon googleplus small tooltip" href="#" title=".social-icon.googleplus.small">GooglePlus</a>
+        <a class="social-icon icloud small tooltip" href="#" title=".social-icon.icloud.small">iCloud</a>
+        <a class="social-icon linkedin small tooltip" href="#" title=".social-icon.linkedin.small">LinkedIn</a>
+        <a class="social-icon mail small tooltip" href="#" title=".social-icon.mail.small">Mail</a>
+        <a class="social-icon msn small tooltip" href="#" title=".social-icon.msn.small">MSN</a>
+        <a class="social-icon pinterest small tooltip" href="#" title=".social-icon.pinterest.small">Pinterest</a>
+        <a class="social-icon rdio small tooltip" href="#" title=".social-icon.rdio.small">Rdio</a>
+        <a class="social-icon rss small tooltip" href="#" title=".social-icon.rss.small">RSS</a>
+        <a class="social-icon skitch small tooltip" href="#" title=".social-icon.skitch.small">Skitch</a>
+        <a class="social-icon skype small tooltip" href="#" title=".social-icon.skype.small">Skype</a>
+        <a class="social-icon spotify small tooltip" href="#" title=".social-icon.spotify.small">Spotify</a>
+        <a class="social-icon stumbleupon small tooltip" href="#" title=".social-icon.stumbleupon.small">StumbleUpon!</a>
+        <a class="social-icon twitter small tooltip" href="#" title=".social-icon.twitter.small">Twitter</a>
+        <a class="social-icon vimeo small tooltip" href="#" title=".social-icon.vimeo.small">Vimeo</a>
+        <a class="social-icon youtube small tooltip" href="#" title=".social-icon.youtube.small">YouTube</a>
+        <a class="social-icon youversion small tooltip" href="#" title=".social-icon.youversion.small">YouVersion</a>
+        <a class="social-icon zerply small tooltip" href="#" title=".social-icon.zerply.small">Zerply</a>
+        <a class="social-icon pocket small tooltip" href="#" title=".social-icon.pocket.small">Pocket App</a>
+
+        <hr/>
+        
+        <h6 class="small">Round Icons</h6>
+        <a class="social-icon twitter round small tooltip" href="#" title=".social-icon.twitter.round.small">Twitter</a>
+        <a class="social-icon twitter round medium tooltip" href="#" title=".social-icon.twitter.round.medium">Twitter</a>
+        <a class="social-icon twitter round large tooltip" href="#" title=".social-icon.twitter.round.large">Twitter</a>
+        
+        <hr/>
+
+        <h6 class="small">Inline Social Icons (relative sizing)</h6>
+        <div class="row">
+          <div class="one whole">
+            <h1><span class="social-icon twitter tooltip" title=".twitter.social-icon"></span> Example of avatar embedded in a level 1 heading</h1>
+            <h2><span class="social-icon twitter tooltip" title=".twitter.social-icon"></span> Example of avatar embedded in a level 2 heading</h2>
+            <h3><span class="social-icon twitter tooltip" title=".twitter.social-icon"></span> Example of avatar embedded in a level 3 heading</h3>
+            <h4><span class="social-icon twitter tooltip" title=".twitter.social-icon"></span> Example of avatar embedded in a level 4 heading</h4>
+            <h5><span class="social-icon twitter tooltip" title=".twitter.social-icon"></span> Example of avatar embedded in a level 5 heading</h5>
+            <h6><span class="social-icon twitter tooltip" title=".twitter.social-icon"></span> Example of avatar embedded in a level 6 heading</h6>
+            <p><span class="social-icon twitter tooltip" title=".twitter.social-icon"></span> Example of avatar embedded in a paragraph</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- scripts -->
+  <script type="text/javascript" src="./js/plugins/jquery.orbit-1.4.0.js"></script>
+  <script type="text/javascript" src="./js/groundwork.js"></script>
+
+  <!-- google analytics -->
+  <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-17121602-5']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+
+</body>
+</html>
