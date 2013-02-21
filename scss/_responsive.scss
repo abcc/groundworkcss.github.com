@@ -20,30 +20,30 @@
 ///////////////////////
 @media only screen and (max-width:767px) {
   // responsive grid
-  .column:not(.small-tablet):not(.mobile), 
-  .columns:not(.small-tablet):not(.mobile), 
-  .half:not(.small-tablet):not(.mobile),
-  .halves:not(.small-tablet):not(.mobile),
-  .third:not(.small-tablet):not(.mobile),
-  .thirds:not(.small-tablet):not(.mobile),
-  .fourth:not(.small-tablet):not(.mobile),
-  .fourths:not(.small-tablet):not(.mobile),
-  .fifth:not(.small-tablet):not(.mobile),
-  .fifths:not(.small-tablet):not(.mobile),
-  .sixth:not(.small-tablet):not(.mobile),
-  .sixths:not(.small-tablet):not(.mobile),
-  .seventh:not(.small-tablet):not(.mobile),
-  .sevenths:not(.small-tablet):not(.mobile),
-  .eighth:not(.small-tablet):not(.mobile),
-  .eighths:not(.small-tablet):not(.mobile),
-  .ninth:not(.small-tablet):not(.mobile),
-  .ninths:not(.small-tablet):not(.mobile),
-  .tenth:not(.small-tablet):not(.mobile),
-  .tenths:not(.small-tablet):not(.mobile),
-  .eleventh:not(.small-tablet):not(.mobile),
-  .elevenths:not(.small-tablet):not(.mobile),
-  .twelfth:not(.small-tablet):not(.mobile),
-  .twelfths:not(.small-tablet):not(.mobile) {
+  .column:not(.small-tablet, .mobile), 
+  .columns:not(.small-tablet, .mobile), 
+  .half:not(.small-tablet, .mobile),
+  .halves:not(.small-tablet, .mobile),
+  .third:not(.small-tablet, .mobile),
+  .thirds:not(.small-tablet, .mobile),
+  .fourth:not(.small-tablet, .mobile),
+  .fourths:not(.small-tablet, .mobile),
+  .fifth:not(.small-tablet, .mobile),
+  .fifths:not(.small-tablet, .mobile),
+  .sixth:not(.small-tablet, .mobile),
+  .sixths:not(.small-tablet, .mobile),
+  .seventh:not(.small-tablet, .mobile),
+  .sevenths:not(.small-tablet, .mobile),
+  .eighth:not(.small-tablet, .mobile),
+  .eighths:not(.small-tablet, .mobile),
+  .ninth:not(.small-tablet, .mobile),
+  .ninths:not(.small-tablet, .mobile),
+  .tenth:not(.small-tablet, .mobile),
+  .tenths:not(.small-tablet, .mobile),
+  .eleventh:not(.small-tablet, .mobile),
+  .elevenths:not(.small-tablet, .mobile),
+  .twelfth:not(.small-tablet, .mobile),
+  .twelfths:not(.small-tablet, .mobile) {
     width:auto !important;
     float:none;
     clear:both;
@@ -183,7 +183,7 @@
       }
     }
   }
-  .tabs:not(.small-tablet):not(.mobile):not(.vertical) {
+  .tabs:not(.small-tablet, .mobile, .vertical) {
     > ul {
       li {
         float:none;
