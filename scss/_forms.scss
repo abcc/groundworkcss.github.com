@@ -141,6 +141,9 @@ ul.radio-list {
   position:relative;
   z-index:1;
   width:100%;
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow:ellipsis;
   margin:0;
   padding:0.4em;
   font-family:monospace;
