@@ -178,9 +178,7 @@ $(document).ready ->
       $(this).attr('src',$(this).attr('src').replace('.svg','.png'))
 
   # add titles to demo grid cells
-  $('.demo > .row > .column, 
-     .demo > .row > .columns,
-     .demo > .row > .whole, 
+  $('.demo > .row > .whole, 
      .demo > .row > .wholes, 
      .demo > .row > .half, 
      .demo > .row > .halves, 
@@ -206,9 +204,7 @@ $(document).ready ->
      .demo > .row > .twelfths').each ->
     $(this).attr('data-title',$(this).attr('class'))
     $(this).attr('data-text',$(this).text())
-  $('.demo > .row > .column, 
-     .demo > .row > .columns,
-     .demo > .row > .whole, 
+  $('.demo > .row > .whole, 
      .demo > .row > .wholes, 
      .demo > .row > .half, 
      .demo > .row > .halves, 
