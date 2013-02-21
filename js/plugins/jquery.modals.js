@@ -162,19 +162,21 @@
     })();
     return $(window).resize(function() {
       return $('div.modal.active').each(function() {
-        $(this).removeClass('active').css({
-          top: '50%',
-          left: '50%',
-          'margin-top': ($(this).outerHeight() / -2) + 'px',
-          'margin-left': ($(this).outerWidth() / -2) + 'px'
-        }).addClass('active');
-        if (!$(this).hasClass('iframe')) {
-          $(this).css({
-            height: 'auto'
-          });
-          return $(this).css({
-            height: $(this).outerHeight()
-          });
+        if (!$(this).hasClass('fullscreen')) {
+          $(this).removeClass('active').css({
+            top: '50%',
+            left: '50%',
+            'margin-top': ($(this).outerHeight() / -2) + 'px',
+            'margin-left': ($(this).outerWidth() / -2) + 'px'
+          }).addClass('active');
+          if (!$(this).hasClass('iframe')) {
+            $(this).css({
+              height: 'auto'
+            });
+            return $(this).css({
+              height: $(this).outerHeight()
+            });
+          }
         }
       });
     });

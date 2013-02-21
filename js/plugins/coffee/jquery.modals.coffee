@@ -145,17 +145,18 @@
 
   $(window).resize ->
     $('div.modal.active').each ->
-      $(this).removeClass('active').css(
-        top: '50%',
-        left: '50%',
-        'margin-top': ($(this).outerHeight() / -2) + 'px',
-        'margin-left': ($(this).outerWidth() / -2) + 'px'
-      ).addClass('active')
-      unless $(this).hasClass('iframe')
-        $(this).css
-          height: 'auto'
-        $(this).css
-          height: $(this).outerHeight()
+      unless $(this).hasClass('fullscreen')
+        $(this).removeClass('active').css(
+          top: '50%',
+          left: '50%',
+          'margin-top': ($(this).outerHeight() / -2) + 'px',
+          'margin-left': ($(this).outerWidth() / -2) + 'px'
+        ).addClass('active')
+        unless $(this).hasClass('iframe')
+          $(this).css
+            height: 'auto'
+          $(this).css
+            height: $(this).outerHeight()
 
 
 ) jQuery
